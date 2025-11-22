@@ -1,0 +1,248 @@
+BILLING AND INVOICES
+
+Invoice Requests:
+- Invoices are generated automatically for all subscriptions
+- To request a copy of an invoice, email finance@company.com
+- Include your account number or order ID
+- Invoices are typically sent within 24 hours
+- Invoices are available in PDF format
+- Historical invoices available for download from account portal
+- Invoice numbers are unique and sequential
+- Invoices include itemized charges, taxes, and payment terms
+- Recurring invoices sent on billing date each month
+- Pro forma invoices available for Enterprise customers
+
+Invoice Details:
+- Invoice number format: INV-YYYY-XXXXXX
+- Payment terms: Net 30 for Enterprise, Due on receipt for others
+- Late payment fee: 1.5% per month (Enterprise only)
+- Invoice includes billing address, shipping address (if applicable)
+- Tax information included based on customer location
+- Currency displayed matches payment currency
+- Multi-currency invoices supported for international customers
+
+Payment Methods:
+- Credit cards (Visa, MasterCard, American Express, Discover)
+- Debit cards (with credit card logo)
+- Bank transfer (ACH) - US customers only
+- Wire transfer (for amounts over $10,000 or Enterprise customers)
+- Check payments (must be pre-approved, Enterprise only)
+- PayPal (for small transactions)
+- Apple Pay and Google Pay (mobile payments)
+- Cryptocurrency (Bitcoin, Ethereum) - Enterprise only, requires approval
+
+International Payment Methods:
+- SEPA transfers (EU customers)
+- SWIFT wire transfers (international)
+- Local payment methods available in select countries
+- Currency conversion handled automatically
+- Exchange rates updated daily
+
+To update your payment method:
+1. Log into your account
+2. Go to Billing Settings
+3. Click "Update Payment Method"
+4. Enter new payment information
+5. Verify payment method (small charge may be made and refunded)
+6. Save changes
+7. Set as default payment method if multiple methods on file
+
+Payment Method Security:
+- All payment information encrypted using PCI-DSS compliant systems
+- Payment details never stored on our servers
+- Tokenized payment processing for security
+- 3D Secure authentication for additional security
+- Fraud detection and monitoring systems active
+
+BILLING CYCLE AND FREQUENCY
+
+Billing Cycles:
+- Monthly billing: Charges on same date each month
+- Annual billing: Charges on anniversary date
+- Quarterly billing: Available for Enterprise customers
+- Custom billing cycles: Available for Enterprise with approval
+
+Billing Date Changes:
+- Can be changed once per year for free
+- Additional changes incur $25 administrative fee
+- Changes take effect on next billing cycle
+- Prorated charges apply when changing billing date
+
+Proration:
+- Plan upgrades: Prorated charge for remainder of billing period
+- Plan downgrades: Credit applied to next invoice
+- Add-ons: Prorated based on activation date
+- Cancellations: No refund for partial periods (unless within refund window)
+
+REFUND POLICY
+
+Refund Eligibility:
+- Refunds are available within 30 days of purchase
+- Subscription cancellations: refunds available within first 30 days only
+- Refund processing time: 5-7 business days
+- Refunds are issued to the original payment method
+- Partial refunds available for unused services
+- Annual plan refunds: Prorated based on months used
+
+To request a refund:
+1. Contact customer support via email or phone
+2. Provide order number and reason for refund
+3. Support will review your request within 2 business days
+4. If approved, refund will be processed within 5-7 business days
+5. You'll receive email confirmation when refund is processed
+6. Refund appears on statement within 1-2 billing cycles
+
+Refund Exceptions:
+- Services already used are not eligible
+- Custom products/services may have different policies
+- Refunds after 30 days require special approval
+- Setup fees are non-refundable
+- Third-party integrations and add-ons subject to vendor policies
+- Promotional credits and discounts are non-refundable
+
+Refund Methods:
+- Credit card: Refunded to original card (5-7 business days)
+- Bank transfer: Refunded to original account (7-10 business days)
+- Wire transfer: Refunded to original account (10-14 business days)
+- Check: Mailed to billing address (14-21 business days)
+
+EXPENSE REPORTS
+
+Expense Report Submission:
+- Submit expense reports monthly by the 5th of the following month
+- Use the company expense reporting system (accessible via employee portal)
+- Attach all receipts (required for expenses over $25)
+- Get manager approval before submission
+- Late submissions may delay reimbursement
+- Reports can be submitted via mobile app or web portal
+- Receipts can be uploaded as photos or PDFs
+- Multiple currencies supported with automatic conversion
+
+Reimbursable Expenses:
+- Business travel (flights, hotels, meals, ground transportation)
+- Client entertainment (meals, events, tickets)
+- Office supplies and equipment
+- Professional development courses and certifications
+- Business-related software subscriptions
+- Internet and phone expenses (for remote workers)
+- Home office equipment (with manager approval)
+- Conference and event registration fees
+- Business meals (with client or team members)
+- Parking and tolls (business-related)
+
+Non-Reimbursable Expenses:
+- Personal expenses
+- Alcohol (unless client entertainment, requires approval)
+- Personal travel upgrades
+- Expenses without receipts (over $25)
+- Traffic violations and fines
+- Personal entertainment
+- Gifts over $50 (requires special approval)
+- Political contributions
+- Personal insurance premiums
+
+Expense Limits:
+- Meals: $75 per person per day (domestic), $100 (international)
+- Hotels: Reasonable rates based on location
+- Flights: Economy class standard, business class requires approval
+- Car rentals: Standard size, upgrades require approval
+- Client entertainment: $200 per event, higher amounts require approval
+
+Reimbursement Timeline:
+- Reports submitted by the 5th: paid by the 20th
+- Late submissions: paid in the following cycle
+- Direct deposit to your bank account
+- Payment notifications sent via email
+- Reimbursement appears in account within 2-3 business days of payment
+
+PAYMENT FAILURES AND RESOLUTION
+
+If your payment fails:
+1. You'll receive an email notification immediately
+2. We'll attempt to charge again after 3 days
+3. Second retry attempt after 6 days
+4. Final retry attempt after 9 days
+5. You have a 7-day grace period to update payment
+6. Account will be suspended if payment not resolved after 7 days
+7. To reactivate: update payment method and account restores immediately
+8. Data retention: 30 days after suspension before deletion
+
+Common Payment Failure Reasons:
+- Insufficient funds
+- Expired credit card
+- Card declined by bank
+- Incorrect billing address
+- Card limit reached
+- Bank security hold
+- International transaction blocked
+
+To resolve payment issues:
+- Update payment method in account settings
+- Contact finance@company.com for assistance
+- Check with your bank for any holds or restrictions
+- Verify billing address matches card statement
+- Try alternative payment method
+- Contact support for payment plan options (Enterprise only)
+
+Payment Failure Notifications:
+- Email sent immediately upon failure
+- Reminder emails sent before retry attempts
+- Final warning email sent before suspension
+- SMS notifications available (opt-in required)
+- In-app notifications for active users
+
+ACCOUNT SUSPENSION AND REACTIVATION
+
+Suspended Account Status:
+- Access to services restricted
+- Data retained for 30 days
+- Email notifications continue
+- Can still access billing portal
+- No new charges during suspension
+
+Reactivation Process:
+1. Update payment method in account settings
+2. Payment will be automatically processed
+3. Account restored immediately upon successful payment
+4. All data and settings preserved
+5. Email confirmation sent upon reactivation
+
+Data Recovery:
+- Data available for 30 days after suspension
+- After 30 days, data may be permanently deleted
+- Backup restoration available for Enterprise customers
+- Contact support immediately if you need data recovery
+
+BILLING DISPUTES AND RESOLUTION
+
+Disputing a Charge:
+1. Contact finance@company.com within 60 days
+2. Provide invoice number and reason for dispute
+3. Include any supporting documentation
+4. Finance team will investigate within 5 business days
+5. Resolution communicated via email
+6. If dispute is valid, adjustment made to account
+
+Chargeback Process:
+- Contact us before initiating chargeback
+- We can resolve most issues without chargeback
+- Chargebacks may result in account suspension
+- We'll work with you to resolve the issue
+- Documentation provided to payment processor if needed
+
+BILLING SUPPORT
+
+Contact Information:
+- Email: finance@company.com
+- Phone: 1-800-FINANCE (Mon-Fri, 9 AM - 5 PM EST)
+- Live chat: Available in account portal
+- Response time: Within 24 hours for email, immediate for phone/chat
+
+Billing Portal Features:
+- View all invoices and payment history
+- Download invoices as PDF
+- Update payment methods
+- View upcoming charges
+- Set up payment reminders
+- Manage billing notifications
+- Export billing data for accounting

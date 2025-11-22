@@ -1,0 +1,449 @@
+TERMS OF SERVICE
+
+Last Updated: January 2024
+
+1. ACCEPTANCE OF TERMS
+
+By accessing and using our services, you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing our services.
+
+These terms apply to all users of our services, including without limitation users who are browsers, vendors, customers, merchants, and contributors of content.
+
+We reserve the right to update, change, or replace any part of these Terms of Service by posting updates and changes to our website. It is your responsibility to check our website periodically for changes.
+
+2. USE OF SERVICES
+
+You agree to use our services only for lawful purposes and in accordance with these Terms of Service and all applicable local, state, national, and international laws and regulations.
+
+Prohibited Activities:
+- Violating any applicable laws or regulations
+- Infringing on intellectual property rights of others
+- Transmitting harmful, malicious, or destructive code (viruses, malware, etc.)
+- Attempting to gain unauthorized access to our systems or networks
+- Interfering with or disrupting service operations or servers
+- Engaging in any form of spam, phishing, or fraudulent activity
+- Collecting or harvesting user information without consent
+- Impersonating any person or entity
+- Using services for any illegal or unauthorized purpose
+- Reverse engineering, decompiling, or disassembling our software
+- Removing or altering any proprietary notices or labels
+
+Service Availability:
+- We strive to maintain 99.9% uptime but do not guarantee uninterrupted service
+- Scheduled maintenance will be announced in advance when possible
+- We reserve the right to modify or discontinue services at any time
+- We are not liable for any loss or damage resulting from service unavailability
+
+3. USER ACCOUNTS
+
+Account Creation:
+- You must provide accurate, current, and complete information
+- You are responsible for maintaining the security of your account
+- You must notify us immediately of any unauthorized access
+- You are responsible for all activities under your account
+- One account per person (no shared accounts)
+
+Account Security:
+- You are responsible for maintaining account security
+- Use strong, unique passwords
+- Enable multi-factor authentication when available
+- Don't share your account credentials
+- Log out when using shared devices
+- Report suspicious activity immediately
+
+Account Termination:
+- We reserve the right to suspend or terminate accounts for violations
+- Accounts may be terminated for inactivity (90+ days)
+- Upon termination, access to services will cease immediately
+- We may delete account data after termination (subject to retention policies)
+- You may terminate your account at any time
+
+4. INTELLECTUAL PROPERTY
+
+Ownership:
+- All content, features, and functionality are owned by the company
+- Our trademarks, service marks, and logos are our property
+- You may not use our intellectual property without written permission
+- All rights not expressly granted are reserved
+
+User-Generated Content:
+- You retain ownership of content you create
+- By submitting content, you grant us a license to use, modify, and distribute it
+- You represent that you have the right to grant such license
+- We may remove content that violates these terms
+- We are not responsible for user-generated content
+
+License to Use Services:
+- We grant you a limited, non-exclusive, non-transferable license to use our services
+- This license is for personal or business use as permitted by your subscription
+- You may not sublicense, sell, or transfer this license
+- This license terminates upon termination of your account
+
+5. PAYMENT TERMS
+
+Subscription Fees:
+- Fees are charged according to your subscription plan
+- Payments are due as specified in your subscription agreement
+- All fees are in USD unless otherwise stated
+- Prices are subject to change with 30 days notice
+- Taxes are additional and your responsibility
+
+Billing:
+- Billing occurs on your subscription start date (monthly or annual)
+- Failed payments may result in service suspension
+- We will attempt to charge your payment method multiple times
+- You are responsible for keeping payment information current
+- Refunds are subject to our refund policy
+
+Price Changes:
+- We reserve the right to change pricing with 30 days notice
+- Existing customers will be grandfathered for 12 months
+- Price decreases apply immediately
+- Annual plans are locked at purchase price
+
+Refunds:
+- Refunds available within 30 days of purchase
+- Subscription cancellations: Refunds within first 30 days only
+- Refund processing: 5-7 business days
+- Refunds issued to original payment method
+- See our refund policy for complete details
+
+6. LIMITATION OF LIABILITY
+
+Disclaimer of Warranties:
+- Services provided "as is" and "as available" without warranties
+- We disclaim all warranties, express or implied
+- We do not warrant that services will be uninterrupted or error-free
+- We do not warrant that defects will be corrected
+- We do not warrant that services are free of viruses or harmful components
+
+Limitation of Liability:
+- We are not liable for indirect, incidental, or consequential damages
+- We are not liable for loss of profits, data, or business opportunities
+- Maximum liability limited to fees paid in the past 12 months
+- Some jurisdictions do not allow limitation of liability, so this may not apply to you
+
+Indemnification:
+- You agree to indemnify and hold us harmless from claims
+- This includes claims arising from your use of services
+- This includes claims arising from your violation of these terms
+- This includes claims arising from your violation of any law
+- You agree to cooperate in defense of such claims
+
+7. TERMINATION
+
+Termination by You:
+- You may terminate your account at any time
+- Termination takes effect at end of billing period (unless immediate cancellation)
+- You must cancel before next billing cycle to avoid charges
+- Data export available for 30 days after termination
+- Refunds subject to refund policy
+
+Termination by Us:
+- We may terminate accounts for violations of these terms
+- We may terminate accounts for non-payment
+- We may terminate accounts for illegal activity
+- We may terminate accounts for security reasons
+- Immediate termination possible for serious violations
+- We will provide notice when possible (except for serious violations)
+
+Effect of Termination:
+- Upon termination, access to services will cease immediately
+- We may delete your account and data (subject to retention policies)
+- You remain liable for all charges incurred before termination
+- Provisions that survive termination: Sections 4, 6, 8, 9, 10
+
+8. DISPUTE RESOLUTION
+
+Governing Law:
+- These terms are governed by the laws of [State/Country]
+- Jurisdiction: Courts of [State/Country]
+- You consent to jurisdiction and venue in these courts
+
+Dispute Resolution Process:
+- Informal resolution: Contact us first to resolve disputes
+- Mediation: If informal resolution fails, mediation may be required
+- Arbitration: Binding arbitration may be required (check your agreement)
+- Class action waiver: You waive right to participate in class actions
+- Some jurisdictions may not allow arbitration clauses
+
+9. GENERAL PROVISIONS
+
+Entire Agreement:
+- These terms constitute the entire agreement between you and us
+- They supersede all prior agreements and understandings
+- Any modifications must be in writing and signed by both parties
+
+Severability:
+- If any provision is found to be unenforceable, it will be modified to the minimum extent necessary
+- If modification is not possible, the provision will be severed
+- The remainder of the terms will remain in full effect
+
+Waiver:
+- Failure to enforce any provision does not constitute a waiver
+- Waivers must be in writing and signed
+- Waivers are specific to the provision and instance
+
+Assignment:
+- You may not assign or transfer your account without our consent
+- We may assign or transfer these terms without your consent
+- These terms bind and benefit successors and assigns
+
+Force Majeure:
+- We are not liable for failure to perform due to circumstances beyond our control
+- This includes natural disasters, wars, pandemics, government actions
+- We will use reasonable efforts to resume performance
+
+Notices:
+- Notices may be sent via email, mail, or posted on our website
+- Email notices sent to your registered email address
+- Notices are deemed received when sent (email) or 3 days after mailing
+
+PRIVACY POLICY
+
+Last Updated: January 2024
+
+1. INFORMATION WE COLLECT
+
+Personal Information:
+- Name, email address, phone number, mailing address
+- Account information and preferences
+- Payment information (processed securely through third-party processors)
+- Profile information and settings
+- Communication preferences
+
+Usage Data:
+- Usage data and analytics
+- Device information (type, operating system, browser)
+- IP address and location data
+- Cookies and tracking technologies
+- Log files and access times
+- Feature usage and interactions
+
+Other Information:
+- Information you provide in communications with us
+- Information from third-party services (if you connect accounts)
+- Information from public sources (for business customers)
+- Information from partners and affiliates
+
+2. HOW WE USE INFORMATION
+
+Service Provision:
+- To provide and improve our services
+- To process payments and transactions
+- To communicate with you about your account
+- To provide customer support
+- To send service-related notifications
+
+Business Purposes:
+- To comply with legal obligations
+- To enforce our terms and policies
+- To protect our rights and property
+- To prevent fraud and abuse
+- To conduct business analytics
+
+Marketing (With Your Consent):
+- To send marketing communications
+- To personalize content and advertisements
+- To conduct market research
+- To measure marketing effectiveness
+- You can opt-out at any time
+
+3. INFORMATION SHARING
+
+We Do Not Sell Your Personal Information:
+- We do not sell personal information to third parties
+- We do not rent or trade personal information
+
+Service Providers:
+- We share information with service providers under confidentiality agreements
+- Service providers are bound by contractual obligations
+- Service providers may only use information to provide services to us
+- Examples: Payment processors, cloud hosting, analytics providers
+
+Legal Requirements:
+- We may share information when required by law
+- We may share information to comply with legal process
+- We may share information to protect rights and safety
+- We may share information in connection with business transfers
+
+Business Partners:
+- We may share information with business partners (with your consent)
+- Business partners are required to protect your information
+- You can opt-out of sharing with business partners
+
+4. DATA SECURITY
+
+Security Measures:
+- We use industry-standard security measures
+- Data is encrypted in transit (TLS/SSL)
+- Data is encrypted at rest for sensitive information
+- Regular security audits and updates
+- Access controls and authentication
+- Employee training on data security
+
+Security Incidents:
+- We have incident response procedures
+- We will notify you of breaches as required by law
+- We take breaches seriously and work to prevent them
+- Report security issues to security@company.com
+
+5. YOUR RIGHTS
+
+Access Rights:
+- Access your personal data
+- Receive copy of your data in machine-readable format
+- Know what data we have about you
+
+Correction Rights:
+- Correct inaccurate data
+- Update your information
+- Complete incomplete data
+
+Deletion Rights:
+- Request deletion of your data
+- Right to be forgotten (GDPR)
+- Deletion subject to legal retention requirements
+
+Opt-Out Rights:
+- Opt-out of marketing communications
+- Opt-out of data sharing (where applicable)
+- Manage cookie preferences
+
+Data Portability:
+- Receive your data in portable format
+- Transfer data to another service (where technically feasible)
+
+To Exercise Your Rights:
+- Contact us at privacy@company.com
+- We will respond within 30 days (may extend to 60 days with notice)
+- We may verify your identity before processing requests
+- No fee for requests (unless excessive or repetitive)
+
+6. COOKIES AND TRACKING
+
+Cookies:
+- We use cookies for functionality and analytics
+- Essential cookies: Required for service to function
+- Analytics cookies: Help us understand usage
+- Marketing cookies: Used for advertising (with consent)
+- You can manage cookie preferences in your browser
+
+Tracking Technologies:
+- We use tracking technologies to improve services
+- We use analytics tools to understand usage
+- We may use third-party analytics providers
+- You can opt-out of non-essential tracking
+
+Do Not Track:
+- We respect Do Not Track signals
+- Some features may not work if tracking is disabled
+- We still collect necessary information for service provision
+
+7. CHILDREN'S PRIVACY
+
+Age Restrictions:
+- Our services are not intended for children under 13 (or 16 in EU)
+- We do not knowingly collect information from children
+- If we discover we have collected information from a child, we will delete it
+- Parents should contact us if they believe we have collected child information
+
+8. INTERNATIONAL DATA TRANSFERS
+
+Data Transfers:
+- Your data may be transferred to and processed in countries other than your country
+- We use appropriate safeguards for international transfers
+- Standard Contractual Clauses used for EU data transfers
+- We comply with applicable data protection laws
+
+9. DATA RETENTION
+
+Retention Periods:
+- We retain data while your account is active
+- We retain data as required by law
+- We delete data when no longer needed
+- Backup data may be retained longer
+- See our data retention policy for details
+
+10. CHANGES TO PRIVACY POLICY
+
+Policy Updates:
+- We may update this policy from time to time
+- We will notify you of material changes
+- Continued use after changes constitutes acceptance
+- Check this page periodically for updates
+
+COMPLIANCE
+
+GDPR Compliance:
+- We comply with EU General Data Protection Regulation
+- Data processing agreements in place for EU customers
+- Right to be forgotten implemented
+- Data breach notification procedures established
+- Data Protection Officer appointed (if required)
+- Privacy by design and default implemented
+
+CCPA Compliance:
+- California Consumer Privacy Act compliance
+- Right to know what data is collected
+- Right to delete personal information
+- Right to opt-out of data sales (we don't sell data)
+- Non-discrimination for exercising rights
+- Privacy notices updated with CCPA disclosures
+
+SOC 2 Compliance:
+- Annual SOC 2 Type II audits
+- Security controls and monitoring
+- Access management procedures
+- Incident response plans
+- Vendor management program
+- SOC 2 reports available under NDA
+
+Other Compliance:
+- HIPAA compliance (for healthcare customers with BAA)
+- PCI DSS compliance (for payment processing)
+- Industry-specific compliance as applicable
+- Regular compliance audits and assessments
+
+CONTACT INFORMATION
+
+Legal Department:
+- Email: legal@company.com
+- Privacy Officer: privacy@company.com
+- Data Protection Officer: dpo@company.com (EU customers)
+
+Mailing Address:
+[Company Name]
+[Address]
+[City, State ZIP]
+[Country]
+
+For Questions:
+- Terms of Service: legal@company.com
+- Privacy Policy: privacy@company.com
+- Data Requests: privacy@company.com
+- Security Issues: security@company.com
+
+MODIFICATIONS TO TERMS
+
+We reserve the right to modify these terms at any time. We will:
+- Post updated terms on our website
+- Update the "Last Updated" date
+- Notify users of material changes via email
+- Provide 30 days notice for material changes
+- Continued use after changes constitutes acceptance
+
+Your continued use of our services after any modifications indicates your acceptance of the modified terms. If you do not agree to the modifications, you must stop using our services.
+
+GOVERNING LAW AND JURISDICTION
+
+These Terms of Service and any disputes arising from them are governed by the laws of [State/Country], without regard to conflict of law principles. You agree to submit to the exclusive jurisdiction of the courts located in [State/Country] for resolution of any disputes.
+
+For EU customers, these terms are governed by the laws of [EU Country], and disputes will be resolved in the courts of [EU Country].
+
+SEVERABILITY
+
+If any provision of these Terms of Service is found to be unenforceable or invalid, that provision will be limited or eliminated to the minimum extent necessary so that these Terms will otherwise remain in full force and effect and enforceable.
+
+ENTIRE AGREEMENT
+
+These Terms of Service, together with our Privacy Policy and any other legal notices published on our website, constitute the entire agreement between you and us concerning your use of our services and supersede all prior agreements and understandings.

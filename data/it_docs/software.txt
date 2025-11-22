@@ -1,0 +1,433 @@
+SOFTWARE AND APPLICATIONS
+
+Approved Software List:
+
+Productivity Suite:
+- Microsoft Office 365: Word, Excel, PowerPoint, Outlook, OneNote, Teams
+- Google Workspace: Docs, Sheets, Slides, Gmail, Drive, Meet
+- Adobe Acrobat Pro: PDF creation and editing
+- Notion: Project management and documentation
+- Trello: Task and project management
+- Asana: Project management (with approval)
+
+Communication Tools:
+- Slack: Team communication and collaboration
+- Microsoft Teams: Video conferencing and chat
+- Zoom: External meetings and webinars
+- Email: Outlook (primary), Gmail (Google Workspace users)
+- Webex: Video conferencing (Enterprise customers)
+
+Development Tools:
+- VS Code: Code editor (standard)
+- IntelliJ IDEA: Java development (with approval)
+- PyCharm: Python development (with approval)
+- Git: Version control (standard)
+- GitHub/GitLab: Code repository access
+- Docker: Containerization (with approval)
+- Kubernetes: Container orchestration (with approval)
+- Postman: API testing and development
+- Jira: Issue tracking and project management
+- Confluence: Documentation and wiki
+
+Design Tools:
+- Adobe Creative Cloud: Photoshop, Illustrator, InDesign, Premiere Pro
+- Figma: UI/UX design and prototyping
+- Sketch: UI design (Mac only, with approval)
+- Canva: Quick graphics and social media
+- InVision: Design collaboration
+
+Database Tools:
+- MySQL Workbench: MySQL database management
+- pgAdmin: PostgreSQL database management
+- DBeaver: Universal database tool
+- MongoDB Compass: MongoDB management
+- SQL Server Management Studio: SQL Server (with approval)
+
+Cloud Services:
+- AWS CLI: Amazon Web Services command line
+- Azure CLI: Microsoft Azure command line
+- Google Cloud SDK: Google Cloud Platform tools
+- Terraform: Infrastructure as code (with approval)
+- Ansible: Configuration management (with approval)
+
+Analytics and Business Intelligence:
+- Tableau: Data visualization (with approval)
+- Power BI: Business intelligence (with approval)
+- Excel: Data analysis (standard)
+- Python: Data analysis (with approval)
+- R: Statistical analysis (with approval)
+
+Security Tools:
+- Company-provided antivirus: Pre-installed on all devices
+- VPN Client: Required for remote access
+- Password Manager: Company-approved (1Password, LastPass)
+- Encryption Tools: Company-provided encryption software
+
+SOFTWARE INSTALLATION REQUESTS
+
+To request software installation:
+1. Log into IT Portal
+2. Navigate to "Software Requests"
+3. Search for software or submit new request
+4. Provide business justification
+5. Get manager approval
+6. IT will review and install within 2-3 business days
+7. You'll receive notification when installed
+
+Approval Process:
+- Standard software: Auto-approved (from approved list)
+- Premium software: Requires manager approval and budget approval
+- Development tools: Requires technical manager approval
+- Free software: Still requires IT review for security
+- Custom software: Requires security review, compatibility testing, and approval
+- Open source software: Security and license review required
+
+Software Request Form Requirements:
+- Software name and version
+- Business justification (why needed)
+- Intended use case
+- Number of users (if team-wide)
+- Budget approval (if paid software)
+- Manager approval
+- Security considerations (if applicable)
+
+Installation Timeline:
+- Approved standard software: 1-2 business days
+- Approved premium software: 2-3 business days
+- Custom software: 1-2 weeks (security review required)
+- Enterprise-wide deployments: Scheduled based on impact
+
+LICENSING AND SUBSCRIPTIONS
+
+Software Licenses:
+- Company provides licenses for approved software
+- Personal licenses not reimbursed
+- License sharing is prohibited
+- Unauthorized software installation is not allowed
+- All software must be properly licensed
+- License audits conducted annually
+
+License Types:
+- Per-user licenses: Assigned to individual employees
+- Concurrent licenses: Shared among team members
+- Site licenses: Company-wide access
+- Enterprise licenses: Unlimited users (where available)
+
+License Management:
+- IT manages all license purchases and renewals
+- License inventory tracked in IT portal
+- Users notified before license expiration
+- License reclamation for unused software
+- License optimization to reduce costs
+
+License Renewals:
+- IT manages all license renewals
+- Users will be notified 30 days before expiration
+- Renewal decisions based on usage and need
+- Alternative solutions considered if cost prohibitive
+- Budget approval required for renewals
+
+License Compliance:
+- Regular audits ensure compliance
+- Unauthorized software must be removed
+- License violations reported to management
+- Compliance training provided annually
+
+SOFTWARE UPDATES AND PATCH MANAGEMENT
+
+Update Policies:
+- Security updates: Installed immediately (critical patches)
+- Feature updates: Scheduled during maintenance windows
+- Major version updates: Require approval and testing
+- Automatic updates: Enabled for security patches
+- User notifications: Sent before major updates
+
+Update Schedule:
+- Critical security patches: Deployed within 24 hours
+- Important updates: Deployed within 1 week
+- Feature updates: Deployed monthly during maintenance window
+- Major versions: Deployed quarterly after testing
+
+Update Process:
+1. IT tests updates in staging environment
+2. Updates approved by IT management
+3. Users notified of upcoming updates
+4. Updates deployed during maintenance window
+5. Post-deployment monitoring and support
+
+User Responsibilities:
+- Don't disable automatic updates
+- Install updates when prompted
+- Report issues after updates
+- Can defer non-critical updates (up to 30 days)
+- Must install critical security updates immediately
+
+Update Exceptions:
+- Mission-critical systems: Extended testing period
+- Custom integrations: Compatibility testing required
+- Legacy systems: May require special handling
+- Development environments: Can defer updates longer
+
+CLOUD SERVICES AND SAAS APPLICATIONS
+
+Approved Cloud Services:
+- AWS: Development and production environments
+- Google Cloud Platform: With approval for specific projects
+- Microsoft Azure: Enterprise services and Office 365
+- Dropbox Business: File sharing and collaboration
+- Box: Enterprise file sharing (with approval)
+- Salesforce: CRM (with approval)
+- ServiceNow: IT service management (with approval)
+
+Cloud Service Requests:
+- Submit request through IT portal
+- Include use case and data classification
+- Security review required
+- Manager and IT approval needed
+- Budget approval for paid services
+- Data residency requirements considered
+
+Cloud Service Policies:
+- All cloud services must be approved by IT
+- Security review required before use
+- Data classification determines approved services
+- Encryption required for sensitive data
+- Access controls and monitoring required
+- Regular security assessments conducted
+
+Data Classification:
+- Public: Can be stored in any approved cloud service
+- Internal: Approved cloud services only
+- Confidential: Restricted cloud services
+- Restricted: On-premise or approved secure cloud only
+
+Cloud Service Management:
+- IT manages all cloud service subscriptions
+- Usage monitoring and optimization
+- Cost management and optimization
+- Security monitoring and compliance
+- Regular reviews and audits
+
+SOFTWARE TROUBLESHOOTING
+
+Common Software Issues:
+
+Application Won't Start:
+- Restart application
+- Restart computer
+- Check if software is up to date
+- Verify license is active
+- Reinstall software (contact IT)
+- Check system requirements
+
+Application Crashes:
+- Update to latest version
+- Clear application cache
+- Check for conflicting software
+- Update device drivers
+- Reinstall software
+- Check error logs
+- Contact IT with error details
+
+Slow Performance:
+- Close unnecessary applications
+- Check available disk space
+- Increase RAM if possible
+- Update software
+- Clear cache and temporary files
+- Check for malware
+- Contact IT for performance review
+
+Compatibility Issues:
+- Check system requirements
+- Update operating system
+- Update software to compatible version
+- Check for known compatibility issues
+- Contact IT for alternative solutions
+
+License Issues:
+- Verify license is active
+- Check license expiration date
+- Contact IT to renew license
+- Verify user has license assigned
+- Check license server connectivity
+
+SOFTWARE REMOVAL AND UNINSTALLATION
+
+To Remove Software:
+1. Submit request through IT portal
+2. Provide reason for removal
+3. IT will uninstall software
+4. License reclaimed (if applicable)
+5. Confirmation sent when complete
+
+Uninstallation Process:
+- IT handles all software removal
+- Ensures complete removal
+- Cleans up registry and files
+- Reclaims licenses
+- Updates inventory
+
+Software That Cannot Be Removed:
+- Security software (antivirus, encryption)
+- System utilities
+- Company-required software
+- Software required for role
+
+SOFTWARE TRAINING AND SUPPORT
+
+Training Resources:
+- Online training courses available
+- Video tutorials in knowledge base
+- In-person training sessions (quarterly)
+- Department-specific training available
+- External training reimbursement (with approval)
+
+Support Channels:
+- IT Help Desk: it-support@company.com
+- Knowledge Base: Available in IT portal
+- Software vendor support: For licensed software
+- Peer support: Team members and power users
+- Online communities: For open source software
+
+Documentation:
+- User guides available in knowledge base
+- Software-specific documentation
+- Best practices guides
+- Troubleshooting guides
+- FAQ sections
+
+SOFTWARE SECURITY
+
+Security Requirements:
+- All software must pass security review
+- Regular security updates required
+- Vulnerability scanning conducted
+- Security patches applied promptly
+- Malware scanning before installation
+
+Security Policies:
+- No unauthorized software installation
+- All software must be from trusted sources
+- Open source software requires security review
+- Custom software requires security audit
+- Third-party plugins require approval
+
+Vulnerability Management:
+- Regular vulnerability assessments
+- Patch management process
+- Critical vulnerabilities patched immediately
+- Security advisories communicated to users
+- Incident response procedures in place
+
+SECURITY POLICIES
+
+Password Policy:
+- Minimum 12 characters
+- Must include uppercase, lowercase, numbers, special characters
+- Cannot reuse last 5 passwords
+- Must change every 90 days
+- Account lockout after 5 failed attempts
+- Password complexity requirements enforced
+
+Multi-Factor Authentication:
+- Required for all systems
+- Use company-approved authenticator app
+- Backup codes provided during setup
+- Contact IT if device lost or stolen
+- MFA required for remote access
+
+Data Security:
+- Encrypt sensitive data at rest and in transit
+- Use approved cloud storage only
+- No personal cloud storage for work data
+- Regular security training required
+- Report security incidents immediately
+- Follow data classification guidelines
+
+SOFTWARE INVENTORY AND ASSET MANAGEMENT
+
+Software Inventory:
+- All software tracked in IT asset management system
+- License counts and usage monitored
+- Regular audits conducted
+- Unused software identified and removed
+- Cost optimization based on usage
+
+Asset Management:
+- Hardware and software tracked together
+- Lifecycle management for all assets
+- Depreciation and replacement planning
+- Budget planning based on asset data
+- Compliance reporting
+
+SOFTWARE BUDGET AND COST MANAGEMENT
+
+Budget Process:
+- Annual software budget planning
+- Department budgets allocated
+- Approval required for new purchases
+- Cost optimization initiatives
+- Vendor negotiations for better pricing
+
+Cost Management:
+- License optimization to reduce costs
+- Consolidation of similar tools
+- Open source alternatives considered
+- Volume discounts negotiated
+- Regular cost reviews and optimization
+
+VENDOR MANAGEMENT
+
+Vendor Relationships:
+- IT manages vendor relationships
+- Contract negotiations handled by IT
+- Vendor performance monitored
+- Support escalations managed by IT
+- Regular vendor reviews conducted
+
+Vendor Support:
+- IT coordinates vendor support
+- Escalation procedures in place
+- Vendor performance tracked
+- Alternative vendors evaluated regularly
+- Vendor contracts reviewed annually
+
+SOFTWARE RETIREMENT AND END OF LIFE
+
+Software Retirement:
+- End-of-life notifications sent to users
+- Migration plans developed
+- Alternative solutions identified
+- Training provided for new software
+- Data migration assistance available
+
+End of Life Process:
+- 6-month notice before retirement
+- Migration timeline provided
+- Support available during transition
+- Legacy access available temporarily
+- Complete retirement after migration
+
+IT SUPPORT CONTACT INFORMATION
+
+IT Help Desk:
+- Email: it-support@company.com
+- Phone: Extension 1234
+- Hours: Monday-Friday, 8 AM - 6 PM
+- Emergency: Available 24/7 for critical issues
+- Live Chat: Available in IT portal during business hours
+
+IT Portal:
+- Self-service portal: Available 24/7
+- Submit software requests
+- Track request status
+- Knowledge base articles
+- Software downloads
+- License information
+
+Response Times:
+- Critical issues: 1 hour
+- Software installation: 2-3 business days
+- License issues: 4 hours
+- General support: 1 business day

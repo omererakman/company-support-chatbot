@@ -1,0 +1,298 @@
+PRICING AND PLANS
+
+Subscription Plans:
+
+Starter Plan - $29/month (or $290/year, save 20%):
+- Basic features included
+- Up to 5 users
+- Email support (response within 48 hours)
+- 10GB storage per user
+- Basic analytics dashboard
+- Mobile app access
+- Standard integrations (5 integrations)
+- Community forum access
+- Monthly usage reports
+
+Professional Plan - $79/month (or $758/year, save 20%):
+- All Starter features
+- Up to 25 users
+- Priority email support (response within 24 hours)
+- 100GB storage per user
+- Advanced analytics and reporting
+- Custom branding options
+- API access
+- Advanced integrations (unlimited integrations)
+- Priority feature requests
+- Weekly usage reports
+- Data export capabilities
+- Advanced security features
+
+Enterprise Plan - Custom Pricing (starts at $299/month):
+- All Professional features
+- Unlimited users
+- 24/7 phone and email support
+- Dedicated account manager
+- Unlimited storage
+- Custom integrations and API access
+- SLA guarantees (99.9% uptime)
+- Advanced security and compliance features
+- Custom training and onboarding
+- White-label options
+- Custom reporting and analytics
+- Priority bug fixes and feature development
+- Quarterly business reviews
+- Custom contract terms
+
+ADD-ONS AND EXTENSIONS
+
+Storage Add-ons:
+- Additional 50GB: $5/month per user
+- Additional 100GB: $8/month per user
+- Additional 500GB: $30/month per user
+- Unlimited storage: Available for Enterprise
+
+User Add-ons:
+- Additional users: $10/month per user (Starter), $8/month (Professional)
+- Guest users: $2/month per guest
+- Read-only users: $5/month per user
+
+Support Add-ons:
+- Priority support upgrade: $49/month (Starter/Professional)
+- Dedicated support channel: $199/month
+- Custom support hours: Available for Enterprise
+
+Integration Add-ons:
+- Premium integrations: $15/month per integration
+- Custom integration development: Custom pricing
+- API rate limit increases: $25/month per tier
+
+FEATURE ADD-ONS
+
+Advanced Analytics:
+- Professional analytics package: $29/month
+- Custom dashboard creation: $99/month
+- Data warehouse integration: Custom pricing
+
+Security Add-ons:
+- Advanced threat detection: $49/month
+- SSO integration: $99/month
+- Advanced audit logging: $39/month
+- Compliance reporting: $79/month
+
+Customization Add-ons:
+- Custom branding: $49/month (Professional), Included (Enterprise)
+- Custom domain: $15/month
+- White-label mobile app: Custom pricing
+
+BILLING CYCLE AND PAYMENT OPTIONS
+
+Billing Frequency:
+- Monthly billing available for all plans
+- Annual billing: 20% discount on all plans
+- Quarterly billing: Available for Enterprise (15% discount)
+- Multi-year contracts: Available for Enterprise (custom discounts)
+- Billing date: Based on subscription start date
+- Prorated charges for plan changes mid-cycle
+
+Payment Methods Accepted:
+- Credit cards (Visa, MasterCard, Amex, Discover)
+- Debit cards
+- Bank transfer (ACH) - US customers
+- Wire transfer (Enterprise only, minimum $1,000)
+- Purchase orders (Enterprise only, Net 30 terms)
+- PayPal (for Starter and Professional plans)
+- Apple Pay and Google Pay (mobile)
+
+Payment Terms:
+- Standard: Payment due upon receipt
+- Net 15: Available for Enterprise (small fee)
+- Net 30: Available for Enterprise (standard)
+- Net 60: Available for Enterprise (custom pricing)
+- Prepayment discounts: 5% for annual prepayment
+
+INVOICE DETAILS
+
+Invoice Information:
+- Invoices sent via email automatically
+- Available in account portal immediately
+- PDF format for easy download
+- Itemized charges included
+- Tax information included based on location
+- Multi-currency support for international customers
+- Invoice numbers are sequential and unique
+- Payment instructions included on invoice
+
+Invoice Requests:
+- Request copies via finance@company.com
+- Include account number or order ID
+- Typically sent within 24 hours
+- Historical invoices available for 7 years
+- Bulk invoice export available for Enterprise
+- Custom invoice formats available for Enterprise
+
+TAX INFORMATION
+
+Tax Collection:
+- Sales tax applied based on customer location
+- Tax-exempt organizations: Submit tax exemption certificate
+- VAT for EU customers (reverse charge for B2B)
+- GST for Australian customers
+- HST for Canadian customers
+- Tax rates updated quarterly
+- Tax-inclusive pricing available for certain regions
+
+Tax Documents:
+- Annual 1099 forms (if applicable, US only)
+- W-9 forms available on request (US only)
+- Tax ID available on all invoices
+- VAT invoices for EU customers
+- Tax certificates available for Enterprise customers
+
+Tax Exemptions:
+- Non-profit organizations: Submit 501(c)(3) certificate
+- Educational institutions: Submit educational certificate
+- Government entities: Submit government ID
+- Tax-exempt status reviewed annually
+
+PAYMENT TERMS AND POLICIES
+
+Standard Terms:
+- Payment due upon receipt for Starter and Professional
+- Net 30 terms available for Enterprise
+- Late fees: 1.5% per month (Enterprise only)
+- Service suspension after 30 days overdue
+- Interest charges: 1.5% per month on overdue amounts
+
+Payment Processing:
+- Payments processed immediately upon receipt
+- Failed payments: 3 retry attempts over 9 days
+- Email notifications sent for all payment events
+- Account suspension after 7 days of failed payment
+- Automatic retry for failed payments
+
+Early Payment Discounts:
+- 2% discount for payment within 10 days (Enterprise)
+- 5% discount for annual prepayment
+- Volume discounts for multi-year contracts
+
+CREDITS AND DISCOUNTS
+
+Promotional Credits:
+- Applied automatically to account when eligible
+- Visible in billing portal under "Credits"
+- Expire per terms of promotion (typically 90 days)
+- Non-transferable between accounts
+- Used automatically on next invoice
+- Remaining balance shown in account
+
+Discounts Available:
+- Annual billing: 20% off monthly rate
+- Educational discounts: 15% off (verified students/educators)
+- Non-profit discounts: 25% off (verified 501(c)(3))
+- Startup discounts: 20% off first year (eligible startups)
+- Volume discounts: Custom pricing for 100+ users
+- Multi-year contracts: Up to 30% off (Enterprise)
+- Referral discounts: $50 credit per referral (both parties)
+
+Discount Eligibility:
+- Educational: Valid .edu email or school verification
+- Non-profit: 501(c)(3) certificate required
+- Startup: Less than 2 years old, under $5M funding
+- Discounts cannot be combined unless stated
+- Discounts apply to base plan price only
+
+PLAN CHANGES AND UPGRADES
+
+Upgrading Plans:
+- Upgrade anytime from account settings
+- Prorated charge for remainder of billing period
+- Immediate access to new features
+- No downtime during upgrade
+- Data automatically migrated
+
+Downgrading Plans:
+- Downgrade takes effect at end of billing period
+- Credit applied to next invoice for unused portion
+- Data export available before downgrade
+- Some features may be unavailable after downgrade
+- 30-day notice recommended
+
+Cancellation:
+- Cancel anytime from account settings
+- Access continues until end of billing period
+- No refunds for partial periods (unless within 30-day window)
+- Data export available for 30 days after cancellation
+- Cancellation confirmation sent via email
+
+TRIAL PERIODS AND MONEY-BACK GUARANTEE
+
+Free Trial:
+- 14-day free trial for all plans
+- No credit card required for trial
+- Full access to plan features during trial
+- Trial converts to paid plan automatically
+- Can cancel before trial ends with no charge
+- Trial extensions available (contact sales)
+
+Money-Back Guarantee:
+- 30-day money-back guarantee
+- Full refund if not satisfied
+- Applies to first subscription only
+- No questions asked refund policy
+- Refund processed within 5-7 business days
+
+ENTERPRISE CUSTOM PRICING
+
+Enterprise Features:
+- Custom pricing based on usage and requirements
+- Volume discounts for large deployments
+- Multi-year contract discounts
+- Custom SLA terms
+- Dedicated infrastructure options
+- On-premise deployment available
+- Custom integrations and development
+- Training and onboarding included
+- Quarterly business reviews
+
+Enterprise Pricing Factors:
+- Number of users
+- Storage requirements
+- API usage volume
+- Support requirements
+- Compliance needs
+- Custom development needs
+- Contract length
+- Payment terms
+
+Contact Sales:
+- Email: sales@company.com
+- Phone: 1-800-SALES
+- Schedule demo: Available on website
+- Custom quote: Provided within 2 business days
+
+PRICING FAQ
+
+Frequently Asked Questions:
+- Can I change plans anytime? Yes, upgrades are immediate, downgrades at period end
+- Are there setup fees? No setup fees for any plan
+- Can I get a custom plan? Yes, contact sales for Enterprise options
+- Do prices include taxes? No, taxes are added based on your location
+- Can I pay monthly for Enterprise? Yes, but annual billing offers better discounts
+- Are there hidden fees? No, all fees are clearly stated upfront
+- Can I get a discount? Check our discounts section for eligibility
+- What happens if I exceed limits? You'll be notified and can upgrade or purchase add-ons
+
+PRICE CHANGES
+
+Price Change Policy:
+- 30 days notice for price increases
+- Existing customers grandfathered for 12 months
+- Price decreases apply immediately
+- Annual plans locked at purchase price
+- Enterprise contracts honor contract pricing
+
+Notification of Changes:
+- Email notification 30 days before changes
+- In-app notification
+- Billing portal announcement
+- Option to cancel if not satisfied with changes

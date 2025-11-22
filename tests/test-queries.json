@@ -1,0 +1,62 @@
+[
+  {
+    "question": "What are the company's health insurance benefits?",
+    "expectedIntent": "hr",
+    "description": "HR benefits question"
+  },
+  {
+    "question": "How do I reset my password?",
+    "expectedIntent": "it",
+    "description": "IT password reset"
+  },
+  {
+    "question": "When will I receive my refund?",
+    "expectedIntent": "finance",
+    "description": "Finance refund question"
+  },
+  {
+    "question": "What is your privacy policy?",
+    "expectedIntent": "legal",
+    "description": "Legal privacy policy"
+  },
+  {
+    "question": "How many vacation days do I get per year?",
+    "expectedIntent": "hr",
+    "description": "HR leave policy"
+  },
+  {
+    "question": "My laptop won't connect to WiFi",
+    "expectedIntent": "it",
+    "description": "IT technical support"
+  },
+  {
+    "question": "Can you send me an invoice?",
+    "expectedIntent": "finance",
+    "description": "Finance invoice request"
+  },
+  {
+    "question": "What are the terms of service?",
+    "expectedIntent": "legal",
+    "description": "Legal terms question"
+  },
+  {
+    "question": "I need help with my expense report",
+    "expectedIntent": "finance",
+    "description": "Finance expense report"
+  },
+  {
+    "question": "How do I request access to the HR portal?",
+    "expectedIntent": "it",
+    "description": "IT access request"
+  },
+  {
+    "question": "What is the maternity leave policy?",
+    "expectedIntent": "hr",
+    "description": "HR leave policy"
+  },
+  {
+    "question": "I need to update my payment method",
+    "expectedIntent": "finance",
+    "description": "Finance payment method"
+  }
+]
