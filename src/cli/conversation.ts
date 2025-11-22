@@ -218,6 +218,35 @@ function displayStatus(sessionId: string) {
 }
 
 /**
+ * Show loading indicator while processing
+ */
+function showLoadingIndicator(): () => void {
+  const spinnerFrames = ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"];
+  let frameIndex = 0;
+  let intervalId: NodeJS.Timeout | null = null;
+
+  const updateSpinner = () => {
+    process.stdout.write(
+      `\r${spinnerFrames[frameIndex]} Processing your question...`,
+    );
+    frameIndex = (frameIndex + 1) % spinnerFrames.length;
+  };
+
+  // Start the spinner
+  intervalId = setInterval(updateSpinner, 100);
+
+  // Return cleanup function
+  return () => {
+    if (intervalId) {
+      clearInterval(intervalId);
+      intervalId = null;
+    }
+    // Clear the spinner line
+    process.stdout.write("\r" + " ".repeat(50) + "\r");
+  };
+}
+
+/**
  * Main conversational loop
  */
 export async function startConversation() {
@@ -288,14 +317,20 @@ export async function startConversation() {
       return;
     }
 
+    // Clear the prompt line and show loading indicator
+    process.stdout.write("\r" + " ".repeat(50) + "\r");
+    const hideLoading = showLoadingIndicator();
+
     try {
       const result = await processQuestionWithMemory(
         orchestrator,
         question,
         sessionId,
       );
+      hideLoading();
       displayResponse(result);
     } catch (error) {
+      hideLoading();
       console.error(
         "\n❌ Error:",
         error instanceof Error ? error.message : String(error),

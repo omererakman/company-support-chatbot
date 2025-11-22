@@ -11,7 +11,7 @@ const ConfigSchema = z.object({
   chunkSize: z.number().int().positive().default(800),
   chunkOverlap: z.number().int().nonnegative().default(100),
   minChunks: z.number().int().positive().default(20),
-  vectorStoreType: z.enum(["chromadb", "memory"]).default("chromadb"),
+  vectorStoreType: z.enum(["chromadb", "memory"]).default("memory"),
   chromaCollectionName: z.string().default("support_embeddings"),
   chromaHost: z.string().default("localhost"),
   chromaPort: z.number().int().positive().default(8000),

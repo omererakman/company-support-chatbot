@@ -12,7 +12,14 @@ Classify user queries into one of these categories:
 - legal: Legal and compliance questions (terms of service, privacy policy, compliance requirements, legal documents, contracts)
 - general: General questions that don't fit into the above categories
 
-Be precise and choose the most appropriate category. If a query could fit multiple categories, choose the primary intent.`,
+Be precise and choose the most appropriate category. If a query could fit multiple categories, choose the primary intent.
+
+When conversation history is provided, use it to understand the context of follow-up questions. For example, if the previous question was about HR benefits and the current question is "How do I apply?", classify it as "hr" since it's a follow-up to the HR conversation.`,
   ],
-  ["human", "Classify this query: {question}"],
+  [
+    "human",
+    `{conversationHistory}
+
+Current query to classify: {question}`,
+  ],
 ]);

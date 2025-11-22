@@ -33,10 +33,11 @@ function createClassifierChain() {
 }
 
 /**
- * Classifies user intent from a question
+ * Classifies user intent from a question, optionally with conversation context
  */
 export async function classifyIntent(
   question: string,
+  conversationHistory?: Array<{ role: string; content: string }>,
 ): Promise<IntentClassification> {
   return trace("orchestrator.classify", async () => {
     try {
@@ -44,7 +45,35 @@ export async function classifyIntent(
         classifierChain = createClassifierChain();
       }
 
-      const result = (await classifierChain.invoke({ question })) as z.infer<
+      // Format conversation history if available
+      const context = conversationHistory
+        ? conversationHistory
+            .map((msg) => `${msg.role}: ${msg.content}`)
+            .join("\n")
+        : undefined;
+
+      const input: { question: string; conversationHistory?: string } = {
+        question,
+      };
+
+      if (context) {
+        input.conversationHistory = `Previous conversation:\n${context}`;
+        logger.debug(
+          {
+            historyLength: conversationHistory.length,
+            question: question.substring(0, 100),
+          },
+          "Classifying intent with conversation context",
+        );
+      } else {
+        input.conversationHistory = "";
+        logger.debug(
+          { question: question.substring(0, 100) },
+          "Classifying intent without conversation context",
+        );
+      }
+
+      const result = (await classifierChain.invoke(input)) as z.infer<
         typeof ClassificationSchema
       >;
 
