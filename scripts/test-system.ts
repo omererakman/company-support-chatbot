@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { readFileSync } from 'fs';
+import { readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { processQuestion } from '../src/index.js';
 import { logger } from '../src/logger.js';
 import path from 'path';
@@ -13,6 +13,16 @@ interface TestQuery {
 
 async function runTests() {
   const testFile = path.join(process.cwd(), 'tests', 'test-queries.json');
+  const outputDir = path.join(process.cwd(), 'output');
+  
+  // Create output directory if it doesn't exist
+  try {
+    mkdirSync(outputDir, { recursive: true });
+    logger.info({ outputDir }, 'Output directory created/verified');
+  } catch (error) {
+    logger.error({ error, outputDir }, 'Failed to create output directory');
+    process.exit(1);
+  }
   
   let testQueries: TestQuery[];
   try {
@@ -26,8 +36,10 @@ async function runTests() {
   logger.info({ count: testQueries.length }, 'Running test queries...');
 
   const results = [];
+  const allResponses = [];
 
-  for (const test of testQueries) {
+  for (let i = 0; i < testQueries.length; i++) {
+    const test = testQueries[i];
     logger.info(
       {
         question: test.question,
@@ -39,6 +51,15 @@ async function runTests() {
     try {
       const result = await processQuestion(test.question, true);
       const passed = result.intent === test.expectedIntent;
+
+      const fullResponse = {
+        question: test.question,
+        expectedIntent: test.expectedIntent,
+        description: test.description,
+        ...result,
+      };
+      
+      allResponses.push(fullResponse);
 
       results.push({
         question: test.question,
@@ -60,6 +81,17 @@ async function runTests() {
       );
     } catch (error) {
       logger.error({ error, question: test.question }, 'Test query failed');
+      
+      const errorResponse = {
+        question: test.question,
+        expectedIntent: test.expectedIntent,
+        description: test.description,
+        error: error instanceof Error ? error.message : String(error),
+        errorStack: error instanceof Error ? error.stack : undefined,
+      };
+      
+      allResponses.push(errorResponse);
+      
       results.push({
         question: test.question,
         expectedIntent: test.expectedIntent,
@@ -68,6 +100,19 @@ async function runTests() {
       });
     }
   }
+
+  // Save all responses to a single file
+  const responsesFilePath = path.join(outputDir, 'responses.json');
+  writeFileSync(
+    responsesFilePath,
+    JSON.stringify(allResponses, null, 2),
+    'utf-8'
+  );
+  
+  logger.info(
+    { responseFile: 'responses.json', count: allResponses.length },
+    'Saved all responses to output folder'
+  );
 
   // Summary
   const passed = results.filter((r) => r.passed).length;

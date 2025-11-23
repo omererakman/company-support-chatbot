@@ -132,6 +132,7 @@ This will:
 - Check intent classification accuracy
 - Evaluate response quality
 - Generate a summary report with accuracy metrics
+- Save all responses to `output/responses.json`
 
 ## 📁 Project Structure
 
