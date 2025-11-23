@@ -3,6 +3,7 @@ import { HRAgent, ITAgent, FinanceAgent, LegalAgent } from "../agents/index.js";
 import { createVectorStore } from "../vector-stores/index.js";
 import { loadDocumentsFromDirectory } from "../loaders/directory-loader.js";
 import { createTextSplitter } from "../splitters/index.js";
+import { validateChunkCountsOrThrow } from "../utils/chunk-validation.js";
 import { logger } from "../logger.js";
 import path from "path";
 
@@ -30,6 +31,17 @@ export async function initializeAgents(): Promise<OrchestratorAgent> {
   const itChunks = await splitter.splitDocuments(itDocs);
   const financeChunks = await splitter.splitDocuments(financeDocs);
   const legalChunks = await splitter.splitDocuments(legalDocs);
+
+  // Validate chunk counts for all domains
+  const domainChunks = new Map([
+    ["hr_docs", hrChunks],
+    ["it_docs", itChunks],
+    ["finance_docs", financeChunks],
+    ["legal_docs", legalChunks],
+  ]);
+
+  // Validate chunk counts (will throw if insufficient)
+  validateChunkCountsOrThrow(domainChunks);
 
   logger.info(
     {

@@ -10,7 +10,7 @@ const ConfigSchema = z.object({
   openaiApiKey: z.string().min(1, "OPENAI_API_KEY is required"),
   chunkSize: z.number().int().positive().default(800),
   chunkOverlap: z.number().int().nonnegative().default(100),
-  minChunks: z.number().int().positive().default(20),
+  minChunks: z.number().int().positive().default(50),
   vectorStoreType: z.enum(["chromadb", "memory"]).default("memory"),
   chromaCollectionName: z.string().default("support_embeddings"),
   chromaHost: z.string().default("localhost"),

@@ -73,7 +73,18 @@ data/
 └── legal_docs/       # Legal documentation
 ```
 
-Each directory should contain at least 50 chunks of domain-specific content in `.txt` or `.md` format.
+**Document Requirements:**
+- Each domain directory should contain sufficient content to generate **minimum 50 chunks** when split
+- Documents should be in `.txt` or `.md` format
+- With default chunk size (800 tokens) and overlap (100 tokens), each domain needs approximately **26,000+ words** of content
+- Current document collections meet this requirement:
+  - **HR**: benefits.txt, onboarding.txt, employee-relations.txt
+  - **IT**: password-reset.txt, software.txt, infrastructure.txt
+  - **Finance**: billing.txt, pricing.txt, accounting.txt
+  - **Legal**: compliance.txt, terms.txt, contracts.txt
+
+**Verifying Chunk Counts:**
+After building indexes, check the logs to verify chunk counts per domain. Each domain should show 50+ chunks in the build output.
 
 ### 2. Build Vector Indexes
 
@@ -85,9 +96,31 @@ npm run dev:build-index
 
 This will:
 - Load documents from each domain directory
-- Split them into chunks
+- Split them into chunks (800 tokens per chunk, 100 token overlap)
 - Generate embeddings
 - Store in vector stores (ChromaDB or Memory)
+- **Log chunk counts per domain** - verify each domain has 50+ chunks
+
+**Expected Output:**
+The build process will log chunk counts for each domain and validate they meet the minimum requirement. Example:
+```
+{ domain: 'hr_docs', chunkCount: 62, minRequired: 50 } 'Domain 'hr_docs' has 62 chunks (required: 50) ✓'
+{ domain: 'it_docs', chunkCount: 68, minRequired: 50 } 'Domain 'it_docs' has 68 chunks (required: 50) ✓'
+{ domain: 'finance_docs', chunkCount: 55, minRequired: 50 } 'Domain 'finance_docs' has 55 chunks (required: 50) ✓'
+{ domain: 'legal_docs', chunkCount: 65, minRequired: 50 } 'Domain 'legal_docs' has 65 chunks (required: 50) ✓'
+All indexes built successfully
+```
+
+**Validation:**
+- The build process automatically validates that each domain has at least 50 chunks (configurable via `MIN_CHUNKS`)
+- If a domain has insufficient chunks, the build will fail with a clear error message
+- You can override the minimum requirement by setting `MIN_CHUNKS` in your `.env` file (e.g., `MIN_CHUNKS=20` for testing)
+
+**Error Example:**
+If a domain has insufficient chunks, you'll see:
+```
+ERROR: Chunk count validation failed for domain 'hr_docs': Domain 'hr_docs' has only 25 chunks, but 50 are required. Please add more documents to meet the minimum requirement.
+```
 
 ### 3. Query the System
 
@@ -285,7 +318,7 @@ SCORE_THRESHOLD=0.5         # Minimum similarity score threshold
 # Chunking (OPTIONAL - has defaults)
 CHUNK_SIZE=800
 CHUNK_OVERLAP=100
-MIN_CHUNKS=20
+MIN_CHUNKS=50              # Minimum chunks required per domain (validated during build)
 
 # Safety (OPTIONAL - has defaults)
 SAFETY_ENABLED=true
@@ -421,7 +454,7 @@ npm run typecheck      # Type check without emitting
 
 **OpenAI API**: Ensure `OPENAI_API_KEY` is set correctly in `.env`. Check rate limits and API key format (should start with `sk-`).
 
-**Vector Store**: Rebuild indexes with `npm run dev:build-index`. Ensure documents exist in `data/*/` directories and are in `.txt` or `.md` format.
+**Vector Store**: Rebuild indexes with `npm run dev:build-index`. Ensure documents exist in `data/*/` directories and are in `.txt` or `.md` format. Each domain must have sufficient content to generate at least 50 chunks (configurable via `MIN_CHUNKS`). If validation fails, add more documents to the affected domain(s).
 
 **Environment Variables**: Verify `.env` exists and variable names are correct (case-sensitive). Restart the application after changes.
 

@@ -1,0 +1,345 @@
+CONTRACT MANAGEMENT AND INTELLECTUAL PROPERTY
+
+CONTRACT MANAGEMENT OVERVIEW
+
+Contract Management Philosophy:
+- Standardized contract processes
+- Risk mitigation through proper contracting
+- Compliance with legal requirements
+- Clear terms and conditions
+- Proper documentation and storage
+- Regular contract reviews and renewals
+
+Contract Lifecycle:
+- Contract initiation: Request and planning
+- Contract negotiation: Terms negotiation
+- Contract execution: Signing and execution
+- Contract performance: Monitoring and management
+- Contract renewal: Renewal or termination
+- Contract closure: Final closure and archiving
+
+TYPES OF CONTRACTS
+
+Vendor Contracts:
+- Service agreements: Service provider contracts
+- Software licenses: Software licensing agreements
+- Maintenance contracts: Maintenance and support agreements
+- Consulting agreements: Professional services contracts
+- Supply agreements: Goods supply contracts
+- Master service agreements: MSA frameworks
+
+Customer Contracts:
+- Sales agreements: Customer sales contracts
+- Service agreements: Customer service contracts
+- License agreements: Customer license agreements
+- Subscription agreements: Subscription contracts
+- Support agreements: Customer support contracts
+- Professional services: Customer professional services
+
+Employment Contracts:
+- Employment agreements: Employee contracts
+- Independent contractor agreements: Contractor agreements
+- Non-disclosure agreements: NDAs
+- Non-compete agreements: Non-compete clauses
+- Confidentiality agreements: Confidentiality provisions
+- Intellectual property assignments: IP assignment agreements
+
+CONTRACT NEGOTIATION
+
+Negotiation Process:
+- Initial review: Contract review and analysis
+- Risk assessment: Risk identification and assessment
+- Terms negotiation: Terms and conditions negotiation
+- Legal review: Legal department review
+- Approval process: Contract approval workflow
+- Execution: Contract signing and execution
+
+Key Contract Terms:
+- Scope of work: Services or deliverables
+- Payment terms: Payment and pricing terms
+- Term and termination: Contract duration and termination
+- Liability and indemnification: Liability limitations
+- Intellectual property: IP ownership and licensing
+- Confidentiality: Confidentiality obligations
+
+Risk Management:
+- Risk identification: Identifying contract risks
+- Risk assessment: Evaluating risk severity
+- Risk mitigation: Mitigating contract risks
+- Insurance requirements: Insurance provisions
+- Limitation of liability: Liability caps
+- Indemnification: Indemnification provisions
+
+CONTRACT EXECUTION
+
+Execution Process:
+- Authorized signatories: Who can sign contracts
+- Signature requirements: Signature authority limits
+- Execution procedures: Contract execution procedures
+- Document storage: Contract storage and filing
+- Notification: Stakeholder notification
+- Implementation: Contract implementation
+
+Signature Authority:
+- Board approval: Board-level approvals required
+- CEO approval: CEO signature authority
+- Department head approval: Department-level authority
+- Standard contracts: Pre-approved standard contracts
+- Authority limits: Financial and term limits
+- Escalation: Approval escalation procedures
+
+CONTRACT MANAGEMENT
+
+Contract Administration:
+- Contract database: Centralized contract repository
+- Contract tracking: Contract status tracking
+- Key dates: Important contract dates and deadlines
+- Renewal management: Contract renewal tracking
+- Performance monitoring: Contract performance monitoring
+- Compliance monitoring: Contract compliance
+
+Key Dates Management:
+- Renewal dates: Contract renewal deadlines
+- Termination dates: Contract termination deadlines
+- Payment dates: Payment due dates
+- Deliverable dates: Milestone and deliverable dates
+- Notice periods: Notice requirement deadlines
+- Expiration dates: Contract expiration dates
+
+Contract Performance:
+- Performance metrics: Contract performance KPIs
+- SLA monitoring: Service level agreement monitoring
+- Deliverable tracking: Deliverable tracking
+- Quality assurance: Quality requirements
+- Reporting: Contract performance reporting
+- Reviews: Regular contract reviews
+
+CONTRACT RENEWAL AND TERMINATION
+
+Renewal Process:
+- Renewal notice: Advance renewal notification
+- Renewal evaluation: Contract renewal assessment
+- Terms negotiation: Renewal terms negotiation
+- Renewal decision: Renewal or termination decision
+- Renewal execution: Renewal contract execution
+- Transition: Transition planning
+
+Termination:
+- Termination rights: Contract termination rights
+- Termination notice: Termination notice requirements
+- Termination procedures: Termination procedures
+- Exit obligations: Post-termination obligations
+- Transition services: Transition service agreements
+- Final settlement: Final payment and settlement
+
+CONTRACT COMPLIANCE
+
+Compliance Requirements:
+- Legal compliance: Legal and regulatory compliance
+- Policy compliance: Company policy compliance
+- Terms compliance: Contract terms compliance
+- Reporting compliance: Compliance reporting
+- Audit compliance: Contract audit requirements
+- Documentation: Compliance documentation
+
+Compliance Monitoring:
+- Regular audits: Contract compliance audits
+- Performance reviews: Contract performance reviews
+- Issue identification: Compliance issue identification
+- Corrective actions: Compliance corrective actions
+- Training: Compliance training
+- Reporting: Compliance reporting
+
+INTELLECTUAL PROPERTY
+
+IP Ownership:
+- Employee inventions: Employee invention ownership
+- Work product: Work product ownership
+- Third-party IP: Third-party IP licensing
+- Joint ownership: Joint IP ownership
+- IP assignments: IP assignment agreements
+- IP registrations: IP registration and protection
+
+IP Protection:
+- Patents: Patent protection and filing
+- Trademarks: Trademark protection and registration
+- Copyrights: Copyright protection
+- Trade secrets: Trade secret protection
+- Confidentiality: Confidentiality measures
+- Non-disclosure: NDA requirements
+
+IP Licensing:
+- Inbound licensing: Licensing third-party IP
+- Outbound licensing: Licensing company IP
+- License terms: License terms and conditions
+- Royalty payments: Royalty payment terms
+- License restrictions: License use restrictions
+- License termination: License termination rights
+
+NON-DISCLOSURE AGREEMENTS
+
+NDA Types:
+- Mutual NDAs: Two-way confidentiality agreements
+- Unilateral NDAs: One-way confidentiality agreements
+- Standard NDAs: Standard form NDAs
+- Custom NDAs: Customized NDAs
+- Employee NDAs: Employee confidentiality agreements
+- Vendor NDAs: Vendor confidentiality agreements
+
+NDA Terms:
+- Confidential information: Definition of confidential information
+- Exclusions: Excluded information
+- Obligations: Confidentiality obligations
+- Term: Duration of confidentiality
+- Permitted disclosures: Permitted disclosure exceptions
+- Remedies: Breach remedies
+
+NDA Management:
+- NDA database: NDA tracking system
+- Expiration tracking: NDA expiration dates
+- Renewal: NDA renewal procedures
+- Compliance: NDA compliance monitoring
+- Training: NDA training
+- Enforcement: NDA enforcement
+
+SOFTWARE LICENSES
+
+License Types:
+- Perpetual licenses: One-time purchase licenses
+- Subscription licenses: Recurring subscription licenses
+- Concurrent licenses: Shared concurrent licenses
+- Named user licenses: Per-user licenses
+- Site licenses: Site-wide licenses
+- Enterprise licenses: Enterprise-wide licenses
+
+License Terms:
+- Usage rights: Permitted use rights
+- Restrictions: Usage restrictions
+- Maintenance: Maintenance and support
+- Updates: Software updates and upgrades
+- Support: Technical support terms
+- Termination: License termination rights
+
+License Compliance:
+- License tracking: Software license tracking
+- Usage monitoring: License usage monitoring
+- Compliance audits: License compliance audits
+- Vendor audits: Vendor license audits
+- Remediation: Compliance remediation
+- Reporting: License compliance reporting
+
+SERVICE AGREEMENTS
+
+Service Agreement Types:
+- Professional services: Consulting and professional services
+- Managed services: Managed service agreements
+- Support services: Technical support agreements
+- Maintenance services: Maintenance agreements
+- Cloud services: Cloud service agreements
+- Outsourcing: Outsourcing agreements
+
+Service Terms:
+- Scope of services: Services to be provided
+- Service levels: SLA requirements
+- Performance metrics: Service performance KPIs
+- Pricing: Service pricing and payment
+- Term: Service agreement duration
+- Termination: Termination rights and procedures
+
+SLA Management:
+- SLA definition: Service level definitions
+- SLA monitoring: SLA performance monitoring
+- SLA reporting: SLA performance reporting
+- SLA penalties: SLA penalty provisions
+- SLA credits: Service credits
+- SLA reviews: Regular SLA reviews
+
+PURCHASE AGREEMENTS
+
+Purchase Order Terms:
+- Purchase orders: PO terms and conditions
+- Purchase agreements: Purchase agreements
+- Supply agreements: Supply contract terms
+- Delivery terms: Delivery and acceptance terms
+- Payment terms: Payment and invoicing terms
+- Warranties: Product warranties
+
+Vendor Terms:
+- Vendor contracts: Vendor agreement terms
+- Vendor performance: Vendor performance requirements
+- Vendor liability: Vendor liability limitations
+- Vendor insurance: Vendor insurance requirements
+- Vendor compliance: Vendor compliance requirements
+- Vendor termination: Vendor termination rights
+
+CONTRACT DISPUTES
+
+Dispute Resolution:
+- Negotiation: Direct negotiation
+- Mediation: Mediation procedures
+- Arbitration: Arbitration clauses
+- Litigation: Court proceedings
+- Alternative dispute resolution: ADR methods
+- Escalation: Dispute escalation procedures
+
+Dispute Management:
+- Dispute identification: Identifying contract disputes
+- Dispute documentation: Dispute documentation
+- Legal review: Legal department involvement
+- Resolution strategies: Dispute resolution strategies
+- Settlement: Dispute settlement agreements
+- Lessons learned: Post-dispute analysis
+
+CONTRACT TEMPLATES
+
+Standard Templates:
+- Standard contracts: Pre-approved contract templates
+- Template library: Contract template repository
+- Template customization: Template customization guidelines
+- Template approval: Template approval process
+- Template updates: Template maintenance
+- Template training: Template usage training
+
+Template Management:
+- Version control: Template version control
+- Template review: Regular template reviews
+- Template updates: Template update procedures
+- Template distribution: Template distribution
+- Template compliance: Template compliance
+- Template best practices: Template usage guidelines
+
+CONTRACT REPORTING
+
+Contract Metrics:
+- Contract volume: Number of contracts
+- Contract value: Total contract value
+- Contract status: Contract status tracking
+- Renewal pipeline: Upcoming renewals
+- Expiration pipeline: Expiring contracts
+- Risk metrics: Contract risk metrics
+
+Contract Reporting:
+- Executive reporting: Executive contract reports
+- Department reporting: Department contract reports
+- Compliance reporting: Compliance reports
+- Performance reporting: Contract performance reports
+- Risk reporting: Contract risk reports
+- Financial reporting: Contract financial reports
+
+CONTRACT ARCHIVING
+
+Archival Process:
+- Archival criteria: When to archive contracts
+- Archival procedures: Contract archival procedures
+- Document storage: Contract storage systems
+- Retention policies: Contract retention periods
+- Access control: Archive access controls
+- Retrieval: Contract retrieval procedures
+
+Record Keeping:
+- Contract files: Contract file organization
+- Supporting documents: Related document storage
+- Correspondence: Contract-related correspondence
+- Amendments: Contract amendments and addenda
+- Notices: Contract notices and communications
+- Final documents: Executed contract copies
