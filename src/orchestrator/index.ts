@@ -1,5 +1,6 @@
 export { OrchestratorAgent, type OrchestratorConfig } from "./agent.js";
 export { classifyIntent } from "./classifier.js";
+export { initializeAgents } from "./initializer.js";
 export type {
   Intent,
   IntentClassification,
