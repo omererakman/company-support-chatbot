@@ -1,66 +1,38 @@
 import { OrchestratorAgent } from "./agent.js";
 import { HRAgent, ITAgent, FinanceAgent, LegalAgent } from "../agents/index.js";
 import { createVectorStore } from "../vector-stores/index.js";
-import { loadDocumentsFromDirectory } from "../loaders/directory-loader.js";
-import { createTextSplitter } from "../splitters/index.js";
-import { validateChunkCountsOrThrow } from "../utils/chunk-validation.js";
+import { loadAndChunkAllDomains } from "../utils/document-loader.js";
 import { logger } from "../logger.js";
-import path from "path";
+import { getConfig } from "../config/index.js";
 
 export async function initializeAgents(): Promise<OrchestratorAgent> {
-  const dataDir = path.join(process.cwd(), "data");
-
+  const config = getConfig();
   logger.info("Initializing agents...");
 
-  const hrDocs = await loadDocumentsFromDirectory(
-    path.join(dataDir, "hr_docs"),
+  let chunks;
+  if (config.vectorStoreType === "memory") {
+    logger.info("Using memory vector store - loading and chunking documents");
+    chunks = await loadAndChunkAllDomains();
+  } else {
+    logger.info(
+      "Using ChromaDB vector store - loading existing collections (indexes not rebuilt)",
+    );
+  }
+
+  const hrVectorStore = await createVectorStore(
+    chunks?.hrChunks,
+    "hr_embeddings",
   );
-  const itDocs = await loadDocumentsFromDirectory(
-    path.join(dataDir, "it_docs"),
+  const itVectorStore = await createVectorStore(
+    chunks?.itChunks,
+    "it_embeddings",
   );
-  const financeDocs = await loadDocumentsFromDirectory(
-    path.join(dataDir, "finance_docs"),
-  );
-  const legalDocs = await loadDocumentsFromDirectory(
-    path.join(dataDir, "legal_docs"),
-  );
-
-  const splitter = createTextSplitter();
-
-  const hrChunks = await splitter.splitDocuments(hrDocs);
-  const itChunks = await splitter.splitDocuments(itDocs);
-  const financeChunks = await splitter.splitDocuments(financeDocs);
-  const legalChunks = await splitter.splitDocuments(legalDocs);
-
-  // Validate chunk counts for all domains
-  const domainChunks = new Map([
-    ["hr_docs", hrChunks],
-    ["it_docs", itChunks],
-    ["finance_docs", financeChunks],
-    ["legal_docs", legalChunks],
-  ]);
-
-  // Validate chunk counts (will throw if insufficient)
-  validateChunkCountsOrThrow(domainChunks);
-
-  logger.info(
-    {
-      hrChunks: hrChunks.length,
-      itChunks: itChunks.length,
-      financeChunks: financeChunks.length,
-      legalChunks: legalChunks.length,
-    },
-    "Documents loaded and split",
-  );
-
-  const hrVectorStore = await createVectorStore(hrChunks, "hr_embeddings");
-  const itVectorStore = await createVectorStore(itChunks, "it_embeddings");
   const financeVectorStore = await createVectorStore(
-    financeChunks,
+    chunks?.financeChunks,
     "finance_embeddings",
   );
   const legalVectorStore = await createVectorStore(
-    legalChunks,
+    chunks?.legalChunks,
     "legal_embeddings",
   );
 

@@ -2,10 +2,9 @@
 
 import '../src/utils/suppress-chroma-warnings.js';
 
-import { loadDocumentsFromDirectory } from '../src/loaders/directory-loader.js';
-import { createTextSplitter } from '../src/splitters/index.js';
 import { createVectorStore } from '../src/vector-stores/index.js';
 import { validateChunkCountOrThrow } from '../src/utils/chunk-validation.js';
+import { loadAndChunkDomain } from '../src/utils/document-loader.js';
 import { logger } from '../src/logger.js';
 import path from 'path';
 
@@ -18,14 +17,13 @@ async function buildIndexes() {
   const validationFailures: string[] = [];
 
   for (const domain of domains) {
-    const domainPath = path.join(dataDir, domain);
     const collectionName = `${domain.replace('_docs', '')}_embeddings`;
 
     try {
       logger.info({ domain, collectionName }, 'Loading documents...');
-      const docs = await loadDocumentsFromDirectory(domainPath);
+      const chunks = await loadAndChunkDomain(domain, dataDir);
 
-      if (docs.length === 0) {
+      if (chunks.length === 0) {
         logger.warn({ domain }, 'No documents found, skipping');
         validationFailures.push(
           `Domain '${domain}' has no documents. Please add documents to this domain.`,
@@ -33,16 +31,10 @@ async function buildIndexes() {
         continue;
       }
 
-      logger.info({ domain, documentCount: docs.length }, 'Splitting documents...');
-      const splitter = createTextSplitter();
-      const chunks = await splitter.splitDocuments(docs);
-
-      // Validate chunk count (will log and throw if insufficient)
       try {
         validateChunkCountOrThrow(domain, chunks, undefined, true);
       } catch (error) {
         validationFailures.push(domain);
-        // Continue processing other domains, but collect failures
         logger.error(
           { domain, chunkCount: chunks.length },
           'Chunk count validation failed, skipping vector store creation',
