@@ -8,7 +8,8 @@ A Multi-agent orchestration system that intelligently routes customer inquiries 
 
 Demo showing single run question with full structured output and the chat mode:
 
-<video src="./docs/demo.mp4" controls width="600" style="max-width: 100%; height: auto;"></video>
+https://github.com/user-attachments/assets/428e4f5a-f2c8-4270-9c23-af9baf6ea6d8
+
 
 ## 📋 Prerequisites
 
