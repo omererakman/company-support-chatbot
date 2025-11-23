@@ -16,7 +16,7 @@
         {
           "id": "chunk-0",
           "text": "HEALTH INSURANCE BENEFITS\n\nOur company offers comprehensive health insurance benefits to all full-time employees.\n\nMedical Insurance:\n- Coverage begins on the first day of employment\n- We offer three plan options: Basic, Standard, and Premium\n- The company covers 80% of premiums for employees and 60% for dependents\n- Deductibles range from $500 (Premium) to $2,000 (Basic)\n- Annual out-of-pocket maximums range from $3,000 to $6,000\n- Coverage includes preventive care, emergency services, hospitalization, prescription drugs\n- Mental health and substance abuse treatment covered\n- Maternity and newborn care included\n- Pediatric services covered\n- Network includes 95% of providers nationwide\n- Out-of-network coverage available (higher cost)",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/hr_docs/benefits.txt",
+          "sourceId": "/company-support-chatbot/data/hr_docs/benefits.txt",
           "metadata": {
             "startCharStr": "0",
             "endChar": 745,
@@ -35,7 +35,7 @@
         {
           "id": "chunk-1",
           "text": "OTHER BENEFITS\n\nCommuter Benefits:\n- Pre-tax commuter benefits: Up to $300/month\n- Public transportation reimbursement\n- Parking reimbursement (with approval)\n- Bike-to-work program: $20/month incentive\n- Carpool matching service\n\nEmployee Discounts:\n- Corporate discounts on products and services\n- Technology discounts (Apple, Dell, etc.)\n- Travel discounts\n- Entertainment discounts\n- Restaurant discounts\n- Discount portal access\n\nWork-Life Balance:\n- Flexible work hours: Core hours 10 AM - 3 PM\n- Remote work options: Available with manager approval\n- Compressed workweek: Available for some positions\n- Summer hours: Half-day Fridays (Memorial Day to Labor Day)\n- Sabbatical program: 4 weeks after 7 years of service",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/hr_docs/benefits.txt",
+          "sourceId": "/company-support-chatbot/data/hr_docs/benefits.txt",
           "metadata": {
             "startCharStr": "9698",
             "startChar": 9698,
@@ -54,7 +54,7 @@
         {
           "id": "chunk-2",
           "text": "Benefits Administration:\n- HR Benefits Team: benefits@company.com\n- Phone: Extension 1234\n- Benefits portal: Available 24/7\n- Annual open enrollment: November 1-15\n- Benefits guide: Available online and in print",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/hr_docs/benefits.txt",
+          "sourceId": "/company-support-chatbot/data/hr_docs/benefits.txt",
           "metadata": {
             "endCharStr": "11416",
             "startChar": 11205,
@@ -73,7 +73,7 @@
         {
           "id": "chunk-3",
           "text": "Additional Perks:\n- Free snacks and beverages in office\n- Catered lunches: Twice per week\n- Company events: Quarterly team building\n- Holiday parties and celebrations\n- Employee recognition programs\n- Service awards: Milestone recognition\n- Referral program: $2,000 per successful hire\n\nBENEFITS ENROLLMENT\n\nNew Employee Enrollment:\n- Enrollment window: First 30 days of employment\n- Benefits effective: First day of employment (health) or first of month after 30 days\n- Online enrollment portal available\n- HR benefits orientation session\n- Benefits counselor available for questions\n\nQualifying Life Events:\n- Marriage or divorce\n- Birth or adoption of child\n- Death of spouse or dependent\n- Loss of other coverage\n- Change in spouse's employment\n- 30-day window to make changes",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/hr_docs/benefits.txt",
+          "sourceId": "/company-support-chatbot/data/hr_docs/benefits.txt",
           "metadata": {
             "startChar": 10423,
             "startCharStr": "10423",
@@ -92,7 +92,7 @@
         {
           "id": "chunk-4",
           "text": "Retirement Planning:\n- Free financial planning sessions available\n- Online retirement calculator and tools\n- Educational workshops quarterly\n- One-on-one consultations with financial advisors\n- Retirement readiness assessments\n\nLIFE INSURANCE AND DISABILITY\n\nLife Insurance:\n- Basic life insurance: 1x annual salary (company paid)\n- Additional coverage available: Up to 5x salary (employee paid)\n- Spouse coverage: Up to $250,000 available\n- Dependent children coverage: $10,000 per child\n- Accidental death and dismemberment (AD&D): Included\n- Premiums based on age and coverage amount\n- Beneficiary designation required\n- Coverage continues after retirement (reduced amount)",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/hr_docs/benefits.txt",
+          "sourceId": "/company-support-chatbot/data/hr_docs/benefits.txt",
           "metadata": {
             "startChar": 2764,
             "startCharStr": "2764",
@@ -191,7 +191,7 @@
         {
           "id": "chunk-0",
           "text": "PASSWORD RESET PROCEDURES\n\nHow to Reset Your Password:\n\nSelf-Service Password Reset:\n1. Go to the company portal login page\n2. Click on \"Forgot Password\" link\n3. Enter your company email address\n4. Check your email for reset instructions (check spam folder if not received)\n5. Click the reset link in the email (valid for 1 hour)\n6. Follow the link to create a new password\n7. Enter new password twice to confirm\n8. Log in with new password\n\nPassword Reset via Phone:\n1. Call IT Help Desk at extension 1234\n2. Provide your employee ID and manager's name\n3. Answer security questions for verification\n4. IT will send temporary password via email\n5. Log in and change password immediately\n6. Temporary passwords expire after 24 hours",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/it_docs/password-reset.txt",
+          "sourceId": "/company-support-chatbot/data/it_docs/password-reset.txt",
           "metadata": {
             "startCharStr": "0",
             "startChar": 0,
@@ -210,7 +210,7 @@
         {
           "id": "chunk-1",
           "text": "Password Reset via IT Portal:\n1. Log into IT Support Portal (if you have access)\n2. Navigate to \"Password Reset\" section\n3. Select your account\n4. Verify identity with security questions\n5. Receive reset link via email\n6. Follow email instructions to reset\n\nPassword Requirements:\n- Minimum 12 characters\n- Must include uppercase and lowercase letters\n- Must include at least one number\n- Must include at least one special character (!@#$%^&*)\n- Cannot reuse your last 5 passwords\n- Cannot contain your username or email\n- Cannot contain common words or patterns\n- Must be changed every 90 days\n- Password complexity meter shows strength",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/it_docs/password-reset.txt",
+          "sourceId": "/company-support-chatbot/data/it_docs/password-reset.txt",
           "metadata": {
             "endCharStr": "1370",
             "endChar": 1370,
@@ -229,7 +229,7 @@
         {
           "id": "chunk-2",
           "text": "Password Best Practices:\n- Use a unique password (not used elsewhere)\n- Consider using a passphrase (multiple words)\n- Use password manager (company-approved)\n- Never share your password with anyone\n- Never write passwords down in visible locations\n- Change password immediately if compromised\n- Use different passwords for different systems\n\nACCOUNT LOCKOUT AND RECOVERY\n\nIf you're locked out of your account:\n- Account locks after 5 failed login attempts\n- Lockout duration: 30 minutes (auto-unlock)\n- Contact IT Support at it-support@company.com\n- Call the IT Help Desk at extension 1234\n- Provide your employee ID and manager's name for verification\n- IT can unlock account immediately after verification\n- May require password reset after unlock",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/it_docs/password-reset.txt",
+          "sourceId": "/company-support-chatbot/data/it_docs/password-reset.txt",
           "metadata": {
             "startChar": 1372,
             "startCharStr": "1372",
@@ -248,7 +248,7 @@
         {
           "id": "chunk-3",
           "text": "Account Recovery Process:\n1. Contact IT Support with employee ID\n2. Verify identity with security questions\n3. Manager verification may be required\n4. Account unlocked or password reset\n5. Log in and change password\n6. Review account activity for suspicious access\n\nSuspicious Activity:\n- If you notice suspicious activity, contact IT immediately\n- Change password immediately\n- Review account access logs\n- Report to security@company.com\n- IT will investigate and secure account\n\nMULTI-FACTOR AUTHENTICATION (MFA)\n\nMFA Setup:\n- MFA is required for all company accounts\n- Setup during initial account creation\n- Can be set up via IT portal or with IT assistance\n- Multiple methods available: Authenticator app, SMS, Email",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/it_docs/password-reset.txt",
+          "sourceId": "/company-support-chatbot/data/it_docs/password-reset.txt",
           "metadata": {
             "startCharStr": "2124",
             "endChar": 2845,
@@ -267,7 +267,7 @@
         {
           "id": "chunk-4",
           "text": "MFA Methods:\n- Authenticator App (Recommended): Microsoft Authenticator, Google Authenticator\n- SMS: Text message codes to mobile phone\n- Email: Codes sent to company email\n- Backup codes: Provided during setup, store securely\n\nMFA Best Practices:\n- Use authenticator app for better security\n- Keep backup codes in secure location\n- Register multiple devices if possible\n- Update phone number if changed\n- Contact IT if device lost or stolen\n\nMFA Troubleshooting:\n- Not receiving codes: Check phone/email, try backup method\n- Lost device: Contact IT immediately to reset MFA\n- Backup codes: Use if primary method unavailable\n- New device: Add via IT portal or contact IT\n\nWIFI CONNECTION TROUBLESHOOTING",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/it_docs/password-reset.txt",
+          "sourceId": "/company-support-chatbot/data/it_docs/password-reset.txt",
           "metadata": {
             "endChar": 3550,
             "endCharStr": "3550",
@@ -366,7 +366,7 @@
         {
           "id": "chunk-0",
           "text": "Refund Exceptions:\n- Services already used are not eligible\n- Custom products/services may have different policies\n- Refunds after 30 days require special approval\n- Setup fees are non-refundable\n- Third-party integrations and add-ons subject to vendor policies\n- Promotional credits and discounts are non-refundable\n\nRefund Methods:\n- Credit card: Refunded to original card (5-7 business days)\n- Bank transfer: Refunded to original account (7-10 business days)\n- Wire transfer: Refunded to original account (10-14 business days)\n- Check: Mailed to billing address (14-21 business days)\n\nEXPENSE REPORTS",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/finance_docs/billing.txt",
+          "sourceId": "/company-support-chatbot/data/finance_docs/billing.txt",
           "metadata": {
             "startChar": 3662,
             "endCharStr": "4265",
@@ -385,7 +385,7 @@
         {
           "id": "chunk-1",
           "text": "REFUND POLICY\n\nRefund Eligibility:\n- Refunds are available within 30 days of purchase\n- Subscription cancellations: refunds available within first 30 days only\n- Refund processing time: 5-7 business days\n- Refunds are issued to the original payment method\n- Partial refunds available for unused services\n- Annual plan refunds: Prorated based on months used\n\nTo request a refund:\n1. Contact customer support via email or phone\n2. Provide order number and reason for refund\n3. Support will review your request within 2 business days\n4. If approved, refund will be processed within 5-7 business days\n5. You'll receive email confirmation when refund is processed\n6. Refund appears on statement within 1-2 billing cycles",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/finance_docs/billing.txt",
+          "sourceId": "/company-support-chatbot/data/finance_docs/billing.txt",
           "metadata": {
             "startCharStr": "2945",
             "endChar": 3660,
@@ -404,7 +404,7 @@
         {
           "id": "chunk-2",
           "text": "Reimbursement Timeline:\n- Reports submitted by the 5th: paid by the 20th\n- Late submissions: paid in the following cycle\n- Direct deposit to your bank account\n- Payment notifications sent via email\n- Reimbursement appears in account within 2-3 business days of payment\n\nPAYMENT FAILURES AND RESOLUTION\n\nIf your payment fails:\n1. You'll receive an email notification immediately\n2. We'll attempt to charge again after 3 days\n3. Second retry attempt after 6 days\n4. Final retry attempt after 9 days\n5. You have a 7-day grace period to update payment\n6. Account will be suspended if payment not resolved after 7 days\n7. To reactivate: update payment method and account restores immediately\n8. Data retention: 30 days after suspension before deletion",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/finance_docs/billing.txt",
+          "sourceId": "/company-support-chatbot/data/finance_docs/billing.txt",
           "metadata": {
             "startCharStr": "5881",
             "endChar": 6627,
@@ -423,7 +423,7 @@
         {
           "id": "chunk-3",
           "text": "EXPENSE REPORTS\n\nExpense Report Submission:\n- Submit expense reports monthly by the 5th of the following month\n- Use the company expense reporting system (accessible via employee portal)\n- Attach all receipts (required for expenses over $25)\n- Get manager approval before submission\n- Late submissions may delay reimbursement\n- Reports can be submitted via mobile app or web portal\n- Receipts can be uploaded as photos or PDFs\n- Multiple currencies supported with automatic conversion",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/finance_docs/billing.txt",
+          "sourceId": "/company-support-chatbot/data/finance_docs/billing.txt",
           "metadata": {
             "endCharStr": "4734",
             "startCharStr": "4250",
@@ -442,7 +442,7 @@
         {
           "id": "chunk-4",
           "text": "BILLING DISPUTES AND RESOLUTION\n\nDisputing a Charge:\n1. Contact finance@company.com within 60 days\n2. Provide invoice number and reason for dispute\n3. Include any supporting documentation\n4. Finance team will investigate within 5 business days\n5. Resolution communicated via email\n6. If dispute is valid, adjustment made to account\n\nChargeback Process:\n- Contact us before initiating chargeback\n- We can resolve most issues without chargeback\n- Chargebacks may result in account suspension\n- We'll work with you to resolve the issue\n- Documentation provided to payment processor if needed\n\nBILLING SUPPORT",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/finance_docs/billing.txt",
+          "sourceId": "/company-support-chatbot/data/finance_docs/billing.txt",
           "metadata": {
             "startChar": 8089,
             "endChar": 8694,
@@ -541,7 +541,7 @@
         {
           "id": "chunk-0",
           "text": "9. DATA RETENTION\n\nRetention Periods:\n- We retain data while your account is active\n- We retain data as required by law\n- We delete data when no longer needed\n- Backup data may be retained longer\n- See our data retention policy for details\n\n10. CHANGES TO PRIVACY POLICY\n\nPolicy Updates:\n- We may update this policy from time to time\n- We will notify you of material changes\n- Continued use after changes constitutes acceptance\n- Check this page periodically for updates\n\nCOMPLIANCE\n\nGDPR Compliance:\n- We comply with EU General Data Protection Regulation\n- Data processing agreements in place for EU customers\n- Right to be forgotten implemented\n- Data breach notification procedures established\n- Data Protection Officer appointed (if required)\n- Privacy by design and default implemented",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/legal_docs/terms.txt",
+          "sourceId": "/company-support-chatbot/data/legal_docs/terms.txt",
           "metadata": {
             "endCharStr": "14330",
             "startChar": 13540,
@@ -560,7 +560,7 @@
         {
           "id": "chunk-1",
           "text": "CONTACT INFORMATION\n\nLegal Department:\n- Email: legal@company.com\n- Privacy Officer: privacy@company.com\n- Data Protection Officer: dpo@company.com (EU customers)\n\nMailing Address:\n[Company Name]\n[Address]\n[City, State ZIP]\n[Country]\n\nFor Questions:\n- Terms of Service: legal@company.com\n- Privacy Policy: privacy@company.com\n- Data Requests: privacy@company.com\n- Security Issues: security@company.com\n\nMODIFICATIONS TO TERMS\n\nWe reserve the right to modify these terms at any time. We will:\n- Post updated terms on our website\n- Update the \"Last Updated\" date\n- Notify users of material changes via email\n- Provide 30 days notice for material changes\n- Continued use after changes constitutes acceptance",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/legal_docs/terms.txt",
+          "sourceId": "/company-support-chatbot/data/legal_docs/terms.txt",
           "metadata": {
             "startChar": 15032,
             "endCharStr": "15737",
@@ -579,7 +579,7 @@
         {
           "id": "chunk-2",
           "text": "7. CHILDREN'S PRIVACY\n\nAge Restrictions:\n- Our services are not intended for children under 13 (or 16 in EU)\n- We do not knowingly collect information from children\n- If we discover we have collected information from a child, we will delete it\n- Parents should contact us if they believe we have collected child information\n\n8. INTERNATIONAL DATA TRANSFERS\n\nData Transfers:\n- Your data may be transferred to and processed in countries other than your country\n- We use appropriate safeguards for international transfers\n- Standard Contractual Clauses used for EU data transfers\n- We comply with applicable data protection laws\n\n9. DATA RETENTION",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/legal_docs/terms.txt",
+          "sourceId": "/company-support-chatbot/data/legal_docs/terms.txt",
           "metadata": {
             "endCharStr": "13557",
             "endChar": 13557,
@@ -598,7 +598,7 @@
         {
           "id": "chunk-3",
           "text": "Privacy by Default:\n- Most privacy-friendly settings as default\n- Opt-in for data sharing (not opt-out)\n- Minimal data collection by default\n- Privacy controls easily accessible\n- Clear privacy choices for users\n\nDATA PROCESSING AGREEMENTS\n\nStandard Agreements:\n- Data Processing Agreements (DPAs) available\n- GDPR-compliant DPAs for EU customers\n- CCPA-compliant agreements for California customers\n- Custom agreements for Enterprise customers\n- Regular updates to agreements\n\nDPA Contents:\n- Data processing purposes and scope\n- Security measures and controls\n- Data subject rights and assistance\n- Sub-processor requirements\n- Data breach notification procedures\n- Data retention and deletion\n- Audit rights and cooperation\n\nREGULATORY REPORTING",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/legal_docs/compliance.txt",
+          "sourceId": "/company-support-chatbot/data/legal_docs/compliance.txt",
           "metadata": {
             "startCharStr": "11160",
             "startChar": 11160,
@@ -617,7 +617,7 @@
         {
           "id": "chunk-4",
           "text": "4. DATA SECURITY\n\nSecurity Measures:\n- We use industry-standard security measures\n- Data is encrypted in transit (TLS/SSL)\n- Data is encrypted at rest for sensitive information\n- Regular security audits and updates\n- Access controls and authentication\n- Employee training on data security\n\nSecurity Incidents:\n- We have incident response procedures\n- We will notify you of breaches as required by law\n- We take breaches seriously and work to prevent them\n- Report security issues to security@company.com\n\n5. YOUR RIGHTS\n\nAccess Rights:\n- Access your personal data\n- Receive copy of your data in machine-readable format\n- Know what data we have about you\n\nCorrection Rights:\n- Correct inaccurate data\n- Update your information\n- Complete incomplete data",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/legal_docs/terms.txt",
+          "sourceId": "/company-support-chatbot/data/legal_docs/terms.txt",
           "metadata": {
             "startCharStr": "10867",
             "endCharStr": "11619",
@@ -716,7 +716,7 @@
         {
           "id": "chunk-0",
           "text": "VACATION AND LEAVE POLICIES\n\nVacation Days:\n- Full-time employees accrue 15 vacation days per year\n- Vacation days accrue at a rate of 1.25 days per month\n- Maximum carryover of 5 days to the next year\n- Unused days beyond carryover limit are forfeited\n- Vacation requests must be submitted at least 2 weeks in advance\n- Manager approval required for all vacation requests\n- Blackout periods may apply (check with manager)\n- Vacation can be taken in half-day increments\n- Vacation accrual increases with tenure:\n  - Years 1-3: 15 days\n  - Years 4-6: 20 days\n  - Years 7-10: 25 days\n  - Years 11+: 30 days",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/hr_docs/benefits.txt",
+          "sourceId": "/company-support-chatbot/data/hr_docs/benefits.txt",
           "metadata": {
             "startChar": 3910,
             "endCharStr": "4514",
@@ -735,7 +735,7 @@
         {
           "id": "chunk-1",
           "text": "Sick Leave:\n- 10 paid sick days per year\n- Unused sick days do not carry over\n- Sick leave can be used for personal illness or family member care\n- No doctor's note required for 3 days or less\n- Doctor's note required for 4+ consecutive days\n- Can be used for medical appointments\n- Can be used for mental health days\n- Accrues at 0.83 days per month\n\nPersonal Days:\n- 3 personal days per year\n- Can be used for any reason\n- Do not require advance notice (within reason)\n- Do not carry over to next year\n- Use it or lose it policy",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/hr_docs/benefits.txt",
+          "sourceId": "/company-support-chatbot/data/hr_docs/benefits.txt",
           "metadata": {
             "startCharStr": "4516",
             "endCharStr": "5046",
@@ -754,7 +754,7 @@
         {
           "id": "chunk-2",
           "text": "Short-Term Disability:\n- Coverage: 60% of salary for up to 26 weeks\n- Elimination period: 7 days\n- Company paid for all employees\n- Covers illness, injury, pregnancy\n- Job protection during disability period\n\nLong-Term Disability:\n- Coverage: 60% of salary up to $10,000/month\n- Elimination period: 90 days\n- Company paid for all employees\n- Coverage until age 65 or return to work\n- Own occupation definition for first 2 years\n- Cost of living adjustments available\n\nVACATION AND LEAVE POLICIES",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/hr_docs/benefits.txt",
+          "sourceId": "/company-support-chatbot/data/hr_docs/benefits.txt",
           "metadata": {
             "endChar": 3937,
             "startChar": 3442,
@@ -773,7 +773,7 @@
         {
           "id": "chunk-3",
           "text": "OTHER BENEFITS\n\nCommuter Benefits:\n- Pre-tax commuter benefits: Up to $300/month\n- Public transportation reimbursement\n- Parking reimbursement (with approval)\n- Bike-to-work program: $20/month incentive\n- Carpool matching service\n\nEmployee Discounts:\n- Corporate discounts on products and services\n- Technology discounts (Apple, Dell, etc.)\n- Travel discounts\n- Entertainment discounts\n- Restaurant discounts\n- Discount portal access\n\nWork-Life Balance:\n- Flexible work hours: Core hours 10 AM - 3 PM\n- Remote work options: Available with manager approval\n- Compressed workweek: Available for some positions\n- Summer hours: Half-day Fridays (Memorial Day to Labor Day)\n- Sabbatical program: 4 weeks after 7 years of service",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/hr_docs/benefits.txt",
+          "sourceId": "/company-support-chatbot/data/hr_docs/benefits.txt",
           "metadata": {
             "endChar": 10421,
             "endCharStr": "10421",
@@ -792,7 +792,7 @@
         {
           "id": "chunk-4",
           "text": "Maternity/Paternity Leave:\n- 12 weeks of paid maternity leave\n- 6 weeks of paid paternity leave\n- Additional unpaid leave available under FMLA (up to 12 weeks total)\n- Leave can begin up to 2 weeks before due date\n- Adoption leave: 6 weeks paid\n- Surrogacy leave: 6 weeks paid\n- Leave runs concurrently with FMLA\n- Health insurance continues during leave\n- Job protection guaranteed\n- Return to work transition program available\n\nBereavement Leave:\n- 3 days paid for immediate family (spouse, child, parent, sibling)\n- 1 day paid for extended family (grandparent, aunt, uncle, cousin)\n- Additional unpaid leave available with manager approval\n- No limit on bereavement leave for immediate family",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/hr_docs/benefits.txt",
+          "sourceId": "/company-support-chatbot/data/hr_docs/benefits.txt",
           "metadata": {
             "startChar": 5048,
             "endChar": 5743,
@@ -891,7 +891,7 @@
         {
           "id": "chunk-0",
           "text": "WIFI CONNECTION TROUBLESHOOTING\n\nCompany WiFi Networks:\n- Company-WiFi: Main network for employees (WPA2-Enterprise)\n- Company-Guest: Guest network (password provided at reception)\n- Company-IoT: For IoT devices (IT approval required)\n\nConnecting to Company-WiFi:\n1. Select \"Company-WiFi\" network\n2. Enter company username and password\n3. Accept certificate if prompted\n4. Connected successfully\n\nCommon WiFi Issues and Solutions:\n\n1. Cannot connect to WiFi:\n   - Forget the network and reconnect\n   - Restart your device\n   - Check if WiFi is enabled\n   - Verify you're using the correct network name (Company-WiFi)\n   - Check if device is in range of access point\n   - Update device WiFi drivers\n   - Contact IT if problem persists",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/it_docs/password-reset.txt",
+          "sourceId": "/company-support-chatbot/data/it_docs/password-reset.txt",
           "metadata": {
             "startChar": 3519,
             "endCharStr": "4252",
@@ -910,7 +910,7 @@
         {
           "id": "chunk-1",
           "text": "2. Slow connection:\n   - Move closer to the access point\n   - Disconnect and reconnect\n   - Check for interference from other devices\n   - Limit bandwidth-intensive applications\n   - Check if too many devices connected\n   - Restart router/access point (if you have access)\n   - Contact IT if problem persists\n\n3. Frequent disconnections:\n   - Update your device's WiFi drivers\n   - Check for software updates\n   - Forget network and reconnect\n   - Check power management settings (may disconnect to save power)\n   - Contact IT Support for advanced troubleshooting\n   - May need to update device firmware\n\n4. Authentication errors:\n   - Verify username and password are correct\n   - Check if account is active\n   - Clear saved credentials and re-enter\n   - Contact IT if account may be locked",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/it_docs/password-reset.txt",
+          "sourceId": "/company-support-chatbot/data/it_docs/password-reset.txt",
           "metadata": {
             "startChar": 4254,
             "startCharStr": "4254",
@@ -929,7 +929,7 @@
         {
           "id": "chunk-2",
           "text": "5. Limited connectivity:\n   - Restart network adapter\n   - Release and renew IP address\n   - Check firewall settings\n   - Contact IT for network configuration\n\nWiFi Security:\n- Always use company WiFi (not public WiFi)\n- VPN required when working remotely\n- Don't share WiFi password\n- Report suspicious networks to IT\n- Keep devices updated with latest security patches\n\nVPN ACCESS\n\nVPN Setup:\n- VPN required for remote access\n- Download VPN client from IT portal\n- Install and configure with IT assistance\n- Use company credentials to connect\n- Available 24/7 for remote workers\n\nVPN Connection:\n1. Open VPN client\n2. Enter company credentials\n3. Select server location (if multiple)\n4. Connect to VPN\n5. Verify connection (check IP address)",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/it_docs/password-reset.txt",
+          "sourceId": "/company-support-chatbot/data/it_docs/password-reset.txt",
           "metadata": {
             "startChar": 5047,
             "endChar": 5790,
@@ -948,7 +948,7 @@
         {
           "id": "chunk-3",
           "text": "VPN Troubleshooting:\n- Cannot connect: Check internet connection, verify credentials\n- Slow connection: Check internet speed, try different server\n- Frequent disconnections: Update VPN client, check firewall\n- Contact IT for VPN issues\n\nSOFTWARE INSTALLATION AND UPDATES\n\nTo request software installation:\n1. Submit a ticket through the IT portal\n2. Include software name and version\n3. Provide business justification\n4. Wait for approval from your manager\n5. IT will install within 2-3 business days\n6. You'll receive notification when installed",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/it_docs/password-reset.txt",
+          "sourceId": "/company-support-chatbot/data/it_docs/password-reset.txt",
           "metadata": {
             "startChar": 5792,
             "startCharStr": "5792",
@@ -967,7 +967,7 @@
         {
           "id": "chunk-4",
           "text": "Cannot Access Shared Drive:\n- Verify network connection\n- Check if VPN is connected (if remote)\n- Verify access permissions\n- Map network drive again\n- Contact IT to verify access\n\nSoftware Crashes:\n- Update software to latest version\n- Restart application\n- Restart computer\n- Clear application cache\n- Reinstall software (contact IT)\n- Check for known issues in knowledge base",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/it_docs/password-reset.txt",
+          "sourceId": "/company-support-chatbot/data/it_docs/password-reset.txt",
           "metadata": {
             "endChar": 12385,
             "startChar": 12007,
@@ -1066,7 +1066,7 @@
         {
           "id": "chunk-0",
           "text": "INVOICE DETAILS\n\nInvoice Information:\n- Invoices sent via email automatically\n- Available in account portal immediately\n- PDF format for easy download\n- Itemized charges included\n- Tax information included based on location\n- Multi-currency support for international customers\n- Invoice numbers are sequential and unique\n- Payment instructions included on invoice\n\nInvoice Requests:\n- Request copies via finance@company.com\n- Include account number or order ID\n- Typically sent within 24 hours\n- Historical invoices available for 7 years\n- Bulk invoice export available for Enterprise\n- Custom invoice formats available for Enterprise\n\nTAX INFORMATION",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/finance_docs/pricing.txt",
+          "sourceId": "/company-support-chatbot/data/finance_docs/pricing.txt",
           "metadata": {
             "startCharStr": "3327",
             "endChar": 3978,
@@ -1085,7 +1085,7 @@
         {
           "id": "chunk-1",
           "text": "BILLING AND INVOICES\n\nInvoice Requests:\n- Invoices are generated automatically for all subscriptions\n- To request a copy of an invoice, email finance@company.com\n- Include your account number or order ID\n- Invoices are typically sent within 24 hours\n- Invoices are available in PDF format\n- Historical invoices available for download from account portal\n- Invoice numbers are unique and sequential\n- Invoices include itemized charges, taxes, and payment terms\n- Recurring invoices sent on billing date each month\n- Pro forma invoices available for Enterprise customers",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/finance_docs/billing.txt",
+          "sourceId": "/company-support-chatbot/data/finance_docs/billing.txt",
           "metadata": {
             "startChar": 0,
             "startCharStr": "0",
@@ -1104,7 +1104,7 @@
         {
           "id": "chunk-2",
           "text": "Invoice Details:\n- Invoice number format: INV-YYYY-XXXXXX\n- Payment terms: Net 30 for Enterprise, Due on receipt for others\n- Late payment fee: 1.5% per month (Enterprise only)\n- Invoice includes billing address, shipping address (if applicable)\n- Tax information included based on customer location\n- Currency displayed matches payment currency\n- Multi-currency invoices supported for international customers",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/finance_docs/billing.txt",
+          "sourceId": "/company-support-chatbot/data/finance_docs/billing.txt",
           "metadata": {
             "startChar": 570,
             "endChar": 979,
@@ -1123,7 +1123,7 @@
         {
           "id": "chunk-3",
           "text": "Payment Methods Accepted:\n- Credit cards (Visa, MasterCard, Amex, Discover)\n- Debit cards\n- Bank transfer (ACH) - US customers\n- Wire transfer (Enterprise only, minimum $1,000)\n- Purchase orders (Enterprise only, Net 30 terms)\n- PayPal (for Starter and Professional plans)\n- Apple Pay and Google Pay (mobile)\n\nPayment Terms:\n- Standard: Payment due upon receipt\n- Net 15: Available for Enterprise (small fee)\n- Net 30: Available for Enterprise (standard)\n- Net 60: Available for Enterprise (custom pricing)\n- Prepayment discounts: 5% for annual prepayment\n\nINVOICE DETAILS",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/finance_docs/pricing.txt",
+          "sourceId": "/company-support-chatbot/data/finance_docs/pricing.txt",
           "metadata": {
             "endChar": 3342,
             "startCharStr": "2770",
@@ -1142,7 +1142,7 @@
         {
           "id": "chunk-4",
           "text": "BILLING SUPPORT\n\nContact Information:\n- Email: finance@company.com\n- Phone: 1-800-FINANCE (Mon-Fri, 9 AM - 5 PM EST)\n- Live chat: Available in account portal\n- Response time: Within 24 hours for email, immediate for phone/chat\n\nBilling Portal Features:\n- View all invoices and payment history\n- Download invoices as PDF\n- Update payment methods\n- View upcoming charges\n- Set up payment reminders\n- Manage billing notifications\n- Export billing data for accounting",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/finance_docs/billing.txt",
+          "sourceId": "/company-support-chatbot/data/finance_docs/billing.txt",
           "metadata": {
             "startCharStr": "8679",
             "endCharStr": "9142",
@@ -1243,7 +1243,7 @@
         {
           "id": "chunk-0",
           "text": "TERMS OF SERVICE\n\nLast Updated: January 2024\n\n1. ACCEPTANCE OF TERMS\n\nBy accessing and using our services, you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing our services.\n\nThese terms apply to all users of our services, including without limitation users who are browsers, vendors, customers, merchants, and contributors of content.\n\nWe reserve the right to update, change, or replace any part of these Terms of Service by posting updates and changes to our website. It is your responsibility to check our website periodically for changes.\n\n2. USE OF SERVICES",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/legal_docs/terms.txt",
+          "sourceId": "/company-support-chatbot/data/legal_docs/terms.txt",
           "metadata": {
             "endCharStr": "686",
             "startChar": 0,
@@ -1262,7 +1262,7 @@
         {
           "id": "chunk-1",
           "text": "SEVERABILITY\n\nIf any provision of these Terms of Service is found to be unenforceable or invalid, that provision will be limited or eliminated to the minimum extent necessary so that these Terms will otherwise remain in full force and effect and enforceable.\n\nENTIRE AGREEMENT\n\nThese Terms of Service, together with our Privacy Policy and any other legal notices published on our website, constitute the entire agreement between you and us concerning your use of our services and supersede all prior agreements and understandings.",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/legal_docs/terms.txt",
+          "sourceId": "/company-support-chatbot/data/legal_docs/terms.txt",
           "metadata": {
             "endCharStr": "16893",
             "startChar": 16363,
@@ -1281,7 +1281,7 @@
         {
           "id": "chunk-2",
           "text": "Your continued use of our services after any modifications indicates your acceptance of the modified terms. If you do not agree to the modifications, you must stop using our services.\n\nGOVERNING LAW AND JURISDICTION\n\nThese Terms of Service and any disputes arising from them are governed by the laws of [State/Country], without regard to conflict of law principles. You agree to submit to the exclusive jurisdiction of the courts located in [State/Country] for resolution of any disputes.\n\nFor EU customers, these terms are governed by the laws of [EU Country], and disputes will be resolved in the courts of [EU Country].\n\nSEVERABILITY",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/legal_docs/terms.txt",
+          "sourceId": "/company-support-chatbot/data/legal_docs/terms.txt",
           "metadata": {
             "endCharStr": "16375",
             "startCharStr": "15739",
@@ -1300,7 +1300,7 @@
         {
           "id": "chunk-3",
           "text": "2. USE OF SERVICES\n\nYou agree to use our services only for lawful purposes and in accordance with these Terms of Service and all applicable local, state, national, and international laws and regulations.",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/legal_docs/terms.txt",
+          "sourceId": "/company-support-chatbot/data/legal_docs/terms.txt",
           "metadata": {
             "endChar": 871,
             "startCharStr": "668",
@@ -1319,7 +1319,7 @@
         {
           "id": "chunk-4",
           "text": "CONTACT INFORMATION\n\nLegal Department:\n- Email: legal@company.com\n- Privacy Officer: privacy@company.com\n- Data Protection Officer: dpo@company.com (EU customers)\n\nMailing Address:\n[Company Name]\n[Address]\n[City, State ZIP]\n[Country]\n\nFor Questions:\n- Terms of Service: legal@company.com\n- Privacy Policy: privacy@company.com\n- Data Requests: privacy@company.com\n- Security Issues: security@company.com\n\nMODIFICATIONS TO TERMS\n\nWe reserve the right to modify these terms at any time. We will:\n- Post updated terms on our website\n- Update the \"Last Updated\" date\n- Notify users of material changes via email\n- Provide 30 days notice for material changes\n- Continued use after changes constitutes acceptance",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/legal_docs/terms.txt",
+          "sourceId": "/company-support-chatbot/data/legal_docs/terms.txt",
           "metadata": {
             "startChar": 15032,
             "startCharStr": "15032",
@@ -1418,7 +1418,7 @@
         {
           "id": "chunk-0",
           "text": "EXPENSE REPORTS\n\nExpense Report Submission:\n- Submit expense reports monthly by the 5th of the following month\n- Use the company expense reporting system (accessible via employee portal)\n- Attach all receipts (required for expenses over $25)\n- Get manager approval before submission\n- Late submissions may delay reimbursement\n- Reports can be submitted via mobile app or web portal\n- Receipts can be uploaded as photos or PDFs\n- Multiple currencies supported with automatic conversion",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/finance_docs/billing.txt",
+          "sourceId": "/company-support-chatbot/data/finance_docs/billing.txt",
           "metadata": {
             "endChar": 4734,
             "startChar": 4250,
@@ -1437,7 +1437,7 @@
         {
           "id": "chunk-1",
           "text": "Reimbursable Expenses:\n- Business travel (flights, hotels, meals, ground transportation)\n- Client entertainment (meals, events, tickets)\n- Office supplies and equipment\n- Professional development courses and certifications\n- Business-related software subscriptions\n- Internet and phone expenses (for remote workers)\n- Home office equipment (with manager approval)\n- Conference and event registration fees\n- Business meals (with client or team members)\n- Parking and tolls (business-related)",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/finance_docs/billing.txt",
+          "sourceId": "/company-support-chatbot/data/finance_docs/billing.txt",
           "metadata": {
             "endCharStr": "5226",
             "endChar": 5226,
@@ -1456,7 +1456,7 @@
         {
           "id": "chunk-2",
           "text": "Non-Reimbursable Expenses:\n- Personal expenses\n- Alcohol (unless client entertainment, requires approval)\n- Personal travel upgrades\n- Expenses without receipts (over $25)\n- Traffic violations and fines\n- Personal entertainment\n- Gifts over $50 (requires special approval)\n- Political contributions\n- Personal insurance premiums\n\nExpense Limits:\n- Meals: $75 per person per day (domestic), $100 (international)\n- Hotels: Reasonable rates based on location\n- Flights: Economy class standard, business class requires approval\n- Car rentals: Standard size, upgrades require approval\n- Client entertainment: $200 per event, higher amounts require approval",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/finance_docs/billing.txt",
+          "sourceId": "/company-support-chatbot/data/finance_docs/billing.txt",
           "metadata": {
             "endChar": 5879,
             "startChar": 5228,
@@ -1475,7 +1475,7 @@
         {
           "id": "chunk-3",
           "text": "Reimbursement Timeline:\n- Reports submitted by the 5th: paid by the 20th\n- Late submissions: paid in the following cycle\n- Direct deposit to your bank account\n- Payment notifications sent via email\n- Reimbursement appears in account within 2-3 business days of payment\n\nPAYMENT FAILURES AND RESOLUTION\n\nIf your payment fails:\n1. You'll receive an email notification immediately\n2. We'll attempt to charge again after 3 days\n3. Second retry attempt after 6 days\n4. Final retry attempt after 9 days\n5. You have a 7-day grace period to update payment\n6. Account will be suspended if payment not resolved after 7 days\n7. To reactivate: update payment method and account restores immediately\n8. Data retention: 30 days after suspension before deletion",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/finance_docs/billing.txt",
+          "sourceId": "/company-support-chatbot/data/finance_docs/billing.txt",
           "metadata": {
             "startChar": 5881,
             "endCharStr": "6627",
@@ -1494,7 +1494,7 @@
         {
           "id": "chunk-4",
           "text": "Refund Exceptions:\n- Services already used are not eligible\n- Custom products/services may have different policies\n- Refunds after 30 days require special approval\n- Setup fees are non-refundable\n- Third-party integrations and add-ons subject to vendor policies\n- Promotional credits and discounts are non-refundable\n\nRefund Methods:\n- Credit card: Refunded to original card (5-7 business days)\n- Bank transfer: Refunded to original account (7-10 business days)\n- Wire transfer: Refunded to original account (10-14 business days)\n- Check: Mailed to billing address (14-21 business days)\n\nEXPENSE REPORTS",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/finance_docs/billing.txt",
+          "sourceId": "/company-support-chatbot/data/finance_docs/billing.txt",
           "metadata": {
             "endChar": 4265,
             "startChar": 3662,
@@ -1593,7 +1593,7 @@
         {
           "id": "chunk-0",
           "text": "Benefits Administration:\n- HR Benefits Team: benefits@company.com\n- Phone: Extension 1234\n- Benefits portal: Available 24/7\n- Annual open enrollment: November 1-15\n- Benefits guide: Available online and in print",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/hr_docs/benefits.txt",
+          "sourceId": "/company-support-chatbot/data/hr_docs/benefits.txt",
           "metadata": {
             "endChar": 11416,
             "startChar": 11205,
@@ -1612,7 +1612,7 @@
         {
           "id": "chunk-1",
           "text": "Set Up Direct Deposit:\n- Bank account verified\n- First paycheck information provided\n- Pay schedule explained (bi-weekly, every other Friday)\n- Pay stub access instructions\n\nEnroll in Benefits (If Eligible):\n- Health insurance selection\n- Dental and vision enrollment\n- 401(k) enrollment (after 90 days)\n- Life insurance beneficiary designation\n- Review of all benefit options\n- Benefits portal access\n\nComplete Mandatory Compliance Training:\n- Security awareness training\n- Data privacy training (GDPR, CCPA)\n- Harassment prevention training\n- Code of conduct training\n- Safety training\n- IT security policies\n- All training must be completed within first week\n\nEMPLOYEE HANDBOOK",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/hr_docs/onboarding.txt",
+          "sourceId": "/company-support-chatbot/data/hr_docs/onboarding.txt",
           "metadata": {
             "startChar": 3776,
             "endCharStr": "4456",
@@ -1631,7 +1631,7 @@
         {
           "id": "chunk-2",
           "text": "Compliance Requirements:\n- Code of conduct acknowledgment\n- Harassment prevention training\n- Safety training (office and role-specific)\n- Industry-specific compliance (if applicable)\n- Export control training (if applicable)\n- Anti-corruption training\n- Confidentiality agreements\n\nSUPPORT AND RESOURCES\n\nHR Support:\n- Email: hr@company.com\n- Phone: Extension 1234\n- Office hours: Monday-Friday, 9 AM - 5 PM\n- HR portal: Available 24/7\n- Benefits questions: benefits@company.com\n- Payroll questions: payroll@company.com\n\nIT Support:\n- Email: it-support@company.com\n- Phone: Extension 5678\n- Help desk portal: Available 24/7\n- Live chat: Available during business hours\n- Emergency support: Available for critical issues",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/hr_docs/onboarding.txt",
+          "sourceId": "/company-support-chatbot/data/hr_docs/onboarding.txt",
           "metadata": {
             "endCharStr": "10009",
             "startCharStr": "9290",
@@ -1650,7 +1650,7 @@
         {
           "id": "chunk-3",
           "text": "DAY 1 - ORIENTATION\n\nWelcome Meeting with HR (9:00 AM - 10:00 AM):\n- Company overview and history\n- Mission, vision, and values presentation\n- Organizational structure introduction\n- Benefits overview and enrollment information\n- Review of employee handbook\n- Q&A session with HR team\n- Tour of office facilities\n- Introduction to key personnel\n\nIT Setup and Equipment Distribution (10:00 AM - 12:00 PM):\n- Laptop/computer assignment and setup\n- Email account activation\n- Password setup and security training\n- Software installation and access provisioning\n- Phone setup (if applicable)\n- Access card/key fob distribution\n- WiFi credentials and network access\n- VPN setup (if remote work)\n- Two-factor authentication setup\n- Introduction to IT support portal",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/hr_docs/onboarding.txt",
+          "sourceId": "/company-support-chatbot/data/hr_docs/onboarding.txt",
           "metadata": {
             "startCharStr": "1078",
             "endCharStr": "1837",
@@ -1669,7 +1669,7 @@
         {
           "id": "chunk-4",
           "text": "EMPLOYEE ONBOARDING PROCESS\n\nWelcome to the company! Here's what to expect during your first week and beyond:\n\nPRE-FIRST DAY PREPARATION\n\nBefore You Start:\n- Complete pre-employment paperwork (sent via email)\n- Review employee handbook (available online)\n- Set up direct deposit information\n- Prepare required documents (see list below)\n- Complete background check (if applicable)\n- Review first week schedule (sent 3 days before start date)\n- Download company mobile app\n- Set up company email account (instructions sent separately)",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/hr_docs/onboarding.txt",
+          "sourceId": "/company-support-chatbot/data/hr_docs/onboarding.txt",
           "metadata": {
             "startCharStr": "0",
             "endChar": 533,
@@ -1770,7 +1770,7 @@
         {
           "id": "chunk-0",
           "text": "Maternity/Paternity Leave:\n- 12 weeks of paid maternity leave\n- 6 weeks of paid paternity leave\n- Additional unpaid leave available under FMLA (up to 12 weeks total)\n- Leave can begin up to 2 weeks before due date\n- Adoption leave: 6 weeks paid\n- Surrogacy leave: 6 weeks paid\n- Leave runs concurrently with FMLA\n- Health insurance continues during leave\n- Job protection guaranteed\n- Return to work transition program available\n\nBereavement Leave:\n- 3 days paid for immediate family (spouse, child, parent, sibling)\n- 1 day paid for extended family (grandparent, aunt, uncle, cousin)\n- Additional unpaid leave available with manager approval\n- No limit on bereavement leave for immediate family",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/hr_docs/benefits.txt",
+          "sourceId": "/company-support-chatbot/data/hr_docs/benefits.txt",
           "metadata": {
             "endChar": 5743,
             "startChar": 5048,
@@ -1789,7 +1789,7 @@
         {
           "id": "chunk-1",
           "text": "Short-Term Disability:\n- Coverage: 60% of salary for up to 26 weeks\n- Elimination period: 7 days\n- Company paid for all employees\n- Covers illness, injury, pregnancy\n- Job protection during disability period\n\nLong-Term Disability:\n- Coverage: 60% of salary up to $10,000/month\n- Elimination period: 90 days\n- Company paid for all employees\n- Coverage until age 65 or return to work\n- Own occupation definition for first 2 years\n- Cost of living adjustments available\n\nVACATION AND LEAVE POLICIES",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/hr_docs/benefits.txt",
+          "sourceId": "/company-support-chatbot/data/hr_docs/benefits.txt",
           "metadata": {
             "startChar": 3442,
             "startCharStr": "3442",
@@ -1808,7 +1808,7 @@
         {
           "id": "chunk-2",
           "text": "VACATION AND LEAVE POLICIES\n\nVacation Days:\n- Full-time employees accrue 15 vacation days per year\n- Vacation days accrue at a rate of 1.25 days per month\n- Maximum carryover of 5 days to the next year\n- Unused days beyond carryover limit are forfeited\n- Vacation requests must be submitted at least 2 weeks in advance\n- Manager approval required for all vacation requests\n- Blackout periods may apply (check with manager)\n- Vacation can be taken in half-day increments\n- Vacation accrual increases with tenure:\n  - Years 1-3: 15 days\n  - Years 4-6: 20 days\n  - Years 7-10: 25 days\n  - Years 11+: 30 days",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/hr_docs/benefits.txt",
+          "sourceId": "/company-support-chatbot/data/hr_docs/benefits.txt",
           "metadata": {
             "startChar": 3910,
             "endChar": 4514,
@@ -1827,7 +1827,7 @@
         {
           "id": "chunk-3",
           "text": "Sick Leave:\n- 10 paid sick days per year\n- Unused sick days do not carry over\n- Sick leave can be used for personal illness or family member care\n- No doctor's note required for 3 days or less\n- Doctor's note required for 4+ consecutive days\n- Can be used for medical appointments\n- Can be used for mental health days\n- Accrues at 0.83 days per month\n\nPersonal Days:\n- 3 personal days per year\n- Can be used for any reason\n- Do not require advance notice (within reason)\n- Do not carry over to next year\n- Use it or lose it policy",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/hr_docs/benefits.txt",
+          "sourceId": "/company-support-chatbot/data/hr_docs/benefits.txt",
           "metadata": {
             "endCharStr": "5046",
             "startChar": 4516,
@@ -1846,7 +1846,7 @@
         {
           "id": "chunk-4",
           "text": "HEALTH INSURANCE BENEFITS\n\nOur company offers comprehensive health insurance benefits to all full-time employees.\n\nMedical Insurance:\n- Coverage begins on the first day of employment\n- We offer three plan options: Basic, Standard, and Premium\n- The company covers 80% of premiums for employees and 60% for dependents\n- Deductibles range from $500 (Premium) to $2,000 (Basic)\n- Annual out-of-pocket maximums range from $3,000 to $6,000\n- Coverage includes preventive care, emergency services, hospitalization, prescription drugs\n- Mental health and substance abuse treatment covered\n- Maternity and newborn care included\n- Pediatric services covered\n- Network includes 95% of providers nationwide\n- Out-of-network coverage available (higher cost)",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/hr_docs/benefits.txt",
+          "sourceId": "/company-support-chatbot/data/hr_docs/benefits.txt",
           "metadata": {
             "startCharStr": "0",
             "startChar": 0,
@@ -1945,7 +1945,7 @@
         {
           "id": "chunk-0",
           "text": "To update your payment method:\n1. Log into your account\n2. Go to Billing Settings\n3. Click \"Update Payment Method\"\n4. Enter new payment information\n5. Verify payment method (small charge may be made and refunded)\n6. Save changes\n7. Set as default payment method if multiple methods on file\n\nPayment Method Security:\n- All payment information encrypted using PCI-DSS compliant systems\n- Payment details never stored on our servers\n- Tokenized payment processing for security\n- 3D Secure authentication for additional security\n- Fraud detection and monitoring systems active\n\nBILLING CYCLE AND FREQUENCY",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/finance_docs/billing.txt",
+          "sourceId": "/company-support-chatbot/data/finance_docs/billing.txt",
           "metadata": {
             "endChar": 2251,
             "startCharStr": "1650",
@@ -1964,7 +1964,7 @@
         {
           "id": "chunk-1",
           "text": "Payment Methods:\n- Credit cards (Visa, MasterCard, American Express, Discover)\n- Debit cards (with credit card logo)\n- Bank transfer (ACH) - US customers only\n- Wire transfer (for amounts over $10,000 or Enterprise customers)\n- Check payments (must be pre-approved, Enterprise only)\n- PayPal (for small transactions)\n- Apple Pay and Google Pay (mobile payments)\n- Cryptocurrency (Bitcoin, Ethereum) - Enterprise only, requires approval\n\nInternational Payment Methods:\n- SEPA transfers (EU customers)\n- SWIFT wire transfers (international)\n- Local payment methods available in select countries\n- Currency conversion handled automatically\n- Exchange rates updated daily",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/finance_docs/billing.txt",
+          "sourceId": "/company-support-chatbot/data/finance_docs/billing.txt",
           "metadata": {
             "startChar": 981,
             "endChar": 1648,
@@ -1983,7 +1983,7 @@
         {
           "id": "chunk-2",
           "text": "Common Payment Failure Reasons:\n- Insufficient funds\n- Expired credit card\n- Card declined by bank\n- Incorrect billing address\n- Card limit reached\n- Bank security hold\n- International transaction blocked\n\nTo resolve payment issues:\n- Update payment method in account settings\n- Contact finance@company.com for assistance\n- Check with your bank for any holds or restrictions\n- Verify billing address matches card statement\n- Try alternative payment method\n- Contact support for payment plan options (Enterprise only)\n\nPayment Failure Notifications:\n- Email sent immediately upon failure\n- Reminder emails sent before retry attempts\n- Final warning email sent before suspension\n- SMS notifications available (opt-in required)\n- In-app notifications for active users",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/finance_docs/billing.txt",
+          "sourceId": "/company-support-chatbot/data/finance_docs/billing.txt",
           "metadata": {
             "endCharStr": "7393",
             "endChar": 7393,
@@ -2002,7 +2002,7 @@
         {
           "id": "chunk-3",
           "text": "Payment Methods Accepted:\n- Credit cards (Visa, MasterCard, Amex, Discover)\n- Debit cards\n- Bank transfer (ACH) - US customers\n- Wire transfer (Enterprise only, minimum $1,000)\n- Purchase orders (Enterprise only, Net 30 terms)\n- PayPal (for Starter and Professional plans)\n- Apple Pay and Google Pay (mobile)\n\nPayment Terms:\n- Standard: Payment due upon receipt\n- Net 15: Available for Enterprise (small fee)\n- Net 30: Available for Enterprise (standard)\n- Net 60: Available for Enterprise (custom pricing)\n- Prepayment discounts: 5% for annual prepayment\n\nINVOICE DETAILS",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/finance_docs/pricing.txt",
+          "sourceId": "/company-support-chatbot/data/finance_docs/pricing.txt",
           "metadata": {
             "endCharStr": "3342",
             "startCharStr": "2770",
@@ -2021,7 +2021,7 @@
         {
           "id": "chunk-4",
           "text": "Reimbursement Timeline:\n- Reports submitted by the 5th: paid by the 20th\n- Late submissions: paid in the following cycle\n- Direct deposit to your bank account\n- Payment notifications sent via email\n- Reimbursement appears in account within 2-3 business days of payment\n\nPAYMENT FAILURES AND RESOLUTION\n\nIf your payment fails:\n1. You'll receive an email notification immediately\n2. We'll attempt to charge again after 3 days\n3. Second retry attempt after 6 days\n4. Final retry attempt after 9 days\n5. You have a 7-day grace period to update payment\n6. Account will be suspended if payment not resolved after 7 days\n7. To reactivate: update payment method and account restores immediately\n8. Data retention: 30 days after suspension before deletion",
-          "sourceId": "/Users/omererakman/work/omer/code/company-support-chatbot/data/finance_docs/billing.txt",
+          "sourceId": "/company-support-chatbot/data/finance_docs/billing.txt",
           "metadata": {
             "startChar": 5881,
             "startCharStr": "5881",
