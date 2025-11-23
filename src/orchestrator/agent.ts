@@ -154,8 +154,19 @@ export class OrchestratorAgent {
                 // Fallback for other message formats
                 if (typeof msg === "object" && msg !== null) {
                   const msgObj = msg as Record<string, unknown>;
-                  const messageType =
-                    msgObj.getType?.() || msgObj.constructor?.name || "unknown";
+                  let messageType = "unknown";
+                  if (typeof msgObj.getType === "function") {
+                    const result = msgObj.getType();
+                    if (result) messageType = String(result);
+                  } else if (
+                    msgObj.constructor &&
+                    typeof msgObj.constructor === "function" &&
+                    "name" in msgObj.constructor
+                  ) {
+                    messageType = String(
+                      (msgObj.constructor as { name: string }).name,
+                    );
+                  }
                   const content = msgObj.content || msgObj.text || "";
 
                   // Normalize role names

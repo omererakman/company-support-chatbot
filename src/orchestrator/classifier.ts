@@ -60,7 +60,7 @@ export async function classifyIntent(
         input.conversationHistory = `Previous conversation:\n${context}`;
         logger.debug(
           {
-            historyLength: conversationHistory.length,
+            historyLength: conversationHistory?.length ?? 0,
             question: question.substring(0, 100),
           },
           "Classifying intent with conversation context",
