@@ -7,8 +7,7 @@ A Multi-agent orchestration system that intelligently routes customer inquiries 
 ## 🎬 Demo
 
 Demo showing single run question with full structured output and the chat mode:
-
-https://github.com/user-attachments/assets/428e4f5a-f2c8-4270-9c23-af9baf6ea6d8
+https://github.com/user-attachments/assets/dda307f1-c640-4b57-b5bc-89166ba76c94
 
 
 ## 📋 Prerequisites
