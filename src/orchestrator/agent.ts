@@ -1,7 +1,12 @@
 import { BaseAgent } from "../agents/base-agent.js";
 import { AgentRegistry } from "../agents/factory.js";
-import { classifyIntent } from "./classifier.js";
-import { OrchestratorResponse } from "./types.js";
+import { classifyMultiIntent } from "./classifier.js";
+import {
+  OrchestratorResponse,
+  Intent,
+  MultiIntentClassification,
+  IntentClassification,
+} from "./types.js";
 import { logger } from "../logger.js";
 import { trace } from "../monitoring/tracing.js";
 import { OrchestratorError } from "../utils/errors.js";
@@ -10,6 +15,10 @@ import {
   ConversationSummaryMemory,
 } from "@langchain/classic/memory";
 import { BaseMessage } from "@langchain/core/messages";
+import { RunnableParallel, RunnableLambda } from "@langchain/core/runnables";
+import { ResultMerger } from "./result-merger.js";
+import { HandoffChain } from "./handoff-chain.js";
+import { AgentResponse, HandoffRequest } from "../types/schemas.js";
 
 export interface OrchestratorConfig {
   hrAgent: BaseAgent;
@@ -45,6 +54,8 @@ export class OrchestratorAgent {
     legal: string;
   };
   private useLazyLoading: boolean;
+  private resultMerger: ResultMerger;
+  private handoffChain: HandoffChain;
 
   constructor(config: OrchestratorConfig | LazyOrchestratorConfig) {
     if ("registry" in config) {
@@ -76,6 +87,9 @@ export class OrchestratorAgent {
         "Orchestrator initialized with eager loading",
       );
     }
+
+    this.resultMerger = new ResultMerger("concatenation");
+    this.handoffChain = new HandoffChain(2);
   }
 
   /**
@@ -97,168 +111,381 @@ export class OrchestratorAgent {
   }
 
   /**
-   * Process a question: classify intent and route to appropriate agent
+   * Extract conversation history from memory
+   */
+  private async extractConversationHistory(
+    memory?: BufferMemory | ConversationSummaryMemory | null,
+  ): Promise<Array<{ role: string; content: string }> | undefined> {
+    if (!memory) {
+      return undefined;
+    }
+
+    try {
+      const memoryVariables = await memory.loadMemoryVariables({});
+      const chatHistory = memoryVariables.chat_history;
+
+      if (Array.isArray(chatHistory) && chatHistory.length > 0) {
+        const conversationHistory = chatHistory
+          .slice(-10)
+          .map((msg: unknown) => {
+            if (msg instanceof BaseMessage) {
+              const messageType = msg.getType();
+              const content =
+                typeof msg.content === "string"
+                  ? msg.content
+                  : String(msg.content);
+
+              let normalizedRole = "user";
+              if (messageType === "human" || messageType === "HumanMessage") {
+                normalizedRole = "user";
+              } else if (
+                messageType === "ai" ||
+                messageType === "AIMessage" ||
+                messageType === "assistant"
+              ) {
+                normalizedRole = "assistant";
+              } else if (
+                messageType === "system" ||
+                messageType === "SystemMessage"
+              ) {
+                normalizedRole = "system";
+              }
+
+              return {
+                role: normalizedRole,
+                content,
+              };
+            }
+            if (typeof msg === "object" && msg !== null) {
+              const msgObj = msg as Record<string, unknown>;
+              let messageType = "unknown";
+              if (typeof msgObj.getType === "function") {
+                const result = msgObj.getType();
+                if (result) messageType = String(result);
+              } else if (
+                msgObj.constructor &&
+                typeof msgObj.constructor === "function" &&
+                "name" in msgObj.constructor
+              ) {
+                messageType = String(
+                  (msgObj.constructor as { name: string }).name,
+                );
+              }
+              const content = msgObj.content || msgObj.text || "";
+
+              let normalizedRole = "user";
+              if (messageType.includes("Human") || messageType === "human") {
+                normalizedRole = "user";
+              } else if (
+                messageType.includes("AI") ||
+                messageType === "ai" ||
+                messageType.includes("Assistant")
+              ) {
+                normalizedRole = "assistant";
+              } else if (
+                messageType.includes("System") ||
+                messageType === "system"
+              ) {
+                normalizedRole = "system";
+              }
+
+              return {
+                role: normalizedRole,
+                content: String(content),
+              };
+            }
+            return null;
+          })
+          .filter(
+            (msg): msg is { role: string; content: string } =>
+              msg !== null && msg.content.length > 0,
+          );
+
+        return conversationHistory.length > 0 ? conversationHistory : undefined;
+      }
+    } catch (error) {
+      logger.debug(
+        { error },
+        "Failed to extract conversation history from memory",
+      );
+    }
+
+    return undefined;
+  }
+
+  /**
+   * Process a question: classify intent and route to appropriate agent(s)
+   * Supports multi-topic queries and handoffs
    */
   async process(
     question: string,
     memory?: BufferMemory | ConversationSummaryMemory | null,
   ): Promise<OrchestratorResponse> {
     return trace("orchestrator.process", async () => {
-      // Extract conversation history from memory if available
-      let conversationHistory:
-        | Array<{ role: string; content: string }>
-        | undefined;
-      if (memory) {
-        try {
-          const memoryVariables = await memory.loadMemoryVariables({});
-          const chatHistory = memoryVariables.chat_history;
-
-          if (Array.isArray(chatHistory) && chatHistory.length > 0) {
-            // Convert LangChain BaseMessage format to simple format
-            conversationHistory = chatHistory
-              .slice(-10) // Only use last 10 messages to avoid token limits
-              .map((msg: unknown) => {
-                // Handle BaseMessage objects from LangChain
-                if (msg instanceof BaseMessage) {
-                  const messageType = msg.getType();
-                  const content =
-                    typeof msg.content === "string"
-                      ? msg.content
-                      : String(msg.content);
-
-                  // Normalize role names
-                  let normalizedRole = "user";
-                  if (
-                    messageType === "human" ||
-                    messageType === "HumanMessage"
-                  ) {
-                    normalizedRole = "user";
-                  } else if (
-                    messageType === "ai" ||
-                    messageType === "AIMessage" ||
-                    messageType === "assistant"
-                  ) {
-                    normalizedRole = "assistant";
-                  } else if (
-                    messageType === "system" ||
-                    messageType === "SystemMessage"
-                  ) {
-                    normalizedRole = "system";
-                  }
-
-                  return {
-                    role: normalizedRole,
-                    content,
-                  };
-                }
-                // Fallback for other message formats
-                if (typeof msg === "object" && msg !== null) {
-                  const msgObj = msg as Record<string, unknown>;
-                  let messageType = "unknown";
-                  if (typeof msgObj.getType === "function") {
-                    const result = msgObj.getType();
-                    if (result) messageType = String(result);
-                  } else if (
-                    msgObj.constructor &&
-                    typeof msgObj.constructor === "function" &&
-                    "name" in msgObj.constructor
-                  ) {
-                    messageType = String(
-                      (msgObj.constructor as { name: string }).name,
-                    );
-                  }
-                  const content = msgObj.content || msgObj.text || "";
-
-                  // Normalize role names
-                  let normalizedRole = "user";
-                  if (
-                    messageType.includes("Human") ||
-                    messageType === "human"
-                  ) {
-                    normalizedRole = "user";
-                  } else if (
-                    messageType.includes("AI") ||
-                    messageType === "ai" ||
-                    messageType.includes("Assistant")
-                  ) {
-                    normalizedRole = "assistant";
-                  } else if (
-                    messageType.includes("System") ||
-                    messageType === "system"
-                  ) {
-                    normalizedRole = "system";
-                  }
-
-                  return {
-                    role: normalizedRole,
-                    content: String(content),
-                  };
-                }
-                return null;
-              })
-              .filter(
-                (msg): msg is { role: string; content: string } =>
-                  msg !== null && msg.content.length > 0,
-              );
-
-            // Only use conversation history if we successfully extracted messages
-            if (conversationHistory.length === 0) {
-              conversationHistory = undefined;
-            }
-          }
-        } catch (error) {
-          logger.debug(
-            { error },
-            "Failed to extract conversation history from memory, classifying without context",
-          );
-        }
-      }
-
-      const classification = await classifyIntent(
-        question,
-        conversationHistory,
-      );
-      const agent = await this.getAgentByIntent(classification.intent);
-
-      if (!agent) {
-        logger.warn(
-          { intent: classification.intent },
-          "No agent found for intent, using IT agent as fallback",
-        );
+      // Handle empty questions gracefully
+      if (!question || question.trim().length === 0) {
         const fallbackAgent = await this.getAgentByIntent("it");
+
         if (!fallbackAgent) {
           throw new OrchestratorError(
-            `No agent available for intent: ${classification.intent}`,
+            "No agent available to handle empty question",
           );
         }
 
-        const agentResponse = await fallbackAgent.invoke(question, memory);
+        const agentResponse = await fallbackAgent.invoke(
+          "The user submitted an empty question. Please ask them how you can help them today.",
+          memory,
+        );
+
         return {
-          intent: classification.intent,
-          classification,
-          routedTo: "it",
+          intent: "it",
+          classification: {
+            intent: "it",
+            confidence: 0.5,
+            reasoning: "Empty question detected - requesting clarification",
+          },
+          routedTo: fallbackAgent.name,
           agentResponse,
         };
       }
 
-      logger.debug(
-        {
-          intent: classification.intent,
-          confidence: classification.confidence,
-          agent: agent.name,
-        },
-        "Routing to specialized agent",
+      const conversationHistory = await this.extractConversationHistory(memory);
+
+      const classification = await classifyMultiIntent(
+        question,
+        conversationHistory,
       );
 
-      const agentResponse = await agent.invoke(question, memory);
+      if (
+        "requiresMultipleAgents" in classification &&
+        classification.requiresMultipleAgents
+      ) {
+        return await this.processMultiTopic(question, classification, memory);
+      } else {
+        return await this.processSingleTopic(
+          question,
+          classification as IntentClassification,
+          memory,
+        );
+      }
+    });
+  }
 
+  /**
+   * Process multi-topic query with parallel execution
+   */
+  private async processMultiTopic(
+    question: string,
+    classification: MultiIntentClassification,
+    memory?: BufferMemory | ConversationSummaryMemory | null,
+  ): Promise<OrchestratorResponse> {
+    logger.debug(
+      {
+        intents: classification.intents.map((i) => i.intent),
+        question: question.substring(0, 100),
+      },
+      "Processing multi-topic query",
+    );
+
+    const agents = new Map<Intent, BaseAgent>();
+    for (const { intent } of classification.intents) {
+      const agent = await this.getAgentByIntent(intent);
+      if (agent) {
+        agents.set(intent, agent);
+      } else {
+        logger.warn(
+          { intent },
+          "Agent not found for intent in multi-topic query",
+        );
+      }
+    }
+
+    if (agents.size === 0) {
+      throw new OrchestratorError("No agents available for multi-topic query");
+    }
+
+    const parallelMap: Record<
+      string,
+      ReturnType<typeof RunnableLambda.from>
+    > = {};
+
+    for (const { intent, subQuery } of classification.intents) {
+      const agent = agents.get(intent);
+      if (agent) {
+        parallelMap[intent] = RunnableLambda.from(async () => {
+          try {
+            logger.debug(
+              { intent, subQuery: subQuery.substring(0, 100) },
+              "Executing parallel agent query",
+            );
+            return await agent.invoke(subQuery, memory);
+          } catch (error) {
+            logger.error(
+              { intent, error, subQuery: subQuery.substring(0, 100) },
+              "Agent execution failed",
+            );
+            throw error;
+          }
+        });
+      }
+    }
+
+    const parallelChain = RunnableParallel.from(parallelMap);
+    const results = await parallelChain.invoke({});
+
+    const mergedResponse = await this.resultMerger.merge(
+      results as Record<string, AgentResponse>,
+      question,
+      classification.intents,
+    );
+
+    // Use primary intent if available, otherwise use the first intent
+    const primaryIntent =
+      classification.primaryIntent || classification.intents[0]?.intent;
+
+    return {
+      intent: primaryIntent,
+      intents: classification.intents.map((i) => i.intent),
+      classification,
+      routedTo: Array.from(agents.keys()),
+      agentResponse: mergedResponse,
+    };
+  }
+
+  /**
+   * Process single-topic query with handoff support
+   */
+  private async processSingleTopic(
+    question: string,
+    classification: IntentClassification,
+    memory?: BufferMemory | ConversationSummaryMemory | null,
+  ): Promise<OrchestratorResponse> {
+    const agent = await this.getAgentByIntent(classification.intent);
+
+    if (!agent) {
+      logger.warn(
+        { intent: classification.intent },
+        "No agent found for intent, using IT agent as fallback",
+      );
+      const fallbackAgent = await this.getAgentByIntent("it");
+      if (!fallbackAgent) {
+        throw new OrchestratorError(
+          `No agent available for intent: ${classification.intent}`,
+        );
+      }
+
+      const agentResponse = await fallbackAgent.invoke(question, memory);
       return {
         intent: classification.intent,
         classification,
-        routedTo: agent.name,
+        routedTo: "it",
         agentResponse,
       };
-    });
+    }
+
+    logger.debug(
+      {
+        intent: classification.intent,
+        confidence: classification.confidence,
+        agent: agent.name,
+      },
+      "Routing to specialized agent",
+    );
+
+    const agentResponse = await agent.invoke(question, memory);
+
+    if (agentResponse.handoffRequest) {
+      const validHandoffRequest: HandoffRequest = {
+        ...agentResponse.handoffRequest,
+        reason: agentResponse.handoffRequest.reason as HandoffRequest["reason"],
+      };
+      return await this.processHandoff(
+        validHandoffRequest,
+        question,
+        agentResponse,
+        memory,
+      );
+    }
+
+    return {
+      intent: classification.intent,
+      classification,
+      routedTo: agent.name,
+      agentResponse,
+    };
+  }
+
+  /**
+   * Process handoff request
+   */
+  private async processHandoff(
+    handoffRequest: HandoffRequest,
+    originalQuery: string,
+    previousResponse: AgentResponse,
+    memory?: BufferMemory | ConversationSummaryMemory | null,
+  ): Promise<OrchestratorResponse> {
+    logger.debug(
+      {
+        from: previousResponse.metadata.agent,
+        to: handoffRequest.requestedAgent,
+        reason: handoffRequest.reason,
+      },
+      "Processing handoff request",
+    );
+
+    const targetAgent = await this.getAgentByIntent(
+      handoffRequest.requestedAgent,
+    );
+    if (!targetAgent) {
+      logger.error(
+        { requestedAgent: handoffRequest.requestedAgent },
+        "Target agent not available for handoff",
+      );
+      return {
+        intent: previousResponse.metadata.agent as Intent,
+        classification: {
+          intent: previousResponse.metadata.agent as Intent,
+          confidence: 0.5,
+          reasoning: "Handoff failed - target agent unavailable",
+        },
+        routedTo: previousResponse.metadata.agent,
+        agentResponse: previousResponse,
+        handoffOccurred: false,
+      };
+    }
+
+    const validHandoffRequest: HandoffRequest = {
+      ...handoffRequest,
+      reason: handoffRequest.reason as HandoffRequest["reason"],
+    };
+
+    const handoffContext = {
+      originalQuery,
+      previousAgent: previousResponse.metadata.agent,
+      previousResponse,
+      conversationHistory: [],
+      handoffReason: validHandoffRequest.reason,
+    };
+
+    const completeResponse = await this.handoffChain.processHandoff(
+      validHandoffRequest,
+      handoffContext,
+      targetAgent,
+      memory,
+    );
+
+    return {
+      intent: handoffRequest.requestedAgent,
+      classification: {
+        intent: handoffRequest.requestedAgent,
+        confidence: handoffRequest.confidence || 0.8,
+        reasoning: handoffRequest.reason,
+      },
+      routedTo: targetAgent.name,
+      agentResponse: completeResponse,
+      handoffOccurred: true,
+      handoffChain: [previousResponse.metadata.agent, targetAgent.name],
+    };
   }
 
   /**

@@ -60,19 +60,12 @@ function createReadlineInterface(): readline.Interface {
   return rl;
 }
 
-interface ProcessResult {
-  agentResponse: {
-    answer: string;
-    sources?: Array<{ text: string }>;
-  };
-  intent?: string;
-  routedTo?: string;
-}
+import type { OrchestratorResponse } from "../orchestrator/types.js";
 
 /**
  * Format and display the response
  */
-function displayResponse(result: ProcessResult) {
+function displayResponse(result: OrchestratorResponse) {
   console.log("\n🤖 Response:");
   console.log("─".repeat(60));
   console.log(result.agentResponse.answer);
@@ -82,12 +75,39 @@ function displayResponse(result: ProcessResult) {
     console.log(
       `\n📍 Routed to: ${result.routedTo} agent (${result.intent} intent)`,
     );
+  } else if (result.intents && result.intents.length > 0) {
+    const agents =
+      typeof result.routedTo === "string" ? [result.routedTo] : result.routedTo;
+    console.log(
+      `\n📍 Routed to: ${agents.join(", ")} agent(s) (${result.intents.join(", ")} intent(s))`,
+    );
   }
 
-  if (result.agentResponse.sources && result.agentResponse.sources.length > 0) {
-    console.log(
-      `\n📚 Sources: ${result.agentResponse.sources.length} document(s) found`,
-    );
+  if (result.handoffOccurred && result.handoffChain) {
+    console.log(`\n🔄 Handoff chain: ${result.handoffChain.join(" → ")}`);
+  }
+
+  let sourceCount = 0;
+  if ("sources" in result.agentResponse) {
+    const sources = result.agentResponse.sources;
+    if (Array.isArray(sources)) {
+      if (
+        sources.length > 0 &&
+        "sources" in sources[0] &&
+        Array.isArray(sources[0].sources)
+      ) {
+        sourceCount = (sources as Array<{ sources: Array<unknown> }>).reduce(
+          (sum, s) => sum + s.sources.length,
+          0,
+        );
+      } else {
+        sourceCount = sources.length;
+      }
+    }
+  }
+
+  if (sourceCount > 0) {
+    console.log(`\n📚 Sources: ${sourceCount} document(s) found`);
   }
 
   console.log(""); // Empty line for spacing

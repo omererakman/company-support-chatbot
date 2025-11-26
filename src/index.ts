@@ -19,9 +19,20 @@ export async function processQuestion(
     const result = await orchestrator.process(question);
 
     if (enableEvaluation) {
-      const context = result.agentResponse.sources
-        .map((s: { text: string }) => s.text)
-        .join("\n\n");
+      const sources =
+        "sources" in result.agentResponse ? result.agentResponse.sources : [];
+
+      const context = Array.isArray(sources)
+        ? sources
+            .map((s: { text?: string; sources?: Array<{ text: string }> }) => {
+              if (s.sources && Array.isArray(s.sources)) {
+                return s.sources.map((src) => src.text).join("\n");
+              }
+              return s.text || "";
+            })
+            .filter(Boolean)
+            .join("\n\n")
+        : "";
 
       const evaluation = await evaluateResponse({
         question,
@@ -29,13 +40,21 @@ export async function processQuestion(
         context,
       });
 
+      const confidence =
+        "confidence" in result.classification
+          ? result.classification.confidence
+          : result.classification.intents?.[0]?.confidence || 0.5;
+
       await recordScore({
         traceId,
         evaluation,
         metadata: {
-          intent: result.intent,
-          agent: result.routedTo,
-          confidence: result.classification.confidence,
+          intent: result.intent || result.intents?.[0] || "unknown",
+          agent:
+            typeof result.routedTo === "string"
+              ? result.routedTo
+              : result.routedTo[0] || "unknown",
+          confidence,
         },
       });
 

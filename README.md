@@ -133,9 +133,10 @@ npm run dev -- "What are the company's health insurance benefits?"
 ```
 
 This will:
-- Classify the intent
-- Route to the appropriate agent
+- Classify the intent (supports single or multi-intent queries)
+- Route to the appropriate agent(s)
 - Return a JSON response with the answer, sources, and evaluation
+- Support agent handoffs when needed
 
 #### Interactive Conversation Mode
 
@@ -149,8 +150,9 @@ npm run chat
 
 This mode:
 - Maintains conversation history across multiple turns
-- Supports commands: `exit`, `quit`, `bye`, `clear`, `help`
+- Supports commands: `exit`, `quit`, `bye`, `q` (exit), `clear`, `help`, `h` (help), `status`
 - Uses conversation memory (buffer or summary based on config)
+- Handles multi-intent queries and agent handoffs
 
 #### Test Suite
 
@@ -178,7 +180,9 @@ company-support-chatbot/
 │   │   └── index.ts                # CLI exports
 │   ├── orchestrator/               # Orchestrator agent
 │   │   ├── agent.ts                # Orchestrator implementation
-│   │   ├── classifier.ts           # Intent classification
+│   │   ├── classifier.ts           # Intent classification (single & multi-intent)
+│   │   ├── handoff-chain.ts        # Agent handoff processing
+│   │   ├── result-merger.ts        # Multi-agent response merging
 │   │   ├── types.ts                # Orchestrator types
 │   │   └── index.ts                # Orchestrator exports
 │   ├── agents/                     # Specialized RAG agents
@@ -420,12 +424,173 @@ This will:
 
 ### Unit Tests
 
-Run unit tests with Vitest:
+Run unit tests with Vitest (excludes e2e tests):
 
 ```bash
-npm test              # Run tests once
-npm run test:watch     # Watch mode
-npm run test:coverage  # With coverage report
+npm test              # Run unit tests once (excludes e2e)
+npm run test:watch     # Watch mode (excludes e2e)
+npm run test:coverage  # With coverage report (excludes e2e)
+```
+
+### E2E Tests
+
+Run end-to-end tests separately:
+
+```bash
+npm run e2e            # Run e2e tests
+```
+
+**Note**: Unit tests (`npm test`) exclude e2e tests by default. E2e tests are run separately using `npm run e2e` and require the OpenAI API key to be configured.
+
+### Response Format
+
+The system returns structured JSON responses with the following format. Note that some fields are optional and may not appear in all responses (e.g., `evaluation` only appears when evaluation is enabled, `_safety` only when safety checks are enabled).
+
+**Single Intent Response:**
+```json
+{
+  "intent": "hr",
+  "classification": {
+    "intent": "hr",
+    "confidence": 0.9,
+    "reasoning": "The query asks about health insurance benefits..."
+  },
+  "routedTo": "hr",
+  "agentResponse": {
+    "answer": "The company's health insurance benefits include...",
+    "sources": [
+      {
+        "id": "chunk-0",
+        "text": "Document chunk content...",
+        "sourceId": "/path/to/document.txt",
+        "metadata": {
+          "startChar": 0,
+          "endChar": 500,
+          "similarityScore": 0.85
+        }
+      }
+    ],
+    "metadata": {
+      "agent": "hr",
+      "model": "gpt-4o-mini",
+      "tokenUsage": {
+        "promptTokens": 500,
+        "completionTokens": 150,
+        "totalTokens": 650
+      },
+      "timings": {
+        "retrievalMs": 200,
+        "llmGenerationMs": 1500,
+        "totalMs": 1700
+      }
+    },
+    "content": "...",
+    "text": "...",
+    "_safety": {
+      "outputChecked": true,
+      "moderationResult": {...},
+      "piiDetected": false
+    }
+  },
+  "evaluation": {
+    "relevance": 9,
+    "completeness": 8,
+    "accuracy": 9,
+    "overall": 9,
+    "reasoning": "..."
+  }
+}
+```
+
+**Multi-Intent Response (Multiple Agents):**
+```json
+{
+  "intents": ["hr", "it"],
+  "classification": {
+    "intents": [
+      {
+        "intent": "hr",
+        "confidence": 0.9,
+        "subQuery": "What are the health insurance benefits?",
+        "reasoning": "..."
+      },
+      {
+        "intent": "it",
+        "confidence": 0.9,
+        "subQuery": "How do I reset my password?",
+        "reasoning": "..."
+      }
+    ],
+    "requiresMultipleAgents": true,
+    "primaryIntent": "hr"
+  },
+  "routedTo": ["hr", "it"],
+  "agentResponse": {
+    "answer": "[HR - What are the health insurance benefits?]\n\n...\n\n---\n\n[IT - How do I reset my password?]\n\n...",
+    "sources": [
+      {
+        "intent": "hr",
+        "agent": "hr",
+        "sources": [
+          {
+            "id": "chunk-0",
+            "text": "Document chunk content...",
+            "sourceId": "/path/to/hr_doc.txt",
+            "metadata": {...}
+          }
+        ]
+      },
+      {
+        "intent": "it",
+        "agent": "it",
+        "sources": [
+          {
+            "id": "chunk-0",
+            "text": "Document chunk content...",
+            "sourceId": "/path/to/it_doc.txt",
+            "metadata": {...}
+          }
+        ]
+      }
+    ],
+    "metadata": {
+      "agents": ["hr", "it"],
+      "intents": ["hr", "it"],
+      "mergeStrategy": "concatenation",
+      "timings": {
+        "executionMs": 2000,
+        "mergeMs": 50,
+        "totalMs": 2050
+      }
+    }
+  },
+  "evaluation": {...}
+}
+```
+
+**Response with Handoff:**
+```json
+{
+  "intent": "legal",
+  "classification": {
+    "intent": "legal",
+    "confidence": 0.8,
+    "reasoning": "Handoff reason: requires_expertise"
+  },
+  "routedTo": "legal",
+  "agentResponse": {
+    "answer": "Complete answer from legal agent...",
+    "sources": [...],
+    "metadata": {
+      "agent": "legal",
+      "model": "gpt-4o-mini",
+      "tokenUsage": {...},
+      "timings": {...}
+    }
+  },
+  "handoffOccurred": true,
+  "handoffChain": ["hr", "legal"]
+}
 ```
 
 ### Example Test Query

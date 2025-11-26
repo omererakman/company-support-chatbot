@@ -35,4 +35,4 @@ jobs:
         LANGFUSE_ENABLED: false
         CACHE_ENABLED: false
         LOG_LEVEL: error
-      run: npm test -- tests/e2e
+      run: npm run e2e

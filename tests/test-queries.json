@@ -58,5 +58,15 @@
     "question": "I need to update my payment method",
     "expectedIntent": "finance",
     "description": "Finance payment method"
+  },
+  {
+    "question": "What are the health insurance benefits and how do I reset my password?",
+    "expectedIntent": "hr",
+    "description": "Multi-intent: HR benefits + IT password reset"
+  },
+  {
+    "question": "What is the refund policy and what are the terms of service?",
+    "expectedIntent": "finance",
+    "description": "Multi-intent: Finance refund + Legal terms"
   }
 ]

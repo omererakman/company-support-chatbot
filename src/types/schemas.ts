@@ -67,6 +67,40 @@ export const IntentClassificationSchema = z.object({
 
 export type IntentClassification = z.infer<typeof IntentClassificationSchema>;
 
+export const MultiIntentItemSchema = z.object({
+  intent: IntentSchema,
+  confidence: z.number().min(0).max(1),
+  subQuery: z.string().describe("The specific sub-query for this intent"),
+  reasoning: z.string().optional(),
+});
+
+export const MultiIntentClassificationSchema = z.object({
+  intents: z.array(MultiIntentItemSchema),
+  requiresMultipleAgents: z.boolean(),
+  primaryIntent: IntentSchema.optional(),
+});
+
+export type MultiIntentItem = z.infer<typeof MultiIntentItemSchema>;
+export type MultiIntentClassification = z.infer<
+  typeof MultiIntentClassificationSchema
+>;
+
+export const HandoffRequestSchema = z.object({
+  requestedAgent: IntentSchema,
+  reason: z.enum([
+    "out_of_scope",
+    "low_confidence",
+    "requires_expertise",
+    "user_request",
+    "incomplete_answer",
+  ]),
+  context: z.string().describe("Context to pass to the receiving agent"),
+  confidence: z.number().min(0).max(1).optional(),
+  partialAnswer: z.string().optional(),
+});
+
+export type HandoffRequest = z.infer<typeof HandoffRequestSchema>;
+
 export const AgentResponseSchema = z.object({
   answer: z.string(),
   sources: z.array(
@@ -93,9 +127,49 @@ export const AgentResponseSchema = z.object({
       totalMs: z.number(),
     }),
   }),
+  handoffRequest: z
+    .object({
+      requestedAgent: IntentSchema,
+      reason: z.string(),
+      context: z.string(),
+      confidence: z.number().min(0).max(1).optional(),
+      partialAnswer: z.string().optional(),
+    })
+    .optional(),
+  confidence: z.number().min(0).max(1).optional(),
 });
 
 export type AgentResponse = z.infer<typeof AgentResponseSchema>;
+
+export const MergedResponseSchema = z.object({
+  answer: z.string(),
+  sources: z.array(
+    z.object({
+      intent: IntentSchema,
+      agent: z.string(),
+      sources: z.array(
+        z.object({
+          id: z.string(),
+          text: z.string(),
+          sourceId: z.string(),
+          metadata: z.record(z.string(), z.unknown()).optional(),
+        }),
+      ),
+    }),
+  ),
+  metadata: z.object({
+    agents: z.array(z.string()),
+    intents: z.array(IntentSchema),
+    mergeStrategy: z.enum(["concatenation", "llm_synthesis", "structured"]),
+    timings: z.object({
+      executionMs: z.number(),
+      mergeMs: z.number(),
+      totalMs: z.number(),
+    }),
+  }),
+});
+
+export type MergedResponse = z.infer<typeof MergedResponseSchema>;
 
 export const StreamChunkSchema = z.object({
   type: z.enum(["start", "retrieval", "token", "end", "error"]),

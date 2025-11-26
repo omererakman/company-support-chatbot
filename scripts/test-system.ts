@@ -3,6 +3,7 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { processQuestion } from '../src/index.js';
 import { logger } from '../src/logger.js';
+import { flushLangfuse } from '../src/monitoring/langfuse.js';
 import path from 'path';
 
 interface TestQuery {
@@ -61,11 +62,16 @@ async function runTests() {
       
       allResponses.push(fullResponse);
 
+      const actualIntent = result.intent || result.intents?.[0] || "unknown";
+      const confidence = "confidence" in result.classification
+        ? result.classification.confidence
+        : result.classification.intents?.[0]?.confidence || 0.5;
+
       results.push({
         question: test.question,
         expectedIntent: test.expectedIntent,
-        actualIntent: result.intent,
-        confidence: result.classification.confidence,
+        actualIntent,
+        confidence,
         passed,
         evaluation: (result as any).evaluation,
       });
@@ -73,9 +79,9 @@ async function runTests() {
       logger.info(
         {
           expected: test.expectedIntent,
-          actual: result.intent,
+          actual: actualIntent,
           passed,
-          confidence: result.classification.confidence,
+          confidence,
         },
         passed ? 'Test passed' : 'Test failed'
       );
@@ -131,6 +137,10 @@ async function runTests() {
   console.log('\n=== Test Results ===');
   console.log(JSON.stringify(results, null, 2));
   console.log(`\nAccuracy: ${accuracy.toFixed(2)}% (${passed}/${total})`);
+  
+  await flushLangfuse();
+  
+  process.exit(0);
 }
 
 runTests().catch((error) => {
