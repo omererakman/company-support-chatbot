@@ -24,13 +24,12 @@ function createChromaClient(
 }
 
 export async function createChromaVectorStore(
-  documents?: Document[],
-  collectionName?: string,
+  documents: Document[] | undefined,
+  collectionName: string,
 ): Promise<Chroma> {
   return trace("vectorstore.chroma.create", async () => {
     const config = getConfig();
     const embeddings = createEmbeddings();
-    const finalCollectionName = collectionName || config.chromaCollectionName;
 
     try {
       const client = createChromaClient(config);
@@ -39,15 +38,15 @@ export async function createChromaVectorStore(
         logger.debug(
           {
             documentCount: documents.length,
-            collectionName: finalCollectionName,
+            collectionName,
           },
           "Creating ChromaDB collection with documents",
         );
 
         try {
-          await client.deleteCollection({ name: finalCollectionName });
+          await client.deleteCollection({ name: collectionName });
           logger.debug(
-            { collectionName: finalCollectionName },
+            { collectionName },
             "Deleted existing ChromaDB collection",
           );
         } catch (error: unknown) {
@@ -65,17 +64,17 @@ export async function createChromaVectorStore(
         }
 
         return await Chroma.fromDocuments(documents, embeddings, {
-          collectionName: finalCollectionName,
+          collectionName,
           index: client,
         });
       } else {
         logger.debug(
-          { collectionName: finalCollectionName },
+          { collectionName },
           "Loading existing ChromaDB collection",
         );
 
         return await Chroma.fromExistingCollection(embeddings, {
-          collectionName: finalCollectionName,
+          collectionName,
           index: client,
         });
       }

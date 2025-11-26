@@ -310,7 +310,6 @@ EMBEDDING_MODEL=text-embedding-3-small
 VECTOR_STORE_TYPE=chromadb
 CHROMA_HOST=localhost
 CHROMA_PORT=8000
-CHROMA_COLLECTION_NAME=support_embeddings
 CHROMA_SSL=false
 CHROMA_API_KEY=              # Only needed for authenticated ChromaDB instances
 

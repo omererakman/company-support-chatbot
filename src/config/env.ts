@@ -12,7 +12,6 @@ const ConfigSchema = z.object({
   chunkOverlap: z.number().int().nonnegative().default(100),
   minChunks: z.number().int().positive().default(50),
   vectorStoreType: z.enum(["chromadb", "memory"]).default("memory"),
-  chromaCollectionName: z.string().default("support_embeddings"),
   chromaHost: z.string().default("localhost"),
   chromaPort: z.number().int().positive().default(8000),
   chromaSsl: z.boolean().default(false),
@@ -56,7 +55,6 @@ export function loadConfig(): Config {
         ? parseInt(process.env.MIN_CHUNKS, 10)
         : undefined,
       vectorStoreType: process.env.VECTOR_STORE_TYPE,
-      chromaCollectionName: process.env.CHROMA_COLLECTION_NAME,
       chromaHost: process.env.CHROMA_HOST,
       chromaPort: process.env.CHROMA_PORT
         ? parseInt(process.env.CHROMA_PORT, 10)

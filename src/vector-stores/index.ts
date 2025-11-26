@@ -5,14 +5,13 @@ import { createChromaVectorStore } from "./chroma.js";
 import { createMemoryVectorStore } from "./memory.js";
 
 export async function createVectorStore(
-  documents?: Document[],
-  collectionName?: string,
+  documents: Document[] | undefined,
+  collectionName: string,
 ): Promise<VectorStore> {
   const config = getConfig();
-  const finalCollectionName = collectionName || config.chromaCollectionName;
 
   if (config.vectorStoreType === "chromadb") {
-    return await createChromaVectorStore(documents, finalCollectionName);
+    return await createChromaVectorStore(documents, collectionName);
   } else {
     return await createMemoryVectorStore(documents);
   }
