@@ -301,3 +301,54 @@ export async function withSpanContext<T>(
 ): Promise<T> {
   return runWithSpanContext(spanId, fn);
 }
+
+/**
+ * Trigger Langfuse native evaluation for a trace
+ * This triggers evaluations configured in the Langfuse UI to run asynchronously
+ */
+export async function triggerLangfuseEvaluation(
+  traceId: string,
+): Promise<void> {
+  const config = getConfig();
+  const client = getLangfuseClient();
+
+  if (!client || !config.langfuseEnabled || !config.langfuseEvaluationEnabled) {
+    logger.debug("Langfuse native evaluation not enabled or not configured");
+    return;
+  }
+
+  try {
+    // Trigger evaluation by creating an evaluation event
+    // Langfuse will pick up this trace and run configured evaluators
+    const eventId = `${Date.now()}-${Math.random().toString(36).substr(2, 9)}-${Math.random().toString(36).substr(2, 9)}`;
+    const timestamp = new Date().toISOString();
+
+    // Create a score event to trigger evaluation
+    // Langfuse evaluators will run based on trace metadata
+    const evaluationEvent: IngestionEvent.ScoreCreate = {
+      type: "score-create",
+      id: eventId,
+      timestamp,
+      body: {
+        id: `eval-trigger-${eventId}`,
+        traceId,
+        name: "evaluation_trigger",
+        value: 1,
+        comment: "Trigger for Langfuse native evaluation",
+      },
+    };
+
+    const request: IngestionRequest = {
+      batch: [evaluationEvent],
+    };
+
+    await client.ingestion.batch(request);
+
+    logger.debug({ traceId }, "Triggered Langfuse native evaluation for trace");
+  } catch (error) {
+    logger.error(
+      { error, traceId },
+      "Failed to trigger Langfuse native evaluation",
+    );
+  }
+}

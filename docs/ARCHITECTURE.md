@@ -22,6 +22,8 @@ User Query → Orchestrator → Intent Classification → Specialized Agent → 
 - **Conversation Memory**: Multi-turn conversation support
 - **Lazy Loading**: Agents initialized on-demand
 - **Observability**: Langfuse tracing and evaluation
+- **Quality Evaluation**: Automatic response quality scoring with clarification requests for low-quality answers
+- **Cross-Platform CLI**: Windows-compatible path handling for direct script execution
 
 ## Architecture Layers
 
@@ -179,6 +181,8 @@ Infrastructure (Vector Store, LLM, Embeddings, Memory)
 ┌─────────────────────────────────────┐
 │  Evaluator Agent (optional)         │
 │  ├─ Quality Scoring                 │
+│  ├─ Threshold Check                 │
+│  ├─ Clarification Request (if low) │
 │  └─ Score Recording (Langfuse)      │
 └─────────────────┬───────────────────┘
                   │
@@ -189,7 +193,8 @@ Infrastructure (Vector Store, LLM, Embeddings, Memory)
 │  ├─ Sources                         │
 │  ├─ Metadata                        │
 │  ├─ Handoff Chain (if occurred)     │
-│  └─ Evaluation (if enabled)         │
+│  ├─ Evaluation (if enabled)         │
+│  └─ Clarification (if quality low)  │
 └─────────────────┬───────────────────┘
                   │
                   ▼
@@ -383,9 +388,15 @@ Infrastructure (Vector Store, LLM, Embeddings, Memory)
 - LangChain middleware pattern
 
 ### Observability
-- Langfuse: Distributed tracing, score tracking
+- Langfuse: Distributed tracing, score tracking, native evaluation triggers
 - Structured logging (Pino)
 - Metrics: Operation counts, timings, error rates
+
+### Quality Evaluation
+- Automatic response quality scoring (relevance, completeness, accuracy, overall)
+- Configurable thresholds (`EVALUATION_MIN_OVERALL`, `EVALUATION_MIN_DIMENSION`)
+- Clarification requests when quality falls below thresholds
+- Langfuse native evaluation integration
 
 #### Langfuse Tracing
 

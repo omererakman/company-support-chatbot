@@ -4,18 +4,25 @@ import "./utils/suppress-chroma-warnings.js";
 
 import { fileURLToPath } from "url";
 import { initializeAgents } from "./orchestrator/index.js";
-import { evaluateResponse, recordScore } from "./evaluator/index.js";
+import {
+  evaluateResponse,
+  recordScore,
+  generateClarificationRequest,
+} from "./evaluator/index.js";
 import {
   createTrace,
   flushLangfuse,
   withTraceContext,
+  triggerLangfuseEvaluation,
 } from "./monitoring/langfuse.js";
 import { logger } from "./logger.js";
+import { getConfig } from "./config/index.js";
 
 export async function processQuestion(
   question: string,
   enableEvaluation = false,
 ) {
+  const config = getConfig();
   const langfuseTrace = await createTrace("multi_agent_query", { question });
   const traceId = langfuseTrace?.id;
 
@@ -23,6 +30,8 @@ export async function processQuestion(
     try {
       const orchestrator = await initializeAgents();
       const result = await orchestrator.process(question);
+
+      // Evaluate quality if enabled
       if (enableEvaluation) {
         const sources =
           "sources" in result.agentResponse ? result.agentResponse.sources : [];
@@ -39,13 +48,53 @@ export async function processQuestion(
               .filter(Boolean)
               .join("\n\n")
           : "";
+
         const evaluation = await evaluateResponse({
           question,
           answer: result.agentResponse.answer,
           context,
         });
+
+        // Check if clarification needed (only if evaluation is enabled in config)
+        if (config.evaluationEnabled) {
+          const clarificationRequest = generateClarificationRequest(
+            evaluation,
+            question,
+            {
+              minOverall: config.evaluationMinOverall,
+              minDimension: config.evaluationMinDimension,
+            },
+          );
+
+          logger.info(
+            {
+              overall: evaluation.overall,
+              relevance: evaluation.relevance,
+              completeness: evaluation.completeness,
+              accuracy: evaluation.accuracy,
+              needsClarification: clarificationRequest.needsClarification,
+            },
+            clarificationRequest.needsClarification
+              ? "Quality check: clarification needed"
+              : "Quality check passed",
+          );
+
+          return {
+            ...result,
+            evaluation,
+            clarification: clarificationRequest.needsClarification
+              ? {
+                  prompt: clarificationRequest.clarificationPrompt,
+                  suggestions: clarificationRequest.suggestedClarifications,
+                  reason: clarificationRequest.reason,
+                }
+              : undefined,
+          };
+        }
+
         return { ...result, evaluation };
       }
+
       return result;
     } catch (error) {
       logger.error({ error, question }, "Failed to process question");
@@ -56,11 +105,13 @@ export async function processQuestion(
   }
 
   try {
+    // Process question with Langfuse tracing
     const result = await withTraceContext(traceId, async () => {
       const orchestrator = await initializeAgents();
       return await orchestrator.process(question);
     });
 
+    // Evaluate quality if enabled
     if (enableEvaluation) {
       const sources =
         "sources" in result.agentResponse ? result.agentResponse.sources : [];
@@ -85,6 +136,40 @@ export async function processQuestion(
         });
       });
 
+      // Check if clarification needed (only if evaluation is enabled in config)
+      let clarificationData;
+      if (config.evaluationEnabled) {
+        const clarificationRequest = generateClarificationRequest(
+          evaluation,
+          question,
+          {
+            minOverall: config.evaluationMinOverall,
+            minDimension: config.evaluationMinDimension,
+          },
+        );
+
+        logger.info(
+          {
+            overall: evaluation.overall,
+            relevance: evaluation.relevance,
+            completeness: evaluation.completeness,
+            accuracy: evaluation.accuracy,
+            needsClarification: clarificationRequest.needsClarification,
+          },
+          clarificationRequest.needsClarification
+            ? "Quality check: clarification needed"
+            : "Quality check passed",
+        );
+
+        clarificationData = clarificationRequest.needsClarification
+          ? {
+              prompt: clarificationRequest.clarificationPrompt,
+              suggestions: clarificationRequest.suggestedClarifications,
+              reason: clarificationRequest.reason,
+            }
+          : undefined;
+      }
+
       const confidence =
         "confidence" in result.classification
           ? result.classification.confidence
@@ -100,12 +185,17 @@ export async function processQuestion(
               ? result.routedTo
               : result.routedTo[0] || "unknown",
           confidence,
+          clarification: clarificationData,
         },
       });
+
+      // Trigger Langfuse native evaluation if enabled
+      await triggerLangfuseEvaluation(traceId);
 
       return {
         ...result,
         evaluation,
+        clarification: clarificationData,
       };
     }
 

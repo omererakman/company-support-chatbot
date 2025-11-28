@@ -11,12 +11,35 @@ import {
   flushLangfuse,
   withTraceContext,
 } from "../monitoring/langfuse.js";
+import {
+  evaluateResponse,
+  generateClarificationRequest,
+} from "../evaluator/index.js";
+import { getConfig } from "../config/index.js";
+
+/**
+ * Helper function to extract context from sources
+ */
+function extractContext(sources: unknown): string {
+  if (!Array.isArray(sources)) return "";
+
+  return sources
+    .map((s: { text?: string; sources?: Array<{ text: string }> }) => {
+      if (s.sources && Array.isArray(s.sources)) {
+        return s.sources.map((src) => src.text).join("\n");
+      }
+      return s.text || "";
+    })
+    .filter(Boolean)
+    .join("\n\n");
+}
 
 async function processQuestionWithMemory(
   orchestrator: OrchestratorAgent,
   question: string,
   sessionId: string,
 ) {
+  const config = getConfig();
   const langfuseTrace = await createTrace("conversational_query", {
     question,
     sessionId,
@@ -30,6 +53,35 @@ async function processQuestionWithMemory(
           return await orchestrator.process(question, memory);
         })
       : await orchestrator.process(question, memory);
+
+    // Evaluate quality if enabled
+    if (config.evaluationEnabled) {
+      const sources =
+        "sources" in result.agentResponse ? result.agentResponse.sources : [];
+      const context = extractContext(sources);
+
+      const evaluation = await evaluateResponse({
+        question,
+        answer: result.agentResponse.answer,
+        context,
+      });
+
+      // Check if clarification needed
+      const clarificationRequest = generateClarificationRequest(
+        evaluation,
+        question,
+        {
+          minOverall: config.evaluationMinOverall,
+          minDimension: config.evaluationMinDimension,
+        },
+      );
+
+      return {
+        ...result,
+        evaluation,
+        clarification: clarificationRequest,
+      };
+    }
 
     return result;
   } catch (error) {
@@ -284,6 +336,37 @@ export async function startConversation() {
         sessionId,
       );
       hideLoading();
+
+      // Check if clarification is needed
+      const resultWithClarification = result as typeof result & {
+        clarification?: {
+          needsClarification: boolean;
+          clarificationPrompt?: string;
+          suggestedClarifications?: string[];
+        };
+      };
+
+      if (resultWithClarification.clarification?.needsClarification) {
+        console.log("\n⚠️  Quality Notice:");
+        console.log("─".repeat(60));
+        console.log(resultWithClarification.clarification.clarificationPrompt);
+
+        if (resultWithClarification.clarification.suggestedClarifications) {
+          console.log("\nSuggestions:");
+          resultWithClarification.clarification.suggestedClarifications.forEach(
+            (suggestion: string) => {
+              console.log(`  • ${suggestion}`);
+            },
+          );
+        }
+
+        console.log("─".repeat(60));
+        console.log(
+          "\n💡 Tip: Try rephrasing your question with more details.\n",
+        );
+      }
+
+      // Still show the answer
       displayResponse(result);
     } catch (error) {
       hideLoading();

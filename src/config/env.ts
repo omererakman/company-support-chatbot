@@ -29,10 +29,14 @@ const ConfigSchema = z.object({
   langfuseSecretKey: z.string().optional(),
   langfuseHost: z.string().default("https://cloud.langfuse.com"),
   langfuseEnabled: z.boolean().default(false),
+  langfuseEvaluationEnabled: z.boolean().default(false),
   cacheEnabled: z.boolean().default(true),
   cacheTtl: z.number().int().positive().default(3600),
   memoryType: z.enum(["buffer", "summary", "none"]).default("buffer"),
   memoryMaxTokens: z.number().int().positive().default(2000),
+  evaluationEnabled: z.boolean().default(true),
+  evaluationMinOverall: z.number().min(1).max(10).default(7),
+  evaluationMinDimension: z.number().min(1).max(10).default(6),
 });
 
 export type Config = z.infer<typeof ConfigSchema>;
@@ -74,6 +78,8 @@ export function loadConfig(): Config {
       langfuseSecretKey: process.env.LANGFUSE_SECRET_KEY,
       langfuseHost: process.env.LANGFUSE_HOST,
       langfuseEnabled: process.env.LANGFUSE_ENABLED !== "false",
+      langfuseEvaluationEnabled:
+        process.env.LANGFUSE_EVALUATION_ENABLED === "true",
       cacheEnabled: process.env.CACHE_ENABLED !== "false",
       cacheTtl: process.env.CACHE_TTL
         ? parseInt(process.env.CACHE_TTL, 10)
@@ -85,6 +91,13 @@ export function loadConfig(): Config {
         | undefined,
       memoryMaxTokens: process.env.MEMORY_MAX_TOKENS
         ? parseInt(process.env.MEMORY_MAX_TOKENS, 10)
+        : undefined,
+      evaluationEnabled: process.env.EVALUATION_ENABLED !== "false",
+      evaluationMinOverall: process.env.EVALUATION_MIN_OVERALL
+        ? parseFloat(process.env.EVALUATION_MIN_OVERALL)
+        : undefined,
+      evaluationMinDimension: process.env.EVALUATION_MIN_DIMENSION
+        ? parseFloat(process.env.EVALUATION_MIN_DIMENSION)
         : undefined,
     };
 

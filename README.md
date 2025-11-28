@@ -289,6 +289,12 @@ LANGFUSE_ENABLED=false
 LANGFUSE_PUBLIC_KEY=pk-lf-xxx
 LANGFUSE_SECRET_KEY=sk-lf-xxx
 LANGFUSE_HOST=https://cloud.langfuse.com
+LANGFUSE_EVALUATION_ENABLED=false  # Enable Langfuse native evaluation triggers
+
+# Evaluation (OPTIONAL - has defaults)
+EVALUATION_ENABLED=true            # Enable quality evaluation with clarification requests
+EVALUATION_MIN_OVERALL=7           # Minimum overall quality score (1-10)
+EVALUATION_MIN_DIMENSION=6         # Minimum score per dimension (1-10)
 
 # LLM Configuration (OPTIONAL - has defaults)
 LLM_MODEL=gpt-4o-mini

@@ -44,6 +44,127 @@ export interface EvaluationInput {
   context: string; // Context sources as formatted string
 }
 
+export interface QualityThresholds {
+  minOverall: number;
+  minDimension: number;
+}
+
+export interface ClarificationRequest {
+  needsClarification: boolean;
+  clarificationPrompt?: string;
+  suggestedClarifications?: string[];
+  reason?:
+    | "low_relevance"
+    | "low_completeness"
+    | "low_accuracy"
+    | "low_overall";
+  evaluation: Evaluation;
+}
+
+/**
+ * Checks if an evaluation meets quality thresholds
+ */
+export function isQualityAcceptable(
+  evaluation: Evaluation,
+  thresholds: QualityThresholds,
+): boolean {
+  // Check overall score
+  if (evaluation.overall < thresholds.minOverall) {
+    logger.debug(
+      {
+        overall: evaluation.overall,
+        threshold: thresholds.minOverall,
+      },
+      "Quality check failed: overall score below threshold",
+    );
+    return false;
+  }
+
+  // Check individual dimensions
+  if (
+    evaluation.relevance < thresholds.minDimension ||
+    evaluation.completeness < thresholds.minDimension ||
+    evaluation.accuracy < thresholds.minDimension
+  ) {
+    logger.debug(
+      {
+        relevance: evaluation.relevance,
+        completeness: evaluation.completeness,
+        accuracy: evaluation.accuracy,
+        threshold: thresholds.minDimension,
+      },
+      "Quality check failed: dimension score below threshold",
+    );
+    return false;
+  }
+
+  return true;
+}
+
+/**
+ * Generates a clarification request based on evaluation quality
+ */
+export function generateClarificationRequest(
+  evaluation: Evaluation,
+  question: string,
+  thresholds: QualityThresholds,
+): ClarificationRequest {
+  const isQualityPoor = !isQualityAcceptable(evaluation, thresholds);
+
+  if (!isQualityPoor) {
+    return {
+      needsClarification: false,
+      evaluation,
+    };
+  }
+
+  // Determine primary issue by checking which dimension is lowest
+  if (evaluation.relevance < thresholds.minDimension) {
+    return {
+      needsClarification: true,
+      reason: "low_relevance",
+      clarificationPrompt: `Your question "${question}" was unclear. Could you provide more specific details about what you're asking?`,
+      suggestedClarifications: [
+        "Which specific topic or area are you asking about?",
+        "What specific information do you need?",
+      ],
+      evaluation,
+    };
+  }
+
+  if (evaluation.completeness < thresholds.minDimension) {
+    return {
+      needsClarification: true,
+      reason: "low_completeness",
+      clarificationPrompt: `I may not have enough information to fully answer your question. Could you clarify what additional details you need?`,
+      evaluation,
+    };
+  }
+
+  if (evaluation.accuracy < thresholds.minDimension) {
+    return {
+      needsClarification: true,
+      reason: "low_accuracy",
+      clarificationPrompt: `I'm not confident in the accuracy of this answer. Could you rephrase your question or provide more context?`,
+      evaluation,
+    };
+  }
+
+  if (evaluation.overall < thresholds.minOverall) {
+    return {
+      needsClarification: true,
+      reason: "low_overall",
+      clarificationPrompt: `I'm not confident I understood your question correctly. Could you rephrase it or provide more details?`,
+      evaluation,
+    };
+  }
+
+  return {
+    needsClarification: false,
+    evaluation,
+  };
+}
+
 /**
  * Evaluates the quality of an agent response
  */
