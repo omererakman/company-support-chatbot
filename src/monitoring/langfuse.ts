@@ -218,7 +218,7 @@ export async function createSpan(
       type: "observation-create",
       id: eventId,
       timestamp,
-      body: spanBody as IngestionEvent.ObservationCreate["body"],
+      body: spanBody as unknown as IngestionEvent.ObservationCreate["body"],
     };
 
     const request: IngestionRequest = {

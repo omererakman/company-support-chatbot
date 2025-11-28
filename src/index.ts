@@ -19,30 +19,39 @@ export async function processQuestion(
   const traceId = langfuseTrace?.id;
 
   if (!traceId) {
-    const orchestrator = await initializeAgents();
-    const result = await orchestrator.process(question);
-    if (enableEvaluation) {
-      const sources =
-        "sources" in result.agentResponse ? result.agentResponse.sources : [];
-      const context = Array.isArray(sources)
-        ? sources
-            .map((s: { text?: string; sources?: Array<{ text: string }> }) => {
-              if (s.sources && Array.isArray(s.sources)) {
-                return s.sources.map((src) => src.text).join("\n");
-              }
-              return s.text || "";
-            })
-            .filter(Boolean)
-            .join("\n\n")
-        : "";
-      const evaluation = await evaluateResponse({
-        question,
-        answer: result.agentResponse.answer,
-        context,
-      });
-      return { ...result, evaluation };
+    try {
+      const orchestrator = await initializeAgents();
+      const result = await orchestrator.process(question);
+      if (enableEvaluation) {
+        const sources =
+          "sources" in result.agentResponse ? result.agentResponse.sources : [];
+        const context = Array.isArray(sources)
+          ? sources
+              .map(
+                (s: { text?: string; sources?: Array<{ text: string }> }) => {
+                  if (s.sources && Array.isArray(s.sources)) {
+                    return s.sources.map((src) => src.text).join("\n");
+                  }
+                  return s.text || "";
+                },
+              )
+              .filter(Boolean)
+              .join("\n\n")
+          : "";
+        const evaluation = await evaluateResponse({
+          question,
+          answer: result.agentResponse.answer,
+          context,
+        });
+        return { ...result, evaluation };
+      }
+      return result;
+    } catch (error) {
+      logger.error({ error, question }, "Failed to process question");
+      throw error;
+    } finally {
+      await flushLangfuse();
     }
-    return result;
   }
 
   try {
@@ -171,13 +180,15 @@ if (import.meta.url === `file://${process.argv[1]}`) {
 
   processQuestion(question, true)
     .then(async (result) => {
-      console.log(JSON.stringify(result, null, 2));
-      await flushLangfuse();
-      process.exit(0);
+      const output = JSON.stringify(result, null, 2);
+      process.stdout.write(output + "\n", () => {
+        process.exit(0);
+      });
     })
     .catch(async (error) => {
-      console.error("Error:", error.message);
-      await flushLangfuse();
-      process.exit(1);
+      const errorOutput = "Error: " + error.message;
+      process.stderr.write(errorOutput + "\n", () => {
+        process.exit(1);
+      });
     });
 }

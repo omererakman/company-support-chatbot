@@ -98,18 +98,8 @@ This will:
 - Load documents from each domain directory
 - Split them into chunks (800 tokens per chunk, 100 token overlap)
 - Generate embeddings
-- Store in vector stores (ChromaDB or Memory)
+- Store in vector stores ([ChromaDB](#chromadb-setup) or Memory)
 - **Log chunk counts per domain** - verify each domain has 50+ chunks
-
-**Expected Output:**
-The build process will log chunk counts for each domain and validate they meet the minimum requirement. Example:
-```
-{ domain: 'hr_docs', chunkCount: 62, minRequired: 50 } 'Domain 'hr_docs' has 62 chunks (required: 50) ✓'
-{ domain: 'it_docs', chunkCount: 68, minRequired: 50 } 'Domain 'it_docs' has 68 chunks (required: 50) ✓'
-{ domain: 'finance_docs', chunkCount: 55, minRequired: 50 } 'Domain 'finance_docs' has 55 chunks (required: 50) ✓'
-{ domain: 'legal_docs', chunkCount: 65, minRequired: 50 } 'Domain 'legal_docs' has 65 chunks (required: 50) ✓'
-All indexes built successfully
-```
 
 **Validation:**
 - The build process automatically validates that each domain has at least 50 chunks (configurable via `MIN_CHUNKS`)
