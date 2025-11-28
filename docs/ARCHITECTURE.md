@@ -408,13 +408,13 @@ Langfuse provides comprehensive distributed tracing for the entire query process
 - Evaluation scores and quality metrics
 
 **Single Topic Query Tracing:**
-![Single Topic Tracing](langfuse_single_topic.png)
+![Single Topic Tracing](images/langfuse_single_topic.png)
 
 **Multi-Topic Query Tracing:**
-![Multi-Topic Tracing](langfuse_multi_topic.png)
+![Multi-Topic Tracing](images/langfuse_multi_topic.png)
 
 **Conversation with Single Topic:**
-![Conversation Single Topic](langfuse_conversation_single_topic.png)
+![Conversation Single Topic](images/langfuse_conversation_single_topic.png)
 
 ## Configuration
 
