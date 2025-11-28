@@ -43,84 +43,84 @@ Infrastructure (Vector Store, LLM, Embeddings, Memory)
 ┌─────────────────────────────────────────────────────────────┐
 │                      Entry Points                           │
 ├─────────────────────────────────────────────────────────────┤
-│  index.ts (CLI)  │  conversation.ts (Interactive)         │
+│  index.ts (CLI)  │  conversation.ts (Interactive)           │
 └─────────────────────────────────────────────────────────────┘
                             │
                             ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                    Orchestrator Layer                        │
+│                    Orchestrator Layer                       │
 ├─────────────────────────────────────────────────────────────┤
-│  ┌──────────────────┐  ┌──────────────────┐             │
-│  │ OrchestratorAgent │  │ classifyIntent()   │             │
-│  │                  │  │ classifyMultiIntent│             │
-│  └────────┬─────────┘  └────────┬──────────┘             │
-│           │                      │                          │
-│           │  ┌──────────────────┴──────────┐             │
-│           │  │ HandoffChain                 │             │
-│           │  └───────────────────────────────┘             │
-│           │  ┌───────────────────────────────┐             │
-│           └──│ ResultMerger                  │             │
-│              └───────────────────────────────┘             │
+│  ┌──────────────────┐  ┌──────────────────────┐             │
+│  │ OrchestratorAgent│  │ classifyIntent()     │             │
+│  │                  │  │ classifyMultiIntent()│             │
+│  └────────┬─────────┘  └──────────┬───────────┘             │
+│           │                        │                        │
+│           │  ┌─────────────────────┴──────────┐             │
+│           │  │ HandoffChain                   │             │
+│           │  └────────────────────────────────┘             │
+│           │  ┌────────────────────────────────┐             │
+│           └──│ ResultMerger                   │             │
+│              └────────────────────────────────┘             │
 └─────────────────────────────────────────────────────────────┘
                             │
                             ▼
 ┌─────────────────────────────────────────────────────────────┐
 │                      Agent Layer                            │
 ├─────────────────────────────────────────────────────────────┤
-│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐ │
-│  │HRAgent   │  │ITAgent   │  │Finance   │  │Legal     │ │
-│  │          │  │          │  │Agent     │  │Agent     │ │
-│  └────┬─────┘  └────┬─────┘  └────┬─────┘  └────┬─────┘ │
-│       │             │             │             │         │
-│       └─────────────┴─────────────┴─────────────┘         │
-│                    │                                       │
-│              ┌─────▼─────┐                                │
-│              │BaseAgent   │                                │
-│              └────────────┘                                │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐     │
+│  │HRAgent   │  │ITAgent   │  │Finance   │  │Legal     │     │
+│  │          │  │          │  │Agent     │  │Agent     │     │
+│  └────┬─────┘  └────┬─────┘  └────┬─────┘  └────┬─────┘     │
+│       │             │             │             │           │
+│       └─────────────┴─────────────┴─────────────┘           │
+│                    │                                        │
+│              ┌─────▼──────┐                                 │
+│              │BaseAgent   │                                 │
+│              └────────────┘                                 │
 └─────────────────────────────────────────────────────────────┘
                             │
                             ▼
 ┌─────────────────────────────────────────────────────────────┐
 │                    RAG Chain Layer                          │
 ├─────────────────────────────────────────────────────────────┤
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐    │
-│  │ Retriever    │→ │ Prompt       │→ │ LLM          │    │
-│  │ (Similarity/ │  │ Construction │  │ Generation   │    │
-│  │  MMR/Comp)   │  │              │  │              │    │
-│  └──────────────┘  └──────────────┘  └──────────────┘    │
-│         │                                                  │
-│         ▼                                                  │
-│  ┌──────────────┐                                         │
-│  │ Safety       │                                         │
-│  │ Middleware   │                                         │
-│  └──────────────┘                                         │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐       │
+│  │ Retriever    │→ │ Prompt       │→ │ LLM          │       │
+│  │ (Similarity/ │  │ Construction │  │ Generation   │       │
+│  │  MMR/Comp)   │  │              │  │              │       │
+│  └──────────────┘  └──────────────┘  └──────────────┘       │
+│                            │                                │
+│                            ▼                                │
+│                    ┌──────────────┐                         │
+│                    │ Safety       │                         │
+│                    │ Middleware   │                         │
+│                    └──────────────┘                         │
 └─────────────────────────────────────────────────────────────┘
                             │
                             ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                  Infrastructure Layer                        │
+│                  Infrastructure Layer                       │
 ├─────────────────────────────────────────────────────────────┤
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐   │
-│  │ Vector Store │  │ LLM Provider │  │ Embeddings   │   │
-│  │ (ChromaDB)   │  │ (OpenAI)     │  │ (OpenAI)     │   │
-│  └──────────────┘  └──────────────┘  └──────────────┘   │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐       │
+│  │ Vector Store │  │ LLM Provider │  │ Embeddings   │       │
+│  │ (ChromaDB)   │  │ (OpenAI)     │  │ (OpenAI)     │       │
+│  └──────────────┘  └──────────────┘  └──────────────┘       │
 │                                                             │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐   │
-│  │ Memory       │  │ Cache        │  │ Logger       │   │
-│  │ (Buffer/     │  │ (In-Memory)  │  │ (Pino)       │   │
-│  │  Summary)    │  │              │  │              │   │
-│  └──────────────┘  └──────────────┘  └──────────────┘   │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐       │
+│  │ Memory       │  │ Cache        │  │ Logger       │       │
+│  │ (Buffer/     │  │ (In-Memory)  │  │ (Pino)       │       │
+│  │  Summary)    │  │              │  │              │       │
+│  └──────────────┘  └──────────────┘  └──────────────┘       │
 └─────────────────────────────────────────────────────────────┘
                             │
                             ▼
 ┌─────────────────────────────────────────────────────────────┐
 │                  Observability Layer                        │
 ├─────────────────────────────────────────────────────────────┤
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐   │
-│  │ Langfuse     │  │ Callbacks    │  │ Metrics      │   │
-│  │ (Tracing)    │  │ (Auto-trace) │  │ (Counts/     │   │
-│  │              │  │              │  │  Timings)    │   │
-│  └──────────────┘  └──────────────┘  └──────────────┘   │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐       │
+│  │ Langfuse     │  │ Callbacks    │  │ Metrics      │       │
+│  │ (Tracing)    │  │ (Auto-trace) │  │ (Counts/     │       │
+│  │              │  │              │  │  Timings)    │       │
+│  └──────────────┘  └──────────────┘  └──────────────┘       │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -139,62 +139,62 @@ Infrastructure (Vector Store, LLM, Embeddings, Memory)
 │  ├─ Content Moderation              │
 │  ├─ PII Detection & Redaction       │
 │  └─ Injection Detection             │
-└──────┬──────────────────────────────┘
-       │
-       ▼
+└─────────────────┬───────────────────┘
+                  │
+                  ▼
 ┌─────────────────────────────────────┐
 │  Orchestrator Agent                 │
-│  ├─ Intent Classification          │
-│  │  └─ LLM (structured output)     │
-│  ├─ Confidence Calculation         │
-│  └─ Agent Selection                │
-└──────┬──────────────────────────────┘
-       │
-       ▼
+│  ├─ Intent Classification           │
+│  │  └─ LLM (structured output)      │
+│  ├─ Confidence Calculation          │
+│  └─ Agent Selection                 │
+└─────────────────┬───────────────────┘
+                  │
+                  ▼
 ┌─────────────────────────────────────┐
-│  Specialized Agent (e.g., HR)     │
-│  ├─ Retrieve Documents             │
-│  │  └─ Vector Search (topK=5)      │
-│  ├─ Context Compression (optional) │
-│  ├─ Prompt Construction            │
-│  └─ LLM Generation                 │
-└──────┬──────────────────────────────┘
-       │
-       ▼
+│  Specialized Agent (e.g., HR)       │
+│  ├─ Retrieve Documents              │
+│  │  └─ Vector Search (topK=5)       │
+│  ├─ Context Compression (optional)  │
+│  ├─ Prompt Construction             │
+│  └─ LLM Generation                  │
+└─────────────────┬───────────────────┘
+                  │
+                  ▼
 ┌─────────────────────────────────────┐
-│  Handoff Check                     │
-│  ├─ Handoff Request?               │
-│  │  ├─ Yes → HandoffChain          │
-│  │  └─ No → Continue               │
-└──────┬──────────────────────────────┘
-       │
-       ▼
+│  Handoff Check                      │
+│  ├─ Handoff Request?                │
+│  │  ├─ Yes → HandoffChain           │
+│  │  └─ No → Continue                │
+└─────────────────┬───────────────────┘
+                  │
+                  ▼
 ┌─────────────────────────────────────┐
 │  Safety Middleware (Output Check)   │
-│  ├─ Content Moderation (optional)  │
+│  ├─ Content Moderation (optional)   │
 │  └─ PII Detection (optional)        │
-└──────┬──────────────────────────────┘
-       │
-       ▼
+└─────────────────┬───────────────────┘
+                  │
+                  ▼
 ┌─────────────────────────────────────┐
 │  Evaluator Agent (optional)         │
-│  ├─ Quality Scoring                │
+│  ├─ Quality Scoring                 │
 │  └─ Score Recording (Langfuse)      │
-└──────┬──────────────────────────────┘
-       │
-       ▼
+└─────────────────┬───────────────────┘
+                  │
+                  ▼
 ┌─────────────────────────────────────┐
 │  Response Formatting                │
 │  ├─ Answer                          │
 │  ├─ Sources                         │
 │  ├─ Metadata                        │
-│  ├─ Handoff Chain (if occurred)    │
-│  └─ Evaluation (if enabled)        │
-└──────┬──────────────────────────────┘
-       │
-       ▼
+│  ├─ Handoff Chain (if occurred)     │
+│  └─ Evaluation (if enabled)         │
+└─────────────────┬───────────────────┘
+                  │
+                  ▼
 ┌─────────────┐
-│   Response  │
+│  Response   │
 └─────────────┘
 ```
 
@@ -208,27 +208,27 @@ Infrastructure (Vector Store, LLM, Embeddings, Memory)
        ▼
 ┌─────────────────────────────────────┐
 │  Safety Middleware (Input Check)    │
-└──────┬──────────────────────────────┘
-       │
-       ▼
+└─────────────────┬───────────────────┘
+                  │
+                  ▼
 ┌─────────────────────────────────────┐
 │  Orchestrator Agent                 │
 │  ├─ Multi-Intent Classification     │
 │  ├─ Sub-Query Generation            │
 │  │  ├─ Intent 1: "HR benefits?"     │
-│  │  └─ Intent 2: "Reset password?" │
+│  │  └─ Intent 2: "Reset password?"  │
 │  └─ Multiple Agent Selection        │
-└──────┬──────────────────────────────┘
-       │
-       ▼
+└─────────────────┬───────────────────┘
+                  │
+                  ▼
 ┌─────────────────────────────────────┐
 │  Parallel Execution                 │
 │  (RunnableParallel)                 │
-│  ┌──────────┐      ┌──────────┐    │
-│  │ HRAgent  │      │ ITAgent  │    │
-│  │          │      │          │    │
-│  │ Response │      │ Response │    │
-│  └────┬─────┘      └────┬─────┘    │
+│  ┌──────────┐      ┌──────────┐     │
+│  │ HRAgent  │      │ ITAgent  │     │
+│  │          │      │          │     │
+│  │ Response │      │ Response │     │
+│  └────┬─────┘      └────┬─────┘     │
 │       │                 │           │
 │       └────────┬────────┘           │
 │                │                    │
@@ -239,34 +239,34 @@ Infrastructure (Vector Store, LLM, Embeddings, Memory)
 │  Result Merger                      │
 │  ├─ Strategy Selection              │
 │  │  ├─ Concatenation (fast)         │
-│  │  ├─ LLM Synthesis (coherent)    │
-│  │  └─ Structured (organized)      │
+│  │  ├─ LLM Synthesis (coherent)     │
+│  │  └─ Structured (organized)       │
 │  ├─ Response Combination            │
 │  └─ Source Aggregation              │
-└──────┬──────────────────────────────┘
-       │
-       ▼
+└─────────────────┬───────────────────┘
+                  │
+                  ▼
 ┌─────────────────────────────────────┐
 │  Safety Middleware (Output Check)   │
-└──────┬──────────────────────────────┘
-       │
-       ▼
+└─────────────────┬───────────────────┘
+                  │
+                  ▼
 ┌─────────────────────────────────────┐
 │  Evaluator Agent (optional)         │
-└──────┬──────────────────────────────┘
-       │
-       ▼
+└─────────────────┬───────────────────┘
+                  │
+                  ▼
 ┌─────────────────────────────────────┐
 │  Merged Response                    │
 │  ├─ Combined Answer                 │
 │  ├─ Sources (grouped by intent)     │
 │  ├─ Metadata (agents, intents)      │
-│  └─ Evaluation (if enabled)        │
-└──────┬──────────────────────────────┘
-       │
-       ▼
+│  └─ Evaluation (if enabled)         │
+└─────────────────┬───────────────────┘
+                  │
+                  ▼
 ┌─────────────┐
-│   Response  │
+│  Response   │
 └─────────────┘
 ```
 
@@ -274,46 +274,46 @@ Infrastructure (Vector Store, LLM, Embeddings, Memory)
 
 ```
 ┌─────────────────────────────────────┐
-│  Initial Agent Processing          │
-│  (e.g., HRAgent)                   │
-│  ├─ Query received                 │
-│  ├─ Determines needs LegalAgent    │
-│  └─ Returns handoffRequest        │
-└──────┬──────────────────────────────┘
-       │
-       ▼
+│  Initial Agent Processing           │
+│  (e.g., HRAgent)                    │
+│  ├─ Query received                  │
+│  ├─ Determines needs LegalAgent     │
+│  └─ Returns handoffRequest          │
+└─────────────────┬───────────────────┘
+                  │
+                  ▼
 ┌─────────────────────────────────────┐
-│  HandoffChain Processing             │
+│  HandoffChain Processing            │
 │  ├─ Validate handoff                │
 │  │  ├─ Prevent loops                │
 │  │  └─ Check max depth (default: 2) │
 │  ├─ Build handoff context           │
 │  │  ├─ Original query               │
-│  │  └─ Agent A's partial response  │
+│  │  └─ Agent A's partial response   │
 │  └─ Route to Agent B                │
-└──────┬──────────────────────────────┘
-       │
-       ▼
+└─────────────────┬───────────────────┘
+                  │
+                  ▼
 ┌─────────────────────────────────────┐
 │  Target Agent Processing            │
 │  (e.g., LegalAgent)                 │
 │  ├─ Receives handoff context        │
 │  ├─ Processes with full context     │
 │  └─ Returns complete response       │
-└──────┬──────────────────────────────┘
-       │
-       ▼
+└─────────────────┬───────────────────┘
+                  │
+                  ▼
 ┌─────────────────────────────────────┐
 │  Response Formatting                │
 │  ├─ Answer from Agent B             │
 │  ├─ handoffOccurred: true           │
 │  ├─ handoffChain: ["hr", "legal"]   │
 │  └─ Sources from both agents        │
-└──────┬──────────────────────────────┘
-       │
-       ▼
+└─────────────────┬───────────────────┘
+                  │
+                  ▼
 ┌─────────────┐
-│   Response  │
+│  Response   │
 └─────────────┘
 ```
 
