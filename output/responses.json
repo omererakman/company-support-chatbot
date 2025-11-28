@@ -11,25 +11,25 @@
     },
     "routedTo": "hr",
     "agentResponse": {
-      "answer": "The company's health insurance benefits include:\n\n- Coverage that begins on the first day of employment.\n- Three plan options: Basic, Standard, and Premium.\n- The company covers 80% of premiums for employees and 60% for dependents.\n- Deductibles range from $500 (Premium) to $2,000 (Basic).\n- Annual out-of-pocket maximums range from $3,000 to $6,000.\n- Coverage includes preventive care, emergency services, hospitalization, prescription drugs, mental health and substance abuse treatment, maternity and newborn care, and pediatric services.\n- The network includes 95% of providers nationwide, with out-of-network coverage available at a higher cost.",
+      "answer": "The company's health insurance benefits include:\n\n- Coverage begins on the first day of employment.\n- Three plan options: Basic, Standard, and Premium.\n- The company covers 80% of premiums for employees and 60% for dependents.\n- Deductibles range from $500 (Premium) to $2,000 (Basic).\n- Annual out-of-pocket maximums range from $3,000 to $6,000.\n- Coverage includes preventive care, emergency services, hospitalization, prescription drugs, mental health and substance abuse treatment, maternity and newborn care, and pediatric services.\n- The network includes 95% of providers nationwide, with out-of-network coverage available at a higher cost.",
       "sources": [
         {
           "id": "chunk-0",
           "text": "HEALTH INSURANCE BENEFITS\n\nOur company offers comprehensive health insurance benefits to all full-time employees.\n\nMedical Insurance:\n- Coverage begins on the first day of employment\n- We offer three plan options: Basic, Standard, and Premium\n- The company covers 80% of premiums for employees and 60% for dependents\n- Deductibles range from $500 (Premium) to $2,000 (Basic)\n- Annual out-of-pocket maximums range from $3,000 to $6,000\n- Coverage includes preventive care, emergency services, hospitalization, prescription drugs\n- Mental health and substance abuse treatment covered\n- Maternity and newborn care included\n- Pediatric services covered\n- Network includes 95% of providers nationwide\n- Out-of-network coverage available (higher cost)",
           "sourceId": "/company-support-chatbot/data/hr_docs/benefits.txt",
           "metadata": {
+            "endCharStr": "745",
             "endChar": 745,
             "startChar": 0,
             "startCharStr": "0",
-            "endCharStr": "745",
             "loc": {
               "lines": {
                 "from": 1,
                 "to": 16
               }
             },
-            "similarityScore": 0.5446235,
-            "score": 0.5446235
+            "similarityScore": 0.5447129,
+            "score": 0.5447129
           }
         },
         {
@@ -38,17 +38,17 @@
           "sourceId": "/company-support-chatbot/data/hr_docs/benefits.txt",
           "metadata": {
             "endCharStr": "10421",
+            "startChar": 9698,
             "startCharStr": "9698",
             "endChar": 10421,
-            "startChar": 9698,
             "loc": {
               "lines": {
                 "from": 268,
                 "to": 290
               }
             },
-            "similarityScore": 0.9192007,
-            "score": 0.9192007
+            "similarityScore": 0.91918886,
+            "score": 0.91918886
           }
         },
         {
@@ -56,18 +56,18 @@
           "text": "Benefits Administration:\n- HR Benefits Team: benefits@company.com\n- Phone: Extension 1234\n- Benefits portal: Available 24/7\n- Annual open enrollment: November 1-15\n- Benefits guide: Available online and in print",
           "sourceId": "/company-support-chatbot/data/hr_docs/benefits.txt",
           "metadata": {
-            "endCharStr": "11416",
-            "endChar": 11416,
             "startCharStr": "11205",
             "startChar": 11205,
+            "endCharStr": "11416",
+            "endChar": 11416,
             "loc": {
               "lines": {
                 "from": 318,
                 "to": 323
               }
             },
-            "similarityScore": 0.92871785,
-            "score": 0.92871785
+            "similarityScore": 0.9287842,
+            "score": 0.9287842
           }
         },
         {
@@ -75,9 +75,9 @@
           "text": "Additional Perks:\n- Free snacks and beverages in office\n- Catered lunches: Twice per week\n- Company events: Quarterly team building\n- Holiday parties and celebrations\n- Employee recognition programs\n- Service awards: Milestone recognition\n- Referral program: $2,000 per successful hire\n\nBENEFITS ENROLLMENT\n\nNew Employee Enrollment:\n- Enrollment window: First 30 days of employment\n- Benefits effective: First day of employment (health) or first of month after 30 days\n- Online enrollment portal available\n- HR benefits orientation session\n- Benefits counselor available for questions\n\nQualifying Life Events:\n- Marriage or divorce\n- Birth or adoption of child\n- Death of spouse or dependent\n- Loss of other coverage\n- Change in spouse's employment\n- 30-day window to make changes",
           "sourceId": "/company-support-chatbot/data/hr_docs/benefits.txt",
           "metadata": {
-            "startCharStr": "10423",
             "endCharStr": "11203",
             "startChar": 10423,
+            "startCharStr": "10423",
             "endChar": 11203,
             "loc": {
               "lines": {
@@ -85,8 +85,8 @@
                 "to": 316
               }
             },
-            "similarityScore": 0.94507414,
-            "score": 0.94507414
+            "similarityScore": 0.94515216,
+            "score": 0.94515216
           }
         },
         {
@@ -104,8 +104,8 @@
                 "to": 82
               }
             },
-            "similarityScore": 1.0572724,
-            "score": 1.0572724
+            "similarityScore": 1.0573721,
+            "score": 1.0573721
           }
         }
       ],
@@ -114,17 +114,17 @@
         "model": "gpt-4o-mini",
         "tokenUsage": {
           "promptTokens": 757,
-          "completionTokens": 139,
-          "totalTokens": 896
+          "completionTokens": 138,
+          "totalTokens": 895
         },
         "timings": {
-          "retrievalMs": 315,
-          "llmGenerationMs": 3373,
-          "totalMs": 3688
+          "retrievalMs": 1499,
+          "llmGenerationMs": 3378,
+          "totalMs": 4877
         }
       },
-      "content": "The company's health insurance benefits include:\n\n- Coverage that begins on the first day of employment.\n- Three plan options: Basic, Standard, and Premium.\n- The company covers 80% of premiums for employees and 60% for dependents.\n- Deductibles range from $500 (Premium) to $2,000 (Basic).\n- Annual out-of-pocket maximums range from $3,000 to $6,000.\n- Coverage includes preventive care, emergency services, hospitalization, prescription drugs, mental health and substance abuse treatment, maternity and newborn care, and pediatric services.\n- The network includes 95% of providers nationwide, with out-of-network coverage available at a higher cost.",
-      "text": "The company's health insurance benefits include:\n\n- Coverage that begins on the first day of employment.\n- Three plan options: Basic, Standard, and Premium.\n- The company covers 80% of premiums for employees and 60% for dependents.\n- Deductibles range from $500 (Premium) to $2,000 (Basic).\n- Annual out-of-pocket maximums range from $3,000 to $6,000.\n- Coverage includes preventive care, emergency services, hospitalization, prescription drugs, mental health and substance abuse treatment, maternity and newborn care, and pediatric services.\n- The network includes 95% of providers nationwide, with out-of-network coverage available at a higher cost.",
+      "content": "The company's health insurance benefits include:\n\n- Coverage begins on the first day of employment.\n- Three plan options: Basic, Standard, and Premium.\n- The company covers 80% of premiums for employees and 60% for dependents.\n- Deductibles range from $500 (Premium) to $2,000 (Basic).\n- Annual out-of-pocket maximums range from $3,000 to $6,000.\n- Coverage includes preventive care, emergency services, hospitalization, prescription drugs, mental health and substance abuse treatment, maternity and newborn care, and pediatric services.\n- The network includes 95% of providers nationwide, with out-of-network coverage available at a higher cost.",
+      "text": "The company's health insurance benefits include:\n\n- Coverage begins on the first day of employment.\n- Three plan options: Basic, Standard, and Premium.\n- The company covers 80% of premiums for employees and 60% for dependents.\n- Deductibles range from $500 (Premium) to $2,000 (Basic).\n- Annual out-of-pocket maximums range from $3,000 to $6,000.\n- Coverage includes preventive care, emergency services, hospitalization, prescription drugs, mental health and substance abuse treatment, maternity and newborn care, and pediatric services.\n- The network includes 95% of providers nationwide, with out-of-network coverage available at a higher cost.",
       "_safety": {
         "outputChecked": true,
         "moderationResult": {
@@ -145,17 +145,17 @@
             "violence/graphic": false
           },
           "category_scores": {
-            "harassment": 2.8130174840733105e-7,
-            "harassment/threatening": 9.721546189381599e-8,
-            "sexual": 0.0000018342893327886845,
-            "hate": 4.356879983467376e-7,
+            "harassment": 3.089494448007139e-7,
+            "harassment/threatening": 1.0348531401872454e-7,
+            "sexual": 0.0000017231572752142392,
+            "hate": 4.78509449489012e-7,
             "hate/threatening": 4.450850519411503e-8,
             "illicit": 3.138146753575985e-7,
             "illicit/violent": 1.4144759985825914e-7,
-            "self-harm/intent": 2.9023119852110973e-7,
-            "self-harm/instructions": 1.2482708949986417e-7,
-            "self-harm": 5.77192003016332e-7,
-            "sexual/minors": 1.7061832388634166e-7,
+            "self-harm/intent": 2.994440981371515e-7,
+            "self-harm/instructions": 1.370957206857845e-7,
+            "self-harm": 6.048918580418918e-7,
+            "sexual/minors": 1.816222403812674e-7,
             "violence": 7.411279871974134e-7,
             "violence/graphic": 2.2603242979035749e-7
           }
@@ -171,7 +171,7 @@
       "completeness": 10,
       "accuracy": 10,
       "overall": 10,
-      "reasoning": "The answer is highly relevant as it directly addresses the question about the company's health insurance benefits. It is complete, providing detailed information about coverage, plan options, premium contributions, deductibles, out-of-pocket maximums, and types of services covered. Additionally, the information is accurate and aligns perfectly with the context provided."
+      "reasoning": "The answer is highly relevant as it directly addresses the question about the company's health insurance benefits. It is complete, providing detailed information about coverage, plan options, premiums, deductibles, out-of-pocket maximums, and the types of services covered. Additionally, the information is accurate, matching the context provided in the source material."
     }
   },
   {
@@ -186,16 +186,16 @@
     },
     "routedTo": "it",
     "agentResponse": {
-      "answer": "You can reset your password using one of the following methods:\n\n1. **Self-Service Password Reset**:\n   - Go to the company portal login page and click on the \"Forgot Password\" link.\n   - Enter your company email address and check your email for reset instructions.\n   - Follow the link in the email to create a new password.\n\n2. **Password Reset via Phone**:\n   - Call the IT Help Desk at extension 1234.\n   - Provide your employee ID and manager's name, and answer security questions for verification.\n   - IT will send a temporary password via email.\n\n3. **Password Reset via IT Portal** (if you have access):\n   - Log into the IT Support Portal and navigate to the \"Password Reset\" section.\n   - Select your account and verify your identity with security questions to receive a reset link via email.\n\nMake sure to follow the password requirements when creating a new password.",
+      "answer": "You can reset your password using one of the following methods:\n\n1. **Self-Service Password Reset:**\n   - Go to the company portal login page.\n   - Click on the \"Forgot Password\" link.\n   - Enter your company email address.\n   - Check your email for reset instructions.\n   - Click the reset link in the email (valid for 1 hour) and follow the instructions to create a new password.\n\n2. **Password Reset via Phone:**\n   - Call the IT Help Desk at extension 1234.\n   - Provide your employee ID and manager's name.\n   - Answer security questions for verification.\n   - IT will send a temporary password via email, which you should log in with and change immediately.\n\n3. **Password Reset via IT Portal:**\n   - Log into the IT Support Portal (if you have access).\n   - Navigate to the \"Password Reset\" section.\n   - Select your account and verify your identity with security questions.\n   - Receive a reset link via email and follow the instructions to reset your password.\n\nMake sure your new password meets the password requirements listed in the guidelines.",
       "sources": [
         {
           "id": "chunk-0",
           "text": "PASSWORD RESET PROCEDURES\n\nHow to Reset Your Password:\n\nSelf-Service Password Reset:\n1. Go to the company portal login page\n2. Click on \"Forgot Password\" link\n3. Enter your company email address\n4. Check your email for reset instructions (check spam folder if not received)\n5. Click the reset link in the email (valid for 1 hour)\n6. Follow the link to create a new password\n7. Enter new password twice to confirm\n8. Log in with new password\n\nPassword Reset via Phone:\n1. Call IT Help Desk at extension 1234\n2. Provide your employee ID and manager's name\n3. Answer security questions for verification\n4. IT will send temporary password via email\n5. Log in and change password immediately\n6. Temporary passwords expire after 24 hours",
           "sourceId": "/company-support-chatbot/data/it_docs/password-reset.txt",
           "metadata": {
+            "startChar": 0,
             "endCharStr": "731",
             "endChar": 731,
-            "startChar": 0,
             "startCharStr": "0",
             "loc": {
               "lines": {
@@ -203,8 +203,8 @@
                 "to": 21
               }
             },
-            "similarityScore": 0.71922255,
-            "score": 0.71922255
+            "similarityScore": 0.71916765,
+            "score": 0.71916765
           }
         },
         {
@@ -212,18 +212,18 @@
           "text": "Password Reset via IT Portal:\n1. Log into IT Support Portal (if you have access)\n2. Navigate to \"Password Reset\" section\n3. Select your account\n4. Verify identity with security questions\n5. Receive reset link via email\n6. Follow email instructions to reset\n\nPassword Requirements:\n- Minimum 12 characters\n- Must include uppercase and lowercase letters\n- Must include at least one number\n- Must include at least one special character (!@#$%^&*)\n- Cannot reuse your last 5 passwords\n- Cannot contain your username or email\n- Cannot contain common words or patterns\n- Must be changed every 90 days\n- Password complexity meter shows strength",
           "sourceId": "/company-support-chatbot/data/it_docs/password-reset.txt",
           "metadata": {
-            "endCharStr": "1370",
             "endChar": 1370,
-            "startCharStr": "733",
             "startChar": 733,
+            "endCharStr": "1370",
+            "startCharStr": "733",
             "loc": {
               "lines": {
                 "from": 23,
                 "to": 40
               }
             },
-            "similarityScore": 0.80621934,
-            "score": 0.80621934
+            "similarityScore": 0.8066398,
+            "score": 0.8066398
           }
         },
         {
@@ -231,18 +231,18 @@
           "text": "Password Best Practices:\n- Use a unique password (not used elsewhere)\n- Consider using a passphrase (multiple words)\n- Use password manager (company-approved)\n- Never share your password with anyone\n- Never write passwords down in visible locations\n- Change password immediately if compromised\n- Use different passwords for different systems\n\nACCOUNT LOCKOUT AND RECOVERY\n\nIf you're locked out of your account:\n- Account locks after 5 failed login attempts\n- Lockout duration: 30 minutes (auto-unlock)\n- Contact IT Support at it-support@company.com\n- Call the IT Help Desk at extension 1234\n- Provide your employee ID and manager's name for verification\n- IT can unlock account immediately after verification\n- May require password reset after unlock",
           "sourceId": "/company-support-chatbot/data/it_docs/password-reset.txt",
           "metadata": {
-            "endChar": 2122,
             "endCharStr": "2122",
-            "startCharStr": "1372",
             "startChar": 1372,
+            "endChar": 2122,
+            "startCharStr": "1372",
             "loc": {
               "lines": {
                 "from": 42,
                 "to": 60
               }
             },
-            "similarityScore": 1.0672319,
-            "score": 1.0672319
+            "similarityScore": 1.0671794,
+            "score": 1.0671794
           }
         },
         {
@@ -251,17 +251,17 @@
           "sourceId": "/company-support-chatbot/data/it_docs/password-reset.txt",
           "metadata": {
             "startChar": 2124,
-            "startCharStr": "2124",
-            "endCharStr": "2845",
             "endChar": 2845,
+            "endCharStr": "2845",
+            "startCharStr": "2124",
             "loc": {
               "lines": {
                 "from": 62,
                 "to": 83
               }
             },
-            "similarityScore": 1.0942466,
-            "score": 1.0942466
+            "similarityScore": 1.0942034,
+            "score": 1.0942034
           }
         },
         {
@@ -270,8 +270,8 @@
           "sourceId": "/company-support-chatbot/data/it_docs/password-reset.txt",
           "metadata": {
             "startCharStr": "2847",
-            "endChar": 3550,
             "startChar": 2847,
+            "endChar": 3550,
             "endCharStr": "3550",
             "loc": {
               "lines": {
@@ -279,8 +279,8 @@
                 "to": 104
               }
             },
-            "similarityScore": 1.3170636,
-            "score": 1.3170636
+            "similarityScore": 1.3170505,
+            "score": 1.3170505
           }
         }
       ],
@@ -289,17 +289,17 @@
         "model": "gpt-4o-mini",
         "tokenUsage": {
           "promptTokens": 846,
-          "completionTokens": 186,
-          "totalTokens": 1032
+          "completionTokens": 226,
+          "totalTokens": 1072
         },
         "timings": {
-          "retrievalMs": 400,
-          "llmGenerationMs": 3465,
-          "totalMs": 3865
+          "retrievalMs": 684,
+          "llmGenerationMs": 5562,
+          "totalMs": 6246
         }
       },
-      "content": "You can reset your password using one of the following methods:\n\n1. **Self-Service Password Reset**:\n   - Go to the company portal login page and click on the \"Forgot Password\" link.\n   - Enter your company email address and check your email for reset instructions.\n   - Follow the link in the email to create a new password.\n\n2. **Password Reset via Phone**:\n   - Call the IT Help Desk at extension 1234.\n   - Provide your employee ID and manager's name, and answer security questions for verification.\n   - IT will send a temporary password via email.\n\n3. **Password Reset via IT Portal** (if you have access):\n   - Log into the IT Support Portal and navigate to the \"Password Reset\" section.\n   - Select your account and verify your identity with security questions to receive a reset link via email.\n\nMake sure to follow the password requirements when creating a new password.",
-      "text": "You can reset your password using one of the following methods:\n\n1. **Self-Service Password Reset**:\n   - Go to the company portal login page and click on the \"Forgot Password\" link.\n   - Enter your company email address and check your email for reset instructions.\n   - Follow the link in the email to create a new password.\n\n2. **Password Reset via Phone**:\n   - Call the IT Help Desk at extension 1234.\n   - Provide your employee ID and manager's name, and answer security questions for verification.\n   - IT will send a temporary password via email.\n\n3. **Password Reset via IT Portal** (if you have access):\n   - Log into the IT Support Portal and navigate to the \"Password Reset\" section.\n   - Select your account and verify your identity with security questions to receive a reset link via email.\n\nMake sure to follow the password requirements when creating a new password.",
+      "content": "You can reset your password using one of the following methods:\n\n1. **Self-Service Password Reset:**\n   - Go to the company portal login page.\n   - Click on the \"Forgot Password\" link.\n   - Enter your company email address.\n   - Check your email for reset instructions.\n   - Click the reset link in the email (valid for 1 hour) and follow the instructions to create a new password.\n\n2. **Password Reset via Phone:**\n   - Call the IT Help Desk at extension 1234.\n   - Provide your employee ID and manager's name.\n   - Answer security questions for verification.\n   - IT will send a temporary password via email, which you should log in with and change immediately.\n\n3. **Password Reset via IT Portal:**\n   - Log into the IT Support Portal (if you have access).\n   - Navigate to the \"Password Reset\" section.\n   - Select your account and verify your identity with security questions.\n   - Receive a reset link via email and follow the instructions to reset your password.\n\nMake sure your new password meets the password requirements listed in the guidelines.",
+      "text": "You can reset your password using one of the following methods:\n\n1. **Self-Service Password Reset:**\n   - Go to the company portal login page.\n   - Click on the \"Forgot Password\" link.\n   - Enter your company email address.\n   - Check your email for reset instructions.\n   - Click the reset link in the email (valid for 1 hour) and follow the instructions to create a new password.\n\n2. **Password Reset via Phone:**\n   - Call the IT Help Desk at extension 1234.\n   - Provide your employee ID and manager's name.\n   - Answer security questions for verification.\n   - IT will send a temporary password via email, which you should log in with and change immediately.\n\n3. **Password Reset via IT Portal:**\n   - Log into the IT Support Portal (if you have access).\n   - Navigate to the \"Password Reset\" section.\n   - Select your account and verify your identity with security questions.\n   - Receive a reset link via email and follow the instructions to reset your password.\n\nMake sure your new password meets the password requirements listed in the guidelines.",
       "_safety": {
         "outputChecked": true,
         "moderationResult": {
@@ -320,19 +320,19 @@
             "violence/graphic": false
           },
           "category_scores": {
-            "harassment": 0.000006922183404468203,
-            "harassment/threatening": 0.0000021444948420913954,
-            "sexual": 0.000006814872211615988,
-            "hate": 0.0000018925148246037342,
-            "hate/threatening": 3.3931448129766124e-7,
-            "illicit": 0.005291360650815062,
-            "illicit/violent": 0.0000020462932829931794,
-            "self-harm/intent": 0.0000034268490542555014,
-            "self-harm/instructions": 0.000001363134508591315,
-            "self-harm": 0.000008750299760661308,
-            "sexual/minors": 0.0000021444948420913954,
-            "violence": 0.000005920916517463734,
-            "violence/graphic": 0.0000020785170435063726
+            "harassment": 0.000007967300986103147,
+            "harassment/threatening": 0.0000024300240743279605,
+            "sexual": 0.0000072543618230189156,
+            "hate": 0.0000017502925788778209,
+            "hate/threatening": 3.84493505874534e-7,
+            "illicit": 0.005289672281962749,
+            "illicit/violent": 0.0000023187477504664324,
+            "self-harm/intent": 0.000004198630823683514,
+            "self-harm/instructions": 0.0000015446309562386385,
+            "self-harm": 0.000009761566060239504,
+            "sexual/minors": 0.0000025071593847983196,
+            "violence": 0.000006814872211615988,
+            "violence/graphic": 0.0000021444948420913954
           }
         },
         "piiDetected": false,
@@ -346,7 +346,7 @@
       "completeness": 10,
       "accuracy": 10,
       "overall": 10,
-      "reasoning": "The answer is highly relevant as it directly addresses the question about resetting a password. It provides a comprehensive overview of multiple methods for resetting the password, ensuring that the user has various options to choose from. Additionally, the answer is accurate and aligns perfectly with the context provided, detailing each step clearly and including important information such as password requirements and best practices."
+      "reasoning": "The answer is highly relevant as it directly addresses the question about resetting a password. It provides a complete overview of multiple methods for password reset, including self-service, phone, and IT portal options, which are all applicable. Additionally, the information is accurate and aligns with the context provided in the source material, detailing the steps and requirements clearly."
     }
   },
   {
@@ -361,25 +361,25 @@
     },
     "routedTo": "finance",
     "agentResponse": {
-      "answer": "You will receive your refund within 5-7 business days after it has been approved. You'll also get an email confirmation when the refund is processed.",
+      "answer": "You will receive your refund within 5-7 business days after it has been approved. You will also receive an email confirmation when the refund is processed.",
       "sources": [
         {
           "id": "chunk-0",
           "text": "Refund Exceptions:\n- Services already used are not eligible\n- Custom products/services may have different policies\n- Refunds after 30 days require special approval\n- Setup fees are non-refundable\n- Third-party integrations and add-ons subject to vendor policies\n- Promotional credits and discounts are non-refundable\n\nRefund Methods:\n- Credit card: Refunded to original card (5-7 business days)\n- Bank transfer: Refunded to original account (7-10 business days)\n- Wire transfer: Refunded to original account (10-14 business days)\n- Check: Mailed to billing address (14-21 business days)\n\nEXPENSE REPORTS",
           "sourceId": "/company-support-chatbot/data/finance_docs/billing.txt",
           "metadata": {
+            "endChar": 4265,
+            "startChar": 3662,
             "startCharStr": "3662",
             "endCharStr": "4265",
-            "startChar": 3662,
-            "endChar": 4265,
             "loc": {
               "lines": {
                 "from": 95,
                 "to": 109
               }
             },
-            "similarityScore": 1.0949574,
-            "score": 1.0949574
+            "similarityScore": 1.0950857,
+            "score": 1.0950857
           }
         },
         {
@@ -387,9 +387,9 @@
           "text": "REFUND POLICY\n\nRefund Eligibility:\n- Refunds are available within 30 days of purchase\n- Subscription cancellations: refunds available within first 30 days only\n- Refund processing time: 5-7 business days\n- Refunds are issued to the original payment method\n- Partial refunds available for unused services\n- Annual plan refunds: Prorated based on months used\n\nTo request a refund:\n1. Contact customer support via email or phone\n2. Provide order number and reason for refund\n3. Support will review your request within 2 business days\n4. If approved, refund will be processed within 5-7 business days\n5. You'll receive email confirmation when refund is processed\n6. Refund appears on statement within 1-2 billing cycles",
           "sourceId": "/company-support-chatbot/data/finance_docs/billing.txt",
           "metadata": {
+            "startCharStr": "2945",
             "startChar": 2945,
             "endCharStr": "3660",
-            "startCharStr": "2945",
             "endChar": 3660,
             "loc": {
               "lines": {
@@ -397,8 +397,8 @@
                 "to": 93
               }
             },
-            "similarityScore": 1.1367114,
-            "score": 1.1367114
+            "similarityScore": 1.1367764,
+            "score": 1.1367764
           }
         },
         {
@@ -407,17 +407,17 @@
           "sourceId": "/company-support-chatbot/data/finance_docs/billing.txt",
           "metadata": {
             "endCharStr": "6627",
-            "startChar": 5881,
             "startCharStr": "5881",
             "endChar": 6627,
+            "startChar": 5881,
             "loc": {
               "lines": {
                 "from": 151,
                 "to": 168
               }
             },
-            "similarityScore": 1.1430423,
-            "score": 1.1430423
+            "similarityScore": 1.1430016,
+            "score": 1.1430016
           }
         },
         {
@@ -435,8 +435,8 @@
                 "to": 119
               }
             },
-            "similarityScore": 1.4007301,
-            "score": 1.4007301
+            "similarityScore": 1.4007757,
+            "score": 1.4007757
           }
         },
         {
@@ -445,17 +445,17 @@
           "sourceId": "/company-support-chatbot/data/finance_docs/billing.txt",
           "metadata": {
             "startChar": 8089,
-            "startCharStr": "8089",
             "endChar": 8694,
             "endCharStr": "8694",
+            "startCharStr": "8089",
             "loc": {
               "lines": {
                 "from": 216,
                 "to": 233
               }
             },
-            "similarityScore": 1.4164195,
-            "score": 1.4164195
+            "similarityScore": 1.416709,
+            "score": 1.416709
           }
         }
       ],
@@ -464,17 +464,17 @@
         "model": "gpt-4o-mini",
         "tokenUsage": {
           "promptTokens": 758,
-          "completionTokens": 30,
-          "totalTokens": 788
+          "completionTokens": 31,
+          "totalTokens": 789
         },
         "timings": {
-          "retrievalMs": 322,
-          "llmGenerationMs": 1011,
-          "totalMs": 1333
+          "retrievalMs": 1992,
+          "llmGenerationMs": 1331,
+          "totalMs": 3323
         }
       },
-      "content": "You will receive your refund within 5-7 business days after it has been approved. You'll also get an email confirmation when the refund is processed.",
-      "text": "You will receive your refund within 5-7 business days after it has been approved. You'll also get an email confirmation when the refund is processed.",
+      "content": "You will receive your refund within 5-7 business days after it has been approved. You will also receive an email confirmation when the refund is processed.",
+      "text": "You will receive your refund within 5-7 business days after it has been approved. You will also receive an email confirmation when the refund is processed.",
       "_safety": {
         "outputChecked": true,
         "moderationResult": {
@@ -495,19 +495,19 @@
             "violence/graphic": false
           },
           "category_scores": {
-            "harassment": 0.0000012219076020491008,
-            "harassment/threatening": 3.3931448129766124e-7,
-            "sexual": 0.000003321419494792514,
-            "hate": 6.339210403977636e-7,
-            "hate/threatening": 4.450850519411503e-8,
+            "harassment": 0.0000011478768127080353,
+            "harassment/threatening": 3.6119830612765795e-7,
+            "sexual": 0.0000036478537675800286,
+            "hate": 5.955139348629957e-7,
+            "hate/threatening": 4.5921356162867124e-8,
             "illicit": 0.000002627477314480822,
             "illicit/violent": 8.530321297909616e-7,
-            "self-harm/intent": 1.816222403812674e-7,
-            "self-harm/instructions": 1.0348531401872454e-7,
-            "self-harm": 5.77192003016332e-7,
-            "sexual/minors": 4.495181578513688e-7,
-            "violence": 0.0000022827997192887966,
-            "violence/graphic": 5.093705003229987e-7
+            "self-harm/intent": 2.123378462433771e-7,
+            "self-harm/instructions": 1.1726420733772349e-7,
+            "self-harm": 6.85431721163334e-7,
+            "sexual/minors": 5.77192003016332e-7,
+            "violence": 0.0000024300240743279605,
+            "violence/graphic": 5.255395707074638e-7
           }
         },
         "piiDetected": false,
@@ -521,7 +521,7 @@
       "completeness": 10,
       "accuracy": 10,
       "overall": 10,
-      "reasoning": "The answer directly addresses the question about the refund timeline, providing a clear timeframe of 5-7 business days for processing after approval. It also mentions that an email confirmation will be sent, which adds to the completeness of the response. The information is accurate and aligns with the context provided regarding refund processing."
+      "reasoning": "The answer is highly relevant as it directly addresses the question about the refund timeline. It is complete, providing a clear timeframe of 5-7 business days for the refund process and mentioning that an email confirmation will be sent. The information is accurate according to the context provided, confirming the standard refund processing time."
     }
   },
   {
@@ -536,25 +536,25 @@
     },
     "routedTo": "legal",
     "agentResponse": {
-      "answer": "The privacy policy includes the following key points:\n\n1. **Data Retention**: Data is retained while your account is active, as required by law, and deleted when no longer needed. Backup data may be retained longer.\n\n2. **Changes to Policy**: The policy may be updated periodically, with material changes notified to users. Continued use after changes constitutes acceptance.\n\n3. **GDPR Compliance**: Compliance with the EU General Data Protection Regulation, including the right to be forgotten and data breach notification procedures.\n\n4. **Children's Privacy**: Services are not intended for children under 13 (or 16 in the EU), and steps are taken to delete any collected information from children.\n\n5. **International Data Transfers**: Data may be processed in countries other than your own, with safeguards in place for such transfers.\n\n6. **Data Security**: Industry-standard security measures are implemented, including encryption and regular audits.\n\n7. **User Rights**: Users have rights to access, correct, and receive their data.\n\nFor more detailed information, you should refer to the complete privacy policy on the company's website.",
+      "answer": "The privacy policy includes several key points:\n\n1. **Data Retention**: Data is retained while your account is active, as required by law, and is deleted when no longer needed. Backup data may be retained longer.\n\n2. **Changes to Privacy Policy**: The policy may be updated periodically, with material changes communicated to users. Continued use after changes indicates acceptance.\n\n3. **GDPR Compliance**: The company complies with the EU General Data Protection Regulation, including the right to be forgotten and data breach notification procedures.\n\n4. **Children's Privacy**: Services are not intended for children under 13 (or 16 in the EU), and the company does not knowingly collect their information.\n\n5. **International Data Transfers**: Data may be processed in other countries, with appropriate safeguards in place.\n\n6. **Data Security**: Industry-standard security measures are used, including encryption and regular audits.\n\n7. **User Rights**: Users have rights to access, correct, and know what data is held about them.\n\nFor more details, you may want to refer to the company's full privacy policy.",
       "sources": [
         {
           "id": "chunk-0",
           "text": "9. DATA RETENTION\n\nRetention Periods:\n- We retain data while your account is active\n- We retain data as required by law\n- We delete data when no longer needed\n- Backup data may be retained longer\n- See our data retention policy for details\n\n10. CHANGES TO PRIVACY POLICY\n\nPolicy Updates:\n- We may update this policy from time to time\n- We will notify you of material changes\n- Continued use after changes constitutes acceptance\n- Check this page periodically for updates\n\nCOMPLIANCE\n\nGDPR Compliance:\n- We comply with EU General Data Protection Regulation\n- Data processing agreements in place for EU customers\n- Right to be forgotten implemented\n- Data breach notification procedures established\n- Data Protection Officer appointed (if required)\n- Privacy by design and default implemented",
           "sourceId": "/company-support-chatbot/data/legal_docs/terms.txt",
           "metadata": {
-            "endChar": 14330,
-            "endCharStr": "14330",
-            "startCharStr": "13540",
             "startChar": 13540,
+            "endCharStr": "14330",
+            "endChar": 14330,
+            "startCharStr": "13540",
             "loc": {
               "lines": {
                 "from": 358,
                 "to": 383
               }
             },
-            "similarityScore": 0.94139534,
-            "score": 0.94139534
+            "similarityScore": 0.94138956,
+            "score": 0.94138956
           }
         },
         {
@@ -563,17 +563,17 @@
           "sourceId": "/company-support-chatbot/data/legal_docs/terms.txt",
           "metadata": {
             "endChar": 15737,
+            "startCharStr": "15032",
             "endCharStr": "15737",
             "startChar": 15032,
-            "startCharStr": "15032",
             "loc": {
               "lines": {
                 "from": 407,
                 "to": 433
               }
             },
-            "similarityScore": 1.0335836,
-            "score": 1.0335836
+            "similarityScore": 1.0335139,
+            "score": 1.0335139
           }
         },
         {
@@ -581,18 +581,18 @@
           "text": "7. CHILDREN'S PRIVACY\n\nAge Restrictions:\n- Our services are not intended for children under 13 (or 16 in EU)\n- We do not knowingly collect information from children\n- If we discover we have collected information from a child, we will delete it\n- Parents should contact us if they believe we have collected child information\n\n8. INTERNATIONAL DATA TRANSFERS\n\nData Transfers:\n- Your data may be transferred to and processed in countries other than your country\n- We use appropriate safeguards for international transfers\n- Standard Contractual Clauses used for EU data transfers\n- We comply with applicable data protection laws\n\n9. DATA RETENTION",
           "sourceId": "/company-support-chatbot/data/legal_docs/terms.txt",
           "metadata": {
-            "startCharStr": "12913",
             "startChar": 12913,
-            "endChar": 13557,
             "endCharStr": "13557",
+            "endChar": 13557,
+            "startCharStr": "12913",
             "loc": {
               "lines": {
                 "from": 342,
                 "to": 358
               }
             },
-            "similarityScore": 1.0617535,
-            "score": 1.0617535
+            "similarityScore": 1.0617546,
+            "score": 1.0617546
           }
         },
         {
@@ -601,17 +601,17 @@
           "sourceId": "/company-support-chatbot/data/legal_docs/compliance.txt",
           "metadata": {
             "endCharStr": "11908",
-            "endChar": 11908,
             "startChar": 11160,
             "startCharStr": "11160",
+            "endChar": 11908,
             "loc": {
               "lines": {
                 "from": 319,
                 "to": 344
               }
             },
-            "similarityScore": 1.0734755,
-            "score": 1.0734755
+            "similarityScore": 1.0733691,
+            "score": 1.0733691
           }
         },
         {
@@ -620,17 +620,17 @@
           "sourceId": "/company-support-chatbot/data/legal_docs/terms.txt",
           "metadata": {
             "startCharStr": "10867",
+            "startChar": 10867,
             "endCharStr": "11619",
             "endChar": 11619,
-            "startChar": 10867,
             "loc": {
               "lines": {
                 "from": 274,
                 "to": 300
               }
             },
-            "similarityScore": 1.09514,
-            "score": 1.09514
+            "similarityScore": 1.0951396,
+            "score": 1.0951396
           }
         }
       ],
@@ -639,17 +639,17 @@
         "model": "gpt-4o-mini",
         "tokenUsage": {
           "promptTokens": 837,
-          "completionTokens": 225,
-          "totalTokens": 1062
+          "completionTokens": 223,
+          "totalTokens": 1060
         },
         "timings": {
-          "retrievalMs": 377,
-          "llmGenerationMs": 5453,
-          "totalMs": 5830
+          "retrievalMs": 1023,
+          "llmGenerationMs": 5465,
+          "totalMs": 6488
         }
       },
-      "content": "The privacy policy includes the following key points:\n\n1. **Data Retention**: Data is retained while your account is active, as required by law, and deleted when no longer needed. Backup data may be retained longer.\n\n2. **Changes to Policy**: The policy may be updated periodically, with material changes notified to users. Continued use after changes constitutes acceptance.\n\n3. **GDPR Compliance**: Compliance with the EU General Data Protection Regulation, including the right to be forgotten and data breach notification procedures.\n\n4. **Children's Privacy**: Services are not intended for children under 13 (or 16 in the EU), and steps are taken to delete any collected information from children.\n\n5. **International Data Transfers**: Data may be processed in countries other than your own, with safeguards in place for such transfers.\n\n6. **Data Security**: Industry-standard security measures are implemented, including encryption and regular audits.\n\n7. **User Rights**: Users have rights to access, correct, and receive their data.\n\nFor more detailed information, you should refer to the complete privacy policy on the company's website.",
-      "text": "The privacy policy includes the following key points:\n\n1. **Data Retention**: Data is retained while your account is active, as required by law, and deleted when no longer needed. Backup data may be retained longer.\n\n2. **Changes to Policy**: The policy may be updated periodically, with material changes notified to users. Continued use after changes constitutes acceptance.\n\n3. **GDPR Compliance**: Compliance with the EU General Data Protection Regulation, including the right to be forgotten and data breach notification procedures.\n\n4. **Children's Privacy**: Services are not intended for children under 13 (or 16 in the EU), and steps are taken to delete any collected information from children.\n\n5. **International Data Transfers**: Data may be processed in countries other than your own, with safeguards in place for such transfers.\n\n6. **Data Security**: Industry-standard security measures are implemented, including encryption and regular audits.\n\n7. **User Rights**: Users have rights to access, correct, and receive their data.\n\nFor more detailed information, you should refer to the complete privacy policy on the company's website.",
+      "content": "The privacy policy includes several key points:\n\n1. **Data Retention**: Data is retained while your account is active, as required by law, and is deleted when no longer needed. Backup data may be retained longer.\n\n2. **Changes to Privacy Policy**: The policy may be updated periodically, with material changes communicated to users. Continued use after changes indicates acceptance.\n\n3. **GDPR Compliance**: The company complies with the EU General Data Protection Regulation, including the right to be forgotten and data breach notification procedures.\n\n4. **Children's Privacy**: Services are not intended for children under 13 (or 16 in the EU), and the company does not knowingly collect their information.\n\n5. **International Data Transfers**: Data may be processed in other countries, with appropriate safeguards in place.\n\n6. **Data Security**: Industry-standard security measures are used, including encryption and regular audits.\n\n7. **User Rights**: Users have rights to access, correct, and know what data is held about them.\n\nFor more details, you may want to refer to the company's full privacy policy.",
+      "text": "The privacy policy includes several key points:\n\n1. **Data Retention**: Data is retained while your account is active, as required by law, and is deleted when no longer needed. Backup data may be retained longer.\n\n2. **Changes to Privacy Policy**: The policy may be updated periodically, with material changes communicated to users. Continued use after changes indicates acceptance.\n\n3. **GDPR Compliance**: The company complies with the EU General Data Protection Regulation, including the right to be forgotten and data breach notification procedures.\n\n4. **Children's Privacy**: Services are not intended for children under 13 (or 16 in the EU), and the company does not knowingly collect their information.\n\n5. **International Data Transfers**: Data may be processed in other countries, with appropriate safeguards in place.\n\n6. **Data Security**: Industry-standard security measures are used, including encryption and regular audits.\n\n7. **User Rights**: Users have rights to access, correct, and know what data is held about them.\n\nFor more details, you may want to refer to the company's full privacy policy.",
       "_safety": {
         "outputChecked": true,
         "moderationResult": {
@@ -670,19 +670,19 @@
             "violence/graphic": false
           },
           "category_scores": {
-            "harassment": 0.0000036478537675800286,
-            "harassment/threatening": 0.000002586743108135441,
-            "sexual": 0.00005792916699214217,
+            "harassment": 0.000003535625074174432,
+            "harassment/threatening": 0.0000018342893327886845,
+            "sexual": 0.00005112579049909173,
             "hate": 0.0000021444948420913954,
-            "hate/threatening": 2.2603242979035749e-7,
-            "illicit": 0.000020662982488383408,
-            "illicit/violent": 5.422218970016178e-7,
-            "self-harm/intent": 5.955139348629957e-7,
-            "self-harm/instructions": 2.4824800371656586e-7,
-            "self-harm": 0.0000025466403947055455,
-            "sexual/minors": 0.00003514382632807918,
-            "violence": 0.000003535625074174432,
-            "violence/graphic": 0.0000015689549727726036
+            "hate/threatening": 1.816222403812674e-7,
+            "illicit": 0.000014653129390717958,
+            "illicit/violent": 4.495181578513688e-7,
+            "self-harm/intent": 4.936988949458183e-7,
+            "self-harm/instructions": 1.7061832388634166e-7,
+            "self-harm": 0.0000019833367060283617,
+            "sexual/minors": 0.000027803096387751555,
+            "violence": 0.000003024195853395102,
+            "violence/graphic": 0.0000010783312222985275
           }
         },
         "piiDetected": false,
@@ -696,7 +696,7 @@
       "completeness": 10,
       "accuracy": 10,
       "overall": 10,
-      "reasoning": "The answer is highly relevant as it directly addresses the question about the privacy policy. It provides a comprehensive overview of key points, ensuring completeness by covering various aspects of the policy. Additionally, the information presented is accurate and aligns well with the context sources provided."
+      "reasoning": "The answer is highly relevant as it directly addresses the question about the privacy policy. It is complete, covering all major aspects of the privacy policy, including data retention, changes to the policy, GDPR compliance, children's privacy, international data transfers, data security, and user rights. The information provided is accurate and aligns well with the context sources, ensuring that the user receives a thorough understanding of the privacy policy."
     }
   },
   {
@@ -719,9 +719,9 @@
           "sourceId": "/company-support-chatbot/data/hr_docs/benefits.txt",
           "metadata": {
             "endChar": 4514,
+            "startChar": 3910,
             "endCharStr": "4514",
             "startCharStr": "3910",
-            "startChar": 3910,
             "loc": {
               "lines": {
                 "from": 99,
@@ -756,9 +756,9 @@
           "text": "Short-Term Disability:\n- Coverage: 60% of salary for up to 26 weeks\n- Elimination period: 7 days\n- Company paid for all employees\n- Covers illness, injury, pregnancy\n- Job protection during disability period\n\nLong-Term Disability:\n- Coverage: 60% of salary up to $10,000/month\n- Elimination period: 90 days\n- Company paid for all employees\n- Coverage until age 65 or return to work\n- Own occupation definition for first 2 years\n- Cost of living adjustments available\n\nVACATION AND LEAVE POLICIES",
           "sourceId": "/company-support-chatbot/data/hr_docs/benefits.txt",
           "metadata": {
-            "startChar": 3442,
             "startCharStr": "3442",
             "endChar": 3937,
+            "startChar": 3442,
             "endCharStr": "3937",
             "loc": {
               "lines": {
@@ -766,8 +766,8 @@
                 "to": 99
               }
             },
-            "similarityScore": 1.2155383,
-            "score": 1.2155383
+            "similarityScore": 1.2156117,
+            "score": 1.2156117
           }
         },
         {
@@ -776,8 +776,8 @@
           "sourceId": "/company-support-chatbot/data/hr_docs/benefits.txt",
           "metadata": {
             "endChar": 10421,
-            "startCharStr": "9698",
             "endCharStr": "10421",
+            "startCharStr": "9698",
             "startChar": 9698,
             "loc": {
               "lines": {
@@ -785,8 +785,8 @@
                 "to": 290
               }
             },
-            "similarityScore": 1.3000817,
-            "score": 1.3000817
+            "similarityScore": 1.3000842,
+            "score": 1.3000842
           }
         },
         {
@@ -794,9 +794,9 @@
           "text": "Maternity/Paternity Leave:\n- 12 weeks of paid maternity leave\n- 6 weeks of paid paternity leave\n- Additional unpaid leave available under FMLA (up to 12 weeks total)\n- Leave can begin up to 2 weeks before due date\n- Adoption leave: 6 weeks paid\n- Surrogacy leave: 6 weeks paid\n- Leave runs concurrently with FMLA\n- Health insurance continues during leave\n- Job protection guaranteed\n- Return to work transition program available\n\nBereavement Leave:\n- 3 days paid for immediate family (spouse, child, parent, sibling)\n- 1 day paid for extended family (grandparent, aunt, uncle, cousin)\n- Additional unpaid leave available with manager approval\n- No limit on bereavement leave for immediate family",
           "sourceId": "/company-support-chatbot/data/hr_docs/benefits.txt",
           "metadata": {
+            "startChar": 5048,
             "endChar": 5743,
             "startCharStr": "5048",
-            "startChar": 5048,
             "endCharStr": "5743",
             "loc": {
               "lines": {
@@ -804,8 +804,8 @@
                 "to": 149
               }
             },
-            "similarityScore": 1.311408,
-            "score": 1.311408
+            "similarityScore": 1.3113651,
+            "score": 1.3113651
           }
         }
       ],
@@ -818,9 +818,9 @@
           "totalTokens": 836
         },
         "timings": {
-          "retrievalMs": 238,
-          "llmGenerationMs": 582,
-          "totalMs": 820
+          "retrievalMs": 712,
+          "llmGenerationMs": 1012,
+          "totalMs": 1724
         }
       },
       "content": "You accrue 15 vacation days per year.",
@@ -871,7 +871,7 @@
       "completeness": 10,
       "accuracy": 10,
       "overall": 10,
-      "reasoning": "The answer directly addresses the question about vacation days, providing the exact number of days accrued per year, which is clearly stated in the context. It includes no extraneous information and is fully aligned with the provided policy details."
+      "reasoning": "The answer directly addresses the question about the number of vacation days per year, providing the exact figure of 15 days. It is complete in that it does not leave out any relevant details from the context, and it is accurate as it aligns perfectly with the provided vacation and leave policies."
     }
   },
   {
@@ -881,30 +881,30 @@
     "intent": "it",
     "classification": {
       "intent": "it",
-      "confidence": 0.9,
-      "reasoning": "The query specifically addresses a technical issue with the laptop's WiFi connectivity, which falls under IT support."
+      "confidence": 1,
+      "reasoning": "The query specifically asks about a technical issue related to WiFi connectivity, which falls under IT support."
     },
     "routedTo": "it",
     "agentResponse": {
-      "answer": "Try the following steps to troubleshoot your WiFi connection issue:\n\n1. Forget the \"Company-WiFi\" network and reconnect.\n2. Restart your laptop.\n3. Check if WiFi is enabled on your device.\n4. Verify that you are using the correct network name (\"Company-WiFi\").\n5. Ensure your device is within range of the access point.\n6. Update your laptop's WiFi drivers.\n7. If the problem persists, contact IT for assistance.",
+      "answer": "Try the following steps to troubleshoot your laptop's WiFi connection:\n\n1. Forget the \"Company-WiFi\" network and reconnect.\n2. Restart your device.\n3. Check if WiFi is enabled on your laptop.\n4. Verify that you are using the correct network name (\"Company-WiFi\").\n5. Ensure your device is within range of the access point.\n6. Update your device's WiFi drivers.\n7. If the problem persists, contact IT for further assistance.",
       "sources": [
         {
           "id": "chunk-0",
           "text": "WIFI CONNECTION TROUBLESHOOTING\n\nCompany WiFi Networks:\n- Company-WiFi: Main network for employees (WPA2-Enterprise)\n- Company-Guest: Guest network (password provided at reception)\n- Company-IoT: For IoT devices (IT approval required)\n\nConnecting to Company-WiFi:\n1. Select \"Company-WiFi\" network\n2. Enter company username and password\n3. Accept certificate if prompted\n4. Connected successfully\n\nCommon WiFi Issues and Solutions:\n\n1. Cannot connect to WiFi:\n   - Forget the network and reconnect\n   - Restart your device\n   - Check if WiFi is enabled\n   - Verify you're using the correct network name (Company-WiFi)\n   - Check if device is in range of access point\n   - Update device WiFi drivers\n   - Contact IT if problem persists",
           "sourceId": "/company-support-chatbot/data/it_docs/password-reset.txt",
           "metadata": {
-            "startCharStr": "3519",
-            "startChar": 3519,
             "endChar": 4252,
             "endCharStr": "4252",
+            "startChar": 3519,
+            "startCharStr": "3519",
             "loc": {
               "lines": {
                 "from": 104,
                 "to": 126
               }
             },
-            "similarityScore": 0.9767519,
-            "score": 0.9767519
+            "similarityScore": 0.97669953,
+            "score": 0.97669953
           }
         },
         {
@@ -912,18 +912,18 @@
           "text": "2. Slow connection:\n   - Move closer to the access point\n   - Disconnect and reconnect\n   - Check for interference from other devices\n   - Limit bandwidth-intensive applications\n   - Check if too many devices connected\n   - Restart router/access point (if you have access)\n   - Contact IT if problem persists\n\n3. Frequent disconnections:\n   - Update your device's WiFi drivers\n   - Check for software updates\n   - Forget network and reconnect\n   - Check power management settings (may disconnect to save power)\n   - Contact IT Support for advanced troubleshooting\n   - May need to update device firmware\n\n4. Authentication errors:\n   - Verify username and password are correct\n   - Check if account is active\n   - Clear saved credentials and re-enter\n   - Contact IT if account may be locked",
           "sourceId": "/company-support-chatbot/data/it_docs/password-reset.txt",
           "metadata": {
-            "endCharStr": "5045",
-            "endChar": 5045,
             "startCharStr": "4254",
             "startChar": 4254,
+            "endChar": 5045,
+            "endCharStr": "5045",
             "loc": {
               "lines": {
                 "from": 128,
                 "to": 149
               }
             },
-            "similarityScore": 1.0624082,
-            "score": 1.0624082
+            "similarityScore": 1.0623033,
+            "score": 1.0623033
           }
         },
         {
@@ -932,8 +932,8 @@
           "sourceId": "/company-support-chatbot/data/it_docs/password-reset.txt",
           "metadata": {
             "startChar": 5047,
-            "endCharStr": "5790",
             "startCharStr": "5047",
+            "endCharStr": "5790",
             "endChar": 5790,
             "loc": {
               "lines": {
@@ -941,8 +941,8 @@
                 "to": 178
               }
             },
-            "similarityScore": 1.104615,
-            "score": 1.104615
+            "similarityScore": 1.104574,
+            "score": 1.104574
           }
         },
         {
@@ -950,18 +950,18 @@
           "text": "VPN Troubleshooting:\n- Cannot connect: Check internet connection, verify credentials\n- Slow connection: Check internet speed, try different server\n- Frequent disconnections: Update VPN client, check firewall\n- Contact IT for VPN issues\n\nSOFTWARE INSTALLATION AND UPDATES\n\nTo request software installation:\n1. Submit a ticket through the IT portal\n2. Include software name and version\n3. Provide business justification\n4. Wait for approval from your manager\n5. IT will install within 2-3 business days\n6. You'll receive notification when installed",
           "sourceId": "/company-support-chatbot/data/it_docs/password-reset.txt",
           "metadata": {
-            "startChar": 5792,
-            "startCharStr": "5792",
             "endChar": 6338,
+            "startChar": 5792,
             "endCharStr": "6338",
+            "startCharStr": "5792",
             "loc": {
               "lines": {
                 "from": 180,
                 "to": 194
               }
             },
-            "similarityScore": 1.2665896,
-            "score": 1.2665896
+            "similarityScore": 1.2665081,
+            "score": 1.2665081
           }
         },
         {
@@ -989,17 +989,17 @@
         "model": "gpt-4o-mini",
         "tokenUsage": {
           "promptTokens": 780,
-          "completionTokens": 96,
-          "totalTokens": 876
+          "completionTokens": 98,
+          "totalTokens": 878
         },
         "timings": {
-          "retrievalMs": 260,
-          "llmGenerationMs": 3236,
-          "totalMs": 3496
+          "retrievalMs": 684,
+          "llmGenerationMs": 2205,
+          "totalMs": 2889
         }
       },
-      "content": "Try the following steps to troubleshoot your WiFi connection issue:\n\n1. Forget the \"Company-WiFi\" network and reconnect.\n2. Restart your laptop.\n3. Check if WiFi is enabled on your device.\n4. Verify that you are using the correct network name (\"Company-WiFi\").\n5. Ensure your device is within range of the access point.\n6. Update your laptop's WiFi drivers.\n7. If the problem persists, contact IT for assistance.",
-      "text": "Try the following steps to troubleshoot your WiFi connection issue:\n\n1. Forget the \"Company-WiFi\" network and reconnect.\n2. Restart your laptop.\n3. Check if WiFi is enabled on your device.\n4. Verify that you are using the correct network name (\"Company-WiFi\").\n5. Ensure your device is within range of the access point.\n6. Update your laptop's WiFi drivers.\n7. If the problem persists, contact IT for assistance.",
+      "content": "Try the following steps to troubleshoot your laptop's WiFi connection:\n\n1. Forget the \"Company-WiFi\" network and reconnect.\n2. Restart your device.\n3. Check if WiFi is enabled on your laptop.\n4. Verify that you are using the correct network name (\"Company-WiFi\").\n5. Ensure your device is within range of the access point.\n6. Update your device's WiFi drivers.\n7. If the problem persists, contact IT for further assistance.",
+      "text": "Try the following steps to troubleshoot your laptop's WiFi connection:\n\n1. Forget the \"Company-WiFi\" network and reconnect.\n2. Restart your device.\n3. Check if WiFi is enabled on your laptop.\n4. Verify that you are using the correct network name (\"Company-WiFi\").\n5. Ensure your device is within range of the access point.\n6. Update your device's WiFi drivers.\n7. If the problem persists, contact IT for further assistance.",
       "_safety": {
         "outputChecked": true,
         "moderationResult": {
@@ -1020,19 +1020,19 @@
             "violence/graphic": false
           },
           "category_scores": {
-            "harassment": 0.000017130819343483194,
-            "harassment/threatening": 0.000002355261854303796,
-            "sexual": 0.000009915273115920183,
-            "hate": 0.000004469407144215697,
-            "hate/threatening": 4.6378732973537256e-7,
-            "illicit": 0.007636424877239833,
-            "illicit/violent": 0.00000498595821272702,
-            "self-harm/intent": 0.0000027535691114583474,
-            "self-harm/instructions": 9.223470110117277e-7,
-            "self-harm": 0.000005920916517463734,
-            "sexual/minors": 0.0000010129990980873922,
-            "violence": 0.000004757645425657629,
-            "violence/graphic": 0.0000013846004563753396
+            "harassment": 0.000013552078562406772,
+            "harassment/threatening": 0.0000018925148246037342,
+            "sexual": 0.000005649793328376294,
+            "hate": 0.0000034268490542555014,
+            "hate/threatening": 3.84493505874534e-7,
+            "illicit": 0.007670348427602691,
+            "illicit/violent": 0.000005920916517463734,
+            "self-harm/intent": 0.0000025466403947055455,
+            "self-harm/instructions": 8.398072034951531e-7,
+            "self-harm": 0.000005225226840386988,
+            "sexual/minors": 7.411279871974134e-7,
+            "violence": 0.000003535625074174432,
+            "violence/graphic": 0.0000011478768127080353
           }
         },
         "piiDetected": false,
@@ -1046,7 +1046,7 @@
       "completeness": 10,
       "accuracy": 10,
       "overall": 10,
-      "reasoning": "The answer is highly relevant as it directly addresses the issue of the laptop not connecting to WiFi. It provides a comprehensive list of troubleshooting steps that are complete and cover various potential causes of the problem. Each step is accurate and aligns with the context provided, ensuring that the user has clear and actionable guidance."
+      "reasoning": "The answer is highly relevant as it directly addresses the issue of connecting to WiFi. It provides a comprehensive list of troubleshooting steps that align perfectly with the common issues and solutions outlined in the context sources. Each step is accurate and reflects the necessary actions to resolve the WiFi connection problem, ensuring the user has clear guidance to follow."
     }
   },
   {
@@ -1068,9 +1068,9 @@
           "text": "INVOICE DETAILS\n\nInvoice Information:\n- Invoices sent via email automatically\n- Available in account portal immediately\n- PDF format for easy download\n- Itemized charges included\n- Tax information included based on location\n- Multi-currency support for international customers\n- Invoice numbers are sequential and unique\n- Payment instructions included on invoice\n\nInvoice Requests:\n- Request copies via finance@company.com\n- Include account number or order ID\n- Typically sent within 24 hours\n- Historical invoices available for 7 years\n- Bulk invoice export available for Enterprise\n- Custom invoice formats available for Enterprise\n\nTAX INFORMATION",
           "sourceId": "/company-support-chatbot/data/finance_docs/pricing.txt",
           "metadata": {
-            "endCharStr": "3978",
-            "startChar": 3327,
             "startCharStr": "3327",
+            "startChar": 3327,
+            "endCharStr": "3978",
             "endChar": 3978,
             "loc": {
               "lines": {
@@ -1078,8 +1078,8 @@
                 "to": 133
               }
             },
-            "similarityScore": 0.864413,
-            "score": 0.864413
+            "similarityScore": 0.8644569,
+            "score": 0.8644569
           }
         },
         {
@@ -1089,16 +1089,16 @@
           "metadata": {
             "endChar": 568,
             "startChar": 0,
-            "startCharStr": "0",
             "endCharStr": "568",
+            "startCharStr": "0",
             "loc": {
               "lines": {
                 "from": 1,
                 "to": 13
               }
             },
-            "similarityScore": 0.877324,
-            "score": 0.877324
+            "similarityScore": 0.87748396,
+            "score": 0.87748396
           }
         },
         {
@@ -1106,18 +1106,18 @@
           "text": "Invoice Details:\n- Invoice number format: INV-YYYY-XXXXXX\n- Payment terms: Net 30 for Enterprise, Due on receipt for others\n- Late payment fee: 1.5% per month (Enterprise only)\n- Invoice includes billing address, shipping address (if applicable)\n- Tax information included based on customer location\n- Currency displayed matches payment currency\n- Multi-currency invoices supported for international customers",
           "sourceId": "/company-support-chatbot/data/finance_docs/billing.txt",
           "metadata": {
+            "endChar": 979,
+            "startCharStr": "570",
             "startChar": 570,
             "endCharStr": "979",
-            "startCharStr": "570",
-            "endChar": 979,
             "loc": {
               "lines": {
                 "from": 15,
                 "to": 22
               }
             },
-            "similarityScore": 1.0421541,
-            "score": 1.0421541
+            "similarityScore": 1.0421542,
+            "score": 1.0421542
           }
         },
         {
@@ -1125,18 +1125,18 @@
           "text": "Payment Methods Accepted:\n- Credit cards (Visa, MasterCard, Amex, Discover)\n- Debit cards\n- Bank transfer (ACH) - US customers\n- Wire transfer (Enterprise only, minimum $1,000)\n- Purchase orders (Enterprise only, Net 30 terms)\n- PayPal (for Starter and Professional plans)\n- Apple Pay and Google Pay (mobile)\n\nPayment Terms:\n- Standard: Payment due upon receipt\n- Net 15: Available for Enterprise (small fee)\n- Net 30: Available for Enterprise (standard)\n- Net 60: Available for Enterprise (custom pricing)\n- Prepayment discounts: 5% for annual prepayment\n\nINVOICE DETAILS",
           "sourceId": "/company-support-chatbot/data/finance_docs/pricing.txt",
           "metadata": {
-            "startCharStr": "2770",
-            "endCharStr": "3342",
-            "endChar": 3342,
             "startChar": 2770,
+            "endCharStr": "3342",
+            "startCharStr": "2770",
+            "endChar": 3342,
             "loc": {
               "lines": {
                 "from": 97,
                 "to": 113
               }
             },
-            "similarityScore": 1.0919559,
-            "score": 1.0919559
+            "similarityScore": 1.0920243,
+            "score": 1.0920243
           }
         },
         {
@@ -1144,18 +1144,18 @@
           "text": "Invoice Generation:\n- Invoice creation: Creating customer invoices\n- Invoice approval: Invoice approval process\n- Invoice delivery: Sending invoices to customers\n- Invoice tracking: Tracking invoice status\n- Invoice follow-up: Collection follow-up\n- Invoice disputes: Dispute resolution\n\nCollection Management:\n- Payment tracking: Tracking customer payments\n- Collection calls: Customer collection calls\n- Collection letters: Formal collection letters\n- Payment plans: Payment plan arrangements\n- Bad debt: Write-off procedures\n- Collection reporting: Collection metrics\n\nGENERAL LEDGER",
           "sourceId": "/company-support-chatbot/data/finance_docs/accounting.txt",
           "metadata": {
-            "startCharStr": "2345",
             "endCharStr": "2931",
             "startChar": 2345,
             "endChar": 2931,
+            "startCharStr": "2345",
             "loc": {
               "lines": {
                 "from": 78,
                 "to": 94
               }
             },
-            "similarityScore": 1.119299,
-            "score": 1.119299
+            "similarityScore": 1.1194141,
+            "score": 1.1194141
           }
         }
       ],
@@ -1168,9 +1168,9 @@
           "totalTokens": 678
         },
         "timings": {
-          "retrievalMs": 347,
-          "llmGenerationMs": 1180,
-          "totalMs": 1527
+          "retrievalMs": 628,
+          "llmGenerationMs": 895,
+          "totalMs": 1523
         }
       },
       "content": "To request an invoice, please email [REDACTED_EMAIL] and include your account number or order ID. Invoices are typically sent within 24 hours.",
@@ -1195,17 +1195,17 @@
             "violence/graphic": false
           },
           "category_scores": {
-            "harassment": 0.0000025466403947055455,
-            "harassment/threatening": 0.0000013420013504783412,
+            "harassment": 0.0000025071593847983196,
+            "harassment/threatening": 0.0000013007128466476034,
             "sexual": 0.000004264746818557914,
             "hate": 9.223470110117277e-7,
             "hate/threatening": 1.9333584585546466e-7,
-            "illicit": 0.000021654404989510328,
-            "illicit/violent": 0.0000018925148246037342,
-            "self-harm/intent": 6.540437226933637e-7,
+            "illicit": 0.000021318756129065198,
+            "illicit/violent": 0.0000018058518261159955,
+            "self-harm/intent": 6.339210403977636e-7,
             "self-harm/instructions": 3.288749065460498e-7,
-            "self-harm": 0.0000014971083692627422,
-            "sexual/minors": 0.0000014285517650093407,
+            "self-harm": 0.0000014738981974494932,
+            "sexual/minors": 0.0000013846004563753396,
             "violence": 0.000007602479448313689,
             "violence/graphic": 0.0000016187581436151335
           }
@@ -1222,8 +1222,8 @@
       "relevance": 9,
       "completeness": 8,
       "accuracy": 9,
-      "overall": 9,
-      "reasoning": "The answer is highly relevant as it directly addresses the request for an invoice by providing the necessary steps to obtain one. It is complete, offering specific instructions on what to include in the email and a timeframe for receiving the invoice. The accuracy is also high, as it aligns with the context provided about invoice requests and delivery."
+      "overall": 8,
+      "reasoning": "The answer is highly relevant as it directly addresses the request for an invoice by providing the necessary steps to obtain one. It is mostly complete, but it could have mentioned that invoices are also available in the account portal, which would be useful information for the customer. The accuracy is high, as the details align with the provided context about invoice requests."
     }
   },
   {
@@ -1238,25 +1238,25 @@
     },
     "routedTo": "legal",
     "agentResponse": {
-      "answer": "The Terms of Service outline the rules and conditions for using the services, including acceptance of terms, use of services, severability, entire agreement, governing law, and jurisdiction. Key points include:\n\n- By using the services, you agree to the terms and applicable laws.\n- You are responsible for checking for updates to the terms.\n- If any provision is found to be unenforceable, the rest of the terms remain effective.\n- The terms constitute the entire agreement between you and the service provider.\n- Continued use after modifications indicates acceptance of those changes.\n- Disputes are governed by specific jurisdiction laws, depending on the user’s location. \n\nFor detailed information, users should refer to the complete Terms of Service document.",
+      "answer": "The Terms of Service outline the conditions under which users may access and use the services provided. Key elements include:\n\n1. **Acceptance of Terms**: By using the services, you agree to comply with the Terms and applicable laws. If you disagree, you cannot use the services.\n2. **Use of Services**: Services must be used lawfully and in accordance with the Terms.\n3. **Modifications**: Continued use after modifications indicates acceptance of the changes.\n4. **Severability**: If any part of the Terms is unenforceable, the remainder remains effective.\n5. **Entire Agreement**: The Terms, along with the Privacy Policy, represent the complete agreement between you and the service provider.\n6. **Governing Law**: The Terms are governed by the laws of a specified State/Country, with jurisdiction for disputes in that location.\n\nFor more detailed information, users should refer to the specific sections of the Terms of Service.",
       "sources": [
         {
           "id": "chunk-0",
           "text": "TERMS OF SERVICE\n\nLast Updated: January 2024\n\n1. ACCEPTANCE OF TERMS\n\nBy accessing and using our services, you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing our services.\n\nThese terms apply to all users of our services, including without limitation users who are browsers, vendors, customers, merchants, and contributors of content.\n\nWe reserve the right to update, change, or replace any part of these Terms of Service by posting updates and changes to our website. It is your responsibility to check our website periodically for changes.\n\n2. USE OF SERVICES",
           "sourceId": "/company-support-chatbot/data/legal_docs/terms.txt",
           "metadata": {
-            "startChar": 0,
+            "startCharStr": "0",
             "endChar": 686,
             "endCharStr": "686",
-            "startCharStr": "0",
+            "startChar": 0,
             "loc": {
               "lines": {
                 "from": 1,
                 "to": 13
               }
             },
-            "similarityScore": 0.54833674,
-            "score": 0.54833674
+            "similarityScore": 0.5482757,
+            "score": 0.5482757
           }
         },
         {
@@ -1264,9 +1264,9 @@
           "text": "SEVERABILITY\n\nIf any provision of these Terms of Service is found to be unenforceable or invalid, that provision will be limited or eliminated to the minimum extent necessary so that these Terms will otherwise remain in full force and effect and enforceable.\n\nENTIRE AGREEMENT\n\nThese Terms of Service, together with our Privacy Policy and any other legal notices published on our website, constitute the entire agreement between you and us concerning your use of our services and supersede all prior agreements and understandings.",
           "sourceId": "/company-support-chatbot/data/legal_docs/terms.txt",
           "metadata": {
+            "startChar": 16363,
             "startCharStr": "16363",
             "endCharStr": "16893",
-            "startChar": 16363,
             "endChar": 16893,
             "loc": {
               "lines": {
@@ -1274,8 +1274,8 @@
                 "to": 449
               }
             },
-            "similarityScore": 0.87863106,
-            "score": 0.87863106
+            "similarityScore": 0.8786305,
+            "score": 0.8786305
           }
         },
         {
@@ -1293,8 +1293,8 @@
                 "to": 443
               }
             },
-            "similarityScore": 0.9114202,
-            "score": 0.9114202
+            "similarityScore": 0.9113995,
+            "score": 0.9113995
           }
         },
         {
@@ -1302,18 +1302,18 @@
           "text": "2. USE OF SERVICES\n\nYou agree to use our services only for lawful purposes and in accordance with these Terms of Service and all applicable local, state, national, and international laws and regulations.",
           "sourceId": "/company-support-chatbot/data/legal_docs/terms.txt",
           "metadata": {
+            "endCharStr": "871",
             "startCharStr": "668",
             "startChar": 668,
             "endChar": 871,
-            "endCharStr": "871",
             "loc": {
               "lines": {
                 "from": 13,
                 "to": 15
               }
             },
-            "similarityScore": 0.9282613,
-            "score": 0.9282613
+            "similarityScore": 0.92761266,
+            "score": 0.92761266
           }
         },
         {
@@ -1321,8 +1321,8 @@
           "text": "Service Terms:\n- Scope of services: Services to be provided\n- Service levels: SLA requirements\n- Performance metrics: Service performance KPIs\n- Pricing: Service pricing and payment\n- Term: Service agreement duration\n- Termination: Termination rights and procedures\n\nSLA Management:\n- SLA definition: Service level definitions\n- SLA monitoring: SLA performance monitoring\n- SLA reporting: SLA performance reporting\n- SLA penalties: SLA penalty provisions\n- SLA credits: Service credits\n- SLA reviews: Regular SLA reviews\n\nPURCHASE AGREEMENTS",
           "sourceId": "/company-support-chatbot/data/legal_docs/contracts.txt",
           "metadata": {
-            "startCharStr": "8246",
             "startChar": 8246,
+            "startCharStr": "8246",
             "endCharStr": "8787",
             "endChar": 8787,
             "loc": {
@@ -1331,8 +1331,8 @@
                 "to": 257
               }
             },
-            "similarityScore": 0.94285893,
-            "score": 0.94285893
+            "similarityScore": 0.9429101,
+            "score": 0.9429101
           }
         }
       ],
@@ -1341,17 +1341,17 @@
         "model": "gpt-4o-mini",
         "tokenUsage": {
           "promptTokens": 595,
-          "completionTokens": 145,
-          "totalTokens": 740
+          "completionTokens": 194,
+          "totalTokens": 789
         },
         "timings": {
-          "retrievalMs": 351,
-          "llmGenerationMs": 2420,
-          "totalMs": 2771
+          "retrievalMs": 825,
+          "llmGenerationMs": 4304,
+          "totalMs": 5129
         }
       },
-      "content": "The Terms of Service outline the rules and conditions for using the services, including acceptance of terms, use of services, severability, entire agreement, governing law, and jurisdiction. Key points include:\n\n- By using the services, you agree to the terms and applicable laws.\n- You are responsible for checking for updates to the terms.\n- If any provision is found to be unenforceable, the rest of the terms remain effective.\n- The terms constitute the entire agreement between you and the service provider.\n- Continued use after modifications indicates acceptance of those changes.\n- Disputes are governed by specific jurisdiction laws, depending on the user’s location. \n\nFor detailed information, users should refer to the complete Terms of Service document.",
-      "text": "The Terms of Service outline the rules and conditions for using the services, including acceptance of terms, use of services, severability, entire agreement, governing law, and jurisdiction. Key points include:\n\n- By using the services, you agree to the terms and applicable laws.\n- You are responsible for checking for updates to the terms.\n- If any provision is found to be unenforceable, the rest of the terms remain effective.\n- The terms constitute the entire agreement between you and the service provider.\n- Continued use after modifications indicates acceptance of those changes.\n- Disputes are governed by specific jurisdiction laws, depending on the user’s location. \n\nFor detailed information, users should refer to the complete Terms of Service document.",
+      "content": "The Terms of Service outline the conditions under which users may access and use the services provided. Key elements include:\n\n1. **Acceptance of Terms**: By using the services, you agree to comply with the Terms and applicable laws. If you disagree, you cannot use the services.\n2. **Use of Services**: Services must be used lawfully and in accordance with the Terms.\n3. **Modifications**: Continued use after modifications indicates acceptance of the changes.\n4. **Severability**: If any part of the Terms is unenforceable, the remainder remains effective.\n5. **Entire Agreement**: The Terms, along with the Privacy Policy, represent the complete agreement between you and the service provider.\n6. **Governing Law**: The Terms are governed by the laws of a specified State/Country, with jurisdiction for disputes in that location.\n\nFor more detailed information, users should refer to the specific sections of the Terms of Service.",
+      "text": "The Terms of Service outline the conditions under which users may access and use the services provided. Key elements include:\n\n1. **Acceptance of Terms**: By using the services, you agree to comply with the Terms and applicable laws. If you disagree, you cannot use the services.\n2. **Use of Services**: Services must be used lawfully and in accordance with the Terms.\n3. **Modifications**: Continued use after modifications indicates acceptance of the changes.\n4. **Severability**: If any part of the Terms is unenforceable, the remainder remains effective.\n5. **Entire Agreement**: The Terms, along with the Privacy Policy, represent the complete agreement between you and the service provider.\n6. **Governing Law**: The Terms are governed by the laws of a specified State/Country, with jurisdiction for disputes in that location.\n\nFor more detailed information, users should refer to the specific sections of the Terms of Service.",
       "_safety": {
         "outputChecked": true,
         "moderationResult": {
@@ -1372,19 +1372,19 @@
             "violence/graphic": false
           },
           "category_scores": {
-            "harassment": 0.0000020785170435063726,
-            "harassment/threatening": 6.144174602214718e-7,
-            "sexual": 0.000016603846953733614,
-            "hate": 0.0000010129990980873922,
-            "hate/threatening": 5.2035710517034275e-8,
-            "illicit": 0.0000036478537675800286,
-            "illicit/violent": 6.962256250138369e-7,
-            "self-harm/intent": 5.093705003229987e-7,
-            "self-harm/instructions": 2.4824800371656586e-7,
-            "self-harm": 0.0000016187581436151335,
-            "sexual/minors": 0.0000014738981974494932,
-            "violence": 0.000003321419494792514,
-            "violence/graphic": 8.664653147910923e-7
+            "harassment": 0.0000017778551863194697,
+            "harassment/threatening": 5.594337713435001e-7,
+            "sexual": 0.000011235328063870752,
+            "hate": 8.398072034951531e-7,
+            "hate/threatening": 4.450850519411503e-8,
+            "illicit": 0.000003024195853395102,
+            "illicit/violent": 4.222833444659923e-7,
+            "self-harm/intent": 4.6378732973537256e-7,
+            "self-harm/instructions": 1.8738753836511972e-7,
+            "self-harm": 0.0000012029639084557005,
+            "sexual/minors": 0.0000013846004563753396,
+            "violence": 0.0000025071593847983196,
+            "violence/graphic": 6.339210403977636e-7
           }
         },
         "piiDetected": false,
@@ -1394,11 +1394,11 @@
       }
     },
     "evaluation": {
-      "relevance": 9,
-      "completeness": 8,
-      "accuracy": 9,
-      "overall": 9,
-      "reasoning": "The answer is highly relevant as it directly addresses the question about the Terms of Service. It provides a comprehensive overview of key points, though it could include more specific details from the context sources. The information presented is accurate and aligns well with the provided context."
+      "relevance": 10,
+      "completeness": 9,
+      "accuracy": 10,
+      "overall": 10,
+      "reasoning": "The answer is highly relevant as it directly addresses the question about the Terms of Service. It provides a comprehensive overview of key elements found in typical Terms of Service agreements, which aligns well with the context provided. The information is accurate and reflects the content of the Terms of Service, including acceptance, use, modifications, severability, entire agreement, and governing law. The only minor point for completeness is that it could have explicitly mentioned that users should refer to the full document for detailed terms, but it does suggest this at the end."
     }
   },
   {
@@ -1408,30 +1408,30 @@
     "intent": "finance",
     "classification": {
       "intent": "finance",
-      "confidence": 1,
+      "confidence": 0.9,
       "reasoning": "The query specifically asks for assistance with an expense report, which falls under finance and billing."
     },
     "routedTo": "finance",
     "agentResponse": {
-      "answer": "Please specify what aspect of your expense report you need help with, such as submission guidelines, allowable expenses, or reimbursement timelines.",
+      "answer": "Please provide more details about the specific issue you are facing with your expense report, and I will assist you accordingly.",
       "sources": [
         {
           "id": "chunk-0",
           "text": "EXPENSE REPORTS\n\nExpense Report Submission:\n- Submit expense reports monthly by the 5th of the following month\n- Use the company expense reporting system (accessible via employee portal)\n- Attach all receipts (required for expenses over $25)\n- Get manager approval before submission\n- Late submissions may delay reimbursement\n- Reports can be submitted via mobile app or web portal\n- Receipts can be uploaded as photos or PDFs\n- Multiple currencies supported with automatic conversion",
           "sourceId": "/company-support-chatbot/data/finance_docs/billing.txt",
           "metadata": {
+            "startCharStr": "4250",
             "endChar": 4734,
             "endCharStr": "4734",
             "startChar": 4250,
-            "startCharStr": "4250",
             "loc": {
               "lines": {
                 "from": 109,
                 "to": 119
               }
             },
-            "similarityScore": 0.8865522,
-            "score": 0.8865522
+            "similarityScore": 0.8866812,
+            "score": 0.8866812
           }
         },
         {
@@ -1441,16 +1441,16 @@
           "metadata": {
             "endCharStr": "5226",
             "startCharStr": "4736",
-            "endChar": 5226,
             "startChar": 4736,
+            "endChar": 5226,
             "loc": {
               "lines": {
                 "from": 121,
                 "to": 131
               }
             },
-            "similarityScore": 1.1493132,
-            "score": 1.1493132
+            "similarityScore": 1.1492794,
+            "score": 1.1492794
           }
         },
         {
@@ -1458,8 +1458,8 @@
           "text": "Non-Reimbursable Expenses:\n- Personal expenses\n- Alcohol (unless client entertainment, requires approval)\n- Personal travel upgrades\n- Expenses without receipts (over $25)\n- Traffic violations and fines\n- Personal entertainment\n- Gifts over $50 (requires special approval)\n- Political contributions\n- Personal insurance premiums\n\nExpense Limits:\n- Meals: $75 per person per day (domestic), $100 (international)\n- Hotels: Reasonable rates based on location\n- Flights: Economy class standard, business class requires approval\n- Car rentals: Standard size, upgrades require approval\n- Client entertainment: $200 per event, higher amounts require approval",
           "sourceId": "/company-support-chatbot/data/finance_docs/billing.txt",
           "metadata": {
-            "endChar": 5879,
             "startChar": 5228,
+            "endChar": 5879,
             "startCharStr": "5228",
             "endCharStr": "5879",
             "loc": {
@@ -1468,8 +1468,8 @@
                 "to": 149
               }
             },
-            "similarityScore": 1.2345724,
-            "score": 1.2345724
+            "similarityScore": 1.2341018,
+            "score": 1.2341018
           }
         },
         {
@@ -1477,9 +1477,9 @@
           "text": "Reimbursement Timeline:\n- Reports submitted by the 5th: paid by the 20th\n- Late submissions: paid in the following cycle\n- Direct deposit to your bank account\n- Payment notifications sent via email\n- Reimbursement appears in account within 2-3 business days of payment\n\nPAYMENT FAILURES AND RESOLUTION\n\nIf your payment fails:\n1. You'll receive an email notification immediately\n2. We'll attempt to charge again after 3 days\n3. Second retry attempt after 6 days\n4. Final retry attempt after 9 days\n5. You have a 7-day grace period to update payment\n6. Account will be suspended if payment not resolved after 7 days\n7. To reactivate: update payment method and account restores immediately\n8. Data retention: 30 days after suspension before deletion",
           "sourceId": "/company-support-chatbot/data/finance_docs/billing.txt",
           "metadata": {
+            "startCharStr": "5881",
             "startChar": 5881,
             "endChar": 6627,
-            "startCharStr": "5881",
             "endCharStr": "6627",
             "loc": {
               "lines": {
@@ -1487,8 +1487,8 @@
                 "to": 168
               }
             },
-            "similarityScore": 1.2771301,
-            "score": 1.2771301
+            "similarityScore": 1.2770956,
+            "score": 1.2770956
           }
         },
         {
@@ -1496,18 +1496,18 @@
           "text": "Month-End Closing:\n- Cut-off procedures: Period cut-off procedures\n- Accruals: Accrual entries\n- Adjustments: Adjusting entries\n- Reconciliations: Account reconciliations\n- Financial statements: Statement preparation\n- Closing checklist: Closing procedures checklist\n\nFINANCIAL REPORTING\n\nFinancial Statements:\n- Balance sheet: Assets, liabilities, equity\n- Income statement: Revenue, expenses, net income\n- Cash flow statement: Operating, investing, financing\n- Statement of equity: Changes in equity\n- Notes to financial statements: Financial disclosures\n- Management discussion: MD&A section",
           "sourceId": "/company-support-chatbot/data/finance_docs/accounting.txt",
           "metadata": {
-            "endChar": 4106,
-            "startCharStr": "3512",
             "endCharStr": "4106",
+            "startCharStr": "3512",
             "startChar": 3512,
+            "endChar": 4106,
             "loc": {
               "lines": {
                 "from": 112,
                 "to": 128
               }
             },
-            "similarityScore": 1.2946812,
-            "score": 1.2946812
+            "similarityScore": 1.2946761,
+            "score": 1.2946761
           }
         }
       ],
@@ -1516,17 +1516,17 @@
         "model": "gpt-4o-mini",
         "tokenUsage": {
           "promptTokens": 696,
-          "completionTokens": 25,
-          "totalTokens": 721
+          "completionTokens": 23,
+          "totalTokens": 719
         },
         "timings": {
-          "retrievalMs": 519,
-          "llmGenerationMs": 1210,
-          "totalMs": 1729
+          "retrievalMs": 804,
+          "llmGenerationMs": 820,
+          "totalMs": 1624
         }
       },
-      "content": "Please specify what aspect of your expense report you need help with, such as submission guidelines, allowable expenses, or reimbursement timelines.",
-      "text": "Please specify what aspect of your expense report you need help with, such as submission guidelines, allowable expenses, or reimbursement timelines.",
+      "content": "Please provide more details about the specific issue you are facing with your expense report, and I will assist you accordingly.",
+      "text": "Please provide more details about the specific issue you are facing with your expense report, and I will assist you accordingly.",
       "_safety": {
         "outputChecked": true,
         "moderationResult": {
@@ -1547,19 +1547,19 @@
             "violence/graphic": false
           },
           "category_scores": {
-            "harassment": 0.0000018631746484712008,
-            "harassment/threatening": 3.6119830612765795e-7,
-            "sexual": 0.0000011843139025979655,
-            "hate": 6.144174602214718e-7,
-            "hate/threatening": 1.2098656835274183e-7,
-            "illicit": 0.000004400118457925303,
-            "illicit/violent": 0.0000034808121961114687,
-            "self-harm/intent": 4.78509449489012e-7,
-            "self-harm/instructions": 3.9054837391123835e-7,
-            "self-harm": 8.80110037979258e-7,
-            "sexual/minors": 2.4824800371656586e-7,
-            "violence": 0.0000018342893327886845,
-            "violence/graphic": 2.2603242979035749e-7
+            "harassment": 0.0000027535691114583474,
+            "harassment/threatening": 6.748051590048605e-7,
+            "sexual": 0.0000041335397768930325,
+            "hate": 5.77192003016332e-7,
+            "hate/threatening": 9.422445939071362e-8,
+            "illicit": 0.00000453978687024344,
+            "illicit/violent": 0.000003321419494792514,
+            "self-harm/intent": 7.183260399857925e-7,
+            "self-harm/instructions": 4.495181578513688e-7,
+            "self-harm": 0.0000013007128466476034,
+            "sexual/minors": 8.139692624947503e-7,
+            "violence": 0.0000041335397768930325,
+            "violence/graphic": 7.411279871974134e-7
           }
         },
         "piiDetected": false,
@@ -1569,11 +1569,11 @@
       }
     },
     "evaluation": {
-      "relevance": 9,
-      "completeness": 7,
-      "accuracy": 10,
-      "overall": 8,
-      "reasoning": "The answer is highly relevant as it prompts the user to specify their needs regarding the expense report, which is directly related to the question. However, it could be more complete by providing specific examples or information from the context sources regarding common issues or questions related to expense reports. The accuracy is high since it aligns with the context provided."
+      "relevance": 8,
+      "completeness": 6,
+      "accuracy": 9,
+      "overall": 7,
+      "reasoning": "The answer is relevant as it prompts the user for more details about their expense report issue, which is necessary for providing assistance. However, it lacks specific guidance or information that could help the user immediately, such as common issues or steps to take. The accuracy is high as it aligns with the context provided, but the completeness is lower due to the lack of actionable information."
     }
   },
   {
@@ -1584,11 +1584,11 @@
     "classification": {
       "intent": "it",
       "confidence": 0.9,
-      "reasoning": "The query asks about requesting access, which is an IT support issue related to system access."
+      "reasoning": "The query asks about requesting access, which falls under IT support for access requests."
     },
     "routedTo": "it",
     "agentResponse": {
-      "answer": "To request access to the HR portal, follow these steps:\n\n1. Log into the IT portal.\n2. Navigate to \"Access Requests.\"\n3. Select the HR Portal.\n4. Provide a business justification.\n5. Get manager approval.\n6. IT will grant access within 1-2 business days, and you'll receive a notification when access is granted.",
+      "answer": "To request access to the HR portal, follow these steps:\n\n1. Log into the IT portal.\n2. Navigate to \"Access Requests.\"\n3. Select the HR Portal.\n4. Provide a business justification.\n5. Get manager approval.\n6. IT will grant access within 1-2 business days, and you'll receive notification when access is granted.",
       "sources": [
         {
           "id": "chunk-0",
@@ -1605,8 +1605,8 @@
                 "to": 245
               }
             },
-            "similarityScore": 0.73108625,
-            "score": 0.73108625
+            "similarityScore": 0.7312717,
+            "score": 0.7312717
           }
         },
         {
@@ -1614,18 +1614,18 @@
           "text": "PASSWORD RESET PROCEDURES\n\nHow to Reset Your Password:\n\nSelf-Service Password Reset:\n1. Go to the company portal login page\n2. Click on \"Forgot Password\" link\n3. Enter your company email address\n4. Check your email for reset instructions (check spam folder if not received)\n5. Click the reset link in the email (valid for 1 hour)\n6. Follow the link to create a new password\n7. Enter new password twice to confirm\n8. Log in with new password\n\nPassword Reset via Phone:\n1. Call IT Help Desk at extension 1234\n2. Provide your employee ID and manager's name\n3. Answer security questions for verification\n4. IT will send temporary password via email\n5. Log in and change password immediately\n6. Temporary passwords expire after 24 hours",
           "sourceId": "/company-support-chatbot/data/it_docs/password-reset.txt",
           "metadata": {
-            "endChar": 731,
-            "endCharStr": "731",
             "startChar": 0,
             "startCharStr": "0",
+            "endChar": 731,
+            "endCharStr": "731",
             "loc": {
               "lines": {
                 "from": 1,
                 "to": 21
               }
             },
-            "similarityScore": 1.0773778,
-            "score": 1.0773778
+            "similarityScore": 1.0773124,
+            "score": 1.0773124
           }
         },
         {
@@ -1634,8 +1634,8 @@
           "sourceId": "/company-support-chatbot/data/it_docs/password-reset.txt",
           "metadata": {
             "endChar": 1370,
-            "startChar": 733,
             "startCharStr": "733",
+            "startChar": 733,
             "endCharStr": "1370",
             "loc": {
               "lines": {
@@ -1643,8 +1643,8 @@
                 "to": 40
               }
             },
-            "similarityScore": 1.1264182,
-            "score": 1.1264182
+            "similarityScore": 1.1274545,
+            "score": 1.1274545
           }
         },
         {
@@ -1662,8 +1662,8 @@
                 "to": 433
               }
             },
-            "similarityScore": 1.1931036,
-            "score": 1.1931036
+            "similarityScore": 1.1929661,
+            "score": 1.1929661
           }
         },
         {
@@ -1671,18 +1671,18 @@
           "text": "Physical Security:\n- Lock screen when away from desk\n- Secure laptops when traveling\n- Don't leave devices unattended\n- Use privacy screens in public\n- Report lost or stolen devices immediately\n- Badge access required for office\n\nIT SUPPORT CONTACT INFORMATION\n\nIT Help Desk:\n- Email: it-support@company.com\n- Phone: Extension 1234\n- Hours: Monday-Friday, 8 AM - 6 PM\n- Emergency: Available 24/7 for critical issues\n- Live Chat: Available in IT portal during business hours\n\nIT Portal:\n- Self-service portal: Available 24/7\n- Submit tickets online\n- Track ticket status\n- Knowledge base articles\n- Software downloads\n- Access request forms\n\nResponse Times:\n- Critical issues: 1 hour\n- High priority: 4 hours\n- Medium priority: 1 business day\n- Low priority: 3 business days",
           "sourceId": "/company-support-chatbot/data/it_docs/password-reset.txt",
           "metadata": {
-            "startChar": 10462,
-            "endChar": 11235,
             "endCharStr": "11235",
             "startCharStr": "10462",
+            "endChar": 11235,
+            "startChar": 10462,
             "loc": {
               "lines": {
                 "from": 321,
                 "to": 350
               }
             },
-            "similarityScore": 1.2019869,
-            "score": 1.2019869
+            "similarityScore": 1.2026002,
+            "score": 1.2026002
           }
         }
       ],
@@ -1691,17 +1691,17 @@
         "model": "gpt-4o-mini",
         "tokenUsage": {
           "promptTokens": 882,
-          "completionTokens": 72,
-          "totalTokens": 954
+          "completionTokens": 71,
+          "totalTokens": 953
         },
         "timings": {
-          "retrievalMs": 492,
-          "llmGenerationMs": 2066,
-          "totalMs": 2558
+          "retrievalMs": 617,
+          "llmGenerationMs": 2083,
+          "totalMs": 2700
         }
       },
-      "content": "To request access to the HR portal, follow these steps:\n\n1. Log into the IT portal.\n2. Navigate to \"Access Requests.\"\n3. Select the HR Portal.\n4. Provide a business justification.\n5. Get manager approval.\n6. IT will grant access within 1-2 business days, and you'll receive a notification when access is granted.",
-      "text": "To request access to the HR portal, follow these steps:\n\n1. Log into the IT portal.\n2. Navigate to \"Access Requests.\"\n3. Select the HR Portal.\n4. Provide a business justification.\n5. Get manager approval.\n6. IT will grant access within 1-2 business days, and you'll receive a notification when access is granted.",
+      "content": "To request access to the HR portal, follow these steps:\n\n1. Log into the IT portal.\n2. Navigate to \"Access Requests.\"\n3. Select the HR Portal.\n4. Provide a business justification.\n5. Get manager approval.\n6. IT will grant access within 1-2 business days, and you'll receive notification when access is granted.",
+      "text": "To request access to the HR portal, follow these steps:\n\n1. Log into the IT portal.\n2. Navigate to \"Access Requests.\"\n3. Select the HR Portal.\n4. Provide a business justification.\n5. Get manager approval.\n6. IT will grant access within 1-2 business days, and you'll receive notification when access is granted.",
       "_safety": {
         "outputChecked": true,
         "moderationResult": {
@@ -1723,18 +1723,18 @@
           },
           "category_scores": {
             "harassment": 0.000001670142184809518,
-            "harassment/threatening": 8.939696304799168e-7,
-            "sexual": 0.000008481104172358076,
-            "hate": 7.183260399857925e-7,
-            "hate/threatening": 8.579235380478509e-8,
-            "illicit": 0.000015598027633743823,
-            "illicit/violent": 0.0000020785170435063726,
-            "self-harm/intent": 5.955139348629957e-7,
-            "self-harm/instructions": 4.495181578513688e-7,
-            "self-harm": 9.666109404131067e-7,
-            "sexual/minors": 0.0000017231572752142392,
-            "violence": 0.000002355261854303796,
-            "violence/graphic": 5.77192003016332e-7
+            "harassment/threatening": 8.139692624947503e-7,
+            "sexual": 0.000008220189478350845,
+            "hate": 6.748051590048605e-7,
+            "hate/threatening": 9.13254801895554e-8,
+            "illicit": 0.00001535623976496012,
+            "illicit/violent": 0.000002212566909570261,
+            "self-harm/intent": 6.144174602214718e-7,
+            "self-harm/instructions": 4.936988949458183e-7,
+            "self-harm": 9.818326983657703e-7,
+            "sexual/minors": 0.000001670142184809518,
+            "violence": 0.0000022827997192887966,
+            "violence/graphic": 5.422218970016178e-7
           }
         },
         "piiDetected": false,
@@ -1748,7 +1748,7 @@
       "completeness": 10,
       "accuracy": 10,
       "overall": 10,
-      "reasoning": "The answer is highly relevant as it directly addresses the question about requesting access to the HR portal. It provides a complete step-by-step guide that aligns perfectly with the context given in the sources, ensuring that all necessary information is included. Additionally, the steps outlined are accurate and consistent with the procedures for access requests, making the response both reliable and informative."
+      "reasoning": "The answer is highly relevant as it directly addresses the question about requesting access to the HR portal. It provides a complete step-by-step guide that aligns perfectly with the context provided about system access requests. Additionally, all the steps mentioned are accurate and consistent with the information from the context sources."
     }
   },
   {
@@ -1763,7 +1763,7 @@
     },
     "routedTo": "hr",
     "agentResponse": {
-      "answer": "The maternity leave policy provides 12 weeks of paid maternity leave. Leave can begin up to 2 weeks before the due date. Additionally, there is unpaid leave available under FMLA (up to 12 weeks total), and health insurance continues during the leave period with guaranteed job protection. A return to work transition program is also available.",
+      "answer": "The maternity leave policy includes 12 weeks of paid maternity leave. Leave can begin up to 2 weeks before the due date. Additionally, there is an option for unpaid leave available under FMLA (up to 12 weeks total). Health insurance continues during leave, and job protection is guaranteed. A return to work transition program is also available.",
       "sources": [
         {
           "id": "chunk-0",
@@ -1771,17 +1771,17 @@
           "sourceId": "/company-support-chatbot/data/hr_docs/benefits.txt",
           "metadata": {
             "endChar": 5743,
-            "endCharStr": "5743",
             "startChar": 5048,
             "startCharStr": "5048",
+            "endCharStr": "5743",
             "loc": {
               "lines": {
                 "from": 133,
                 "to": 149
               }
             },
-            "similarityScore": 0.7825327,
-            "score": 0.7825327
+            "similarityScore": 0.78239805,
+            "score": 0.78239805
           }
         },
         {
@@ -1789,18 +1789,18 @@
           "text": "Short-Term Disability:\n- Coverage: 60% of salary for up to 26 weeks\n- Elimination period: 7 days\n- Company paid for all employees\n- Covers illness, injury, pregnancy\n- Job protection during disability period\n\nLong-Term Disability:\n- Coverage: 60% of salary up to $10,000/month\n- Elimination period: 90 days\n- Company paid for all employees\n- Coverage until age 65 or return to work\n- Own occupation definition for first 2 years\n- Cost of living adjustments available\n\nVACATION AND LEAVE POLICIES",
           "sourceId": "/company-support-chatbot/data/hr_docs/benefits.txt",
           "metadata": {
-            "endChar": 3937,
             "endCharStr": "3937",
             "startCharStr": "3442",
             "startChar": 3442,
+            "endChar": 3937,
             "loc": {
               "lines": {
                 "from": 84,
                 "to": 99
               }
             },
-            "similarityScore": 1.0846785,
-            "score": 1.0846785
+            "similarityScore": 1.0849473,
+            "score": 1.0849473
           }
         },
         {
@@ -1808,18 +1808,18 @@
           "text": "Leave Request Process:\n1. Submit request to HR with documentation\n2. HR reviews eligibility\n3. Approval or denial communicated\n4. Leave begins on approved date\n5. Return-to-work process\n6. Job protection during leave\n\nFMLA Eligibility:\n- 12 months of service\n- 1,250 hours worked in past 12 months\n- Up to 12 weeks unpaid leave\n- Job protection guaranteed\n- Health benefits continue\n- Intermittent leave available\n\nRETURN TO WORK\n\nReturn-to-Work Process:\n- Medical clearance may be required\n- Accommodations assessed if needed\n- Gradual return schedule available\n- Support during transition\n- Regular check-ins\n- Full duties resumed when ready\n\nWORKPLACE SAFETY",
           "sourceId": "/company-support-chatbot/data/hr_docs/employee-relations.txt",
           "metadata": {
-            "endCharStr": "8306",
             "startCharStr": "7645",
-            "endChar": 8306,
+            "endCharStr": "8306",
             "startChar": 7645,
+            "endChar": 8306,
             "loc": {
               "lines": {
                 "from": 262,
                 "to": 288
               }
             },
-            "similarityScore": 1.1339335,
-            "score": 1.1339335
+            "similarityScore": 1.1339815,
+            "score": 1.1339815
           }
         },
         {
@@ -1827,18 +1827,18 @@
           "text": "VACATION AND LEAVE POLICIES\n\nVacation Days:\n- Full-time employees accrue 15 vacation days per year\n- Vacation days accrue at a rate of 1.25 days per month\n- Maximum carryover of 5 days to the next year\n- Unused days beyond carryover limit are forfeited\n- Vacation requests must be submitted at least 2 weeks in advance\n- Manager approval required for all vacation requests\n- Blackout periods may apply (check with manager)\n- Vacation can be taken in half-day increments\n- Vacation accrual increases with tenure:\n  - Years 1-3: 15 days\n  - Years 4-6: 20 days\n  - Years 7-10: 25 days\n  - Years 11+: 30 days",
           "sourceId": "/company-support-chatbot/data/hr_docs/benefits.txt",
           "metadata": {
-            "endCharStr": "4514",
-            "startChar": 3910,
             "startCharStr": "3910",
+            "startChar": 3910,
             "endChar": 4514,
+            "endCharStr": "4514",
             "loc": {
               "lines": {
                 "from": 99,
                 "to": 114
               }
             },
-            "similarityScore": 1.1483291,
-            "score": 1.1483291
+            "similarityScore": 1.1483111,
+            "score": 1.1483111
           }
         },
         {
@@ -1847,8 +1847,8 @@
           "sourceId": "/company-support-chatbot/data/hr_docs/benefits.txt",
           "metadata": {
             "startChar": 4516,
-            "endChar": 5046,
             "endCharStr": "5046",
+            "endChar": 5046,
             "startCharStr": "4516",
             "loc": {
               "lines": {
@@ -1856,8 +1856,8 @@
                 "to": 131
               }
             },
-            "similarityScore": 1.1660956,
-            "score": 1.1660956
+            "similarityScore": 1.1661698,
+            "score": 1.1661698
           }
         }
       ],
@@ -1866,17 +1866,17 @@
         "model": "gpt-4o-mini",
         "tokenUsage": {
           "promptTokens": 818,
-          "completionTokens": 68,
-          "totalTokens": 886
+          "completionTokens": 70,
+          "totalTokens": 888
         },
         "timings": {
-          "retrievalMs": 320,
-          "llmGenerationMs": 1526,
-          "totalMs": 1846
+          "retrievalMs": 951,
+          "llmGenerationMs": 1910,
+          "totalMs": 2861
         }
       },
-      "content": "The maternity leave policy provides 12 weeks of paid maternity leave. Leave can begin up to 2 weeks before the due date. Additionally, there is unpaid leave available under FMLA (up to 12 weeks total), and health insurance continues during the leave period with guaranteed job protection. A return to work transition program is also available.",
-      "text": "The maternity leave policy provides 12 weeks of paid maternity leave. Leave can begin up to 2 weeks before the due date. Additionally, there is unpaid leave available under FMLA (up to 12 weeks total), and health insurance continues during the leave period with guaranteed job protection. A return to work transition program is also available.",
+      "content": "The maternity leave policy includes 12 weeks of paid maternity leave. Leave can begin up to 2 weeks before the due date. Additionally, there is an option for unpaid leave available under FMLA (up to 12 weeks total). Health insurance continues during leave, and job protection is guaranteed. A return to work transition program is also available.",
+      "text": "The maternity leave policy includes 12 weeks of paid maternity leave. Leave can begin up to 2 weeks before the due date. Additionally, there is an option for unpaid leave available under FMLA (up to 12 weeks total). Health insurance continues during leave, and job protection is guaranteed. A return to work transition program is also available.",
       "_safety": {
         "outputChecked": true,
         "moderationResult": {
@@ -1898,16 +1898,16 @@
           },
           "category_scores": {
             "harassment": 2.1907815825757866e-7,
-            "harassment/threatening": 7.571149413053982e-8,
-            "sexual": 0.00001141223854434603,
-            "hate": 2.994440981371515e-7,
-            "hate/threatening": 4.450850519411503e-8,
+            "harassment/threatening": 1.067702870044147e-7,
+            "sexual": 0.000013552078562406772,
+            "hate": 3.9669859149467314e-7,
+            "hate/threatening": 5.368750039367665e-8,
             "illicit": 3.138146753575985e-7,
-            "illicit/violent": 4.222833444659923e-7,
-            "self-harm/intent": 2.8130174840733105e-7,
-            "self-harm/instructions": 1.3287773439792038e-7,
-            "self-harm": 3.2377619022355566e-7,
-            "sexual/minors": 4.936988949458183e-7,
+            "illicit/violent": 3.726639284186561e-7,
+            "self-harm/intent": 3.84493505874534e-7,
+            "self-harm/instructions": 1.816222403812674e-7,
+            "self-harm": 4.289333109916098e-7,
+            "sexual/minors": 5.422218970016178e-7,
             "violence": 4.356879983467376e-7,
             "violence/graphic": 2.2603242979035749e-7
           }
@@ -1920,10 +1920,10 @@
     },
     "evaluation": {
       "relevance": 10,
-      "completeness": 9,
+      "completeness": 10,
       "accuracy": 10,
       "overall": 10,
-      "reasoning": "The answer is highly relevant as it directly addresses the maternity leave policy. It provides comprehensive information about the duration of paid leave, the option to start leave early, the availability of unpaid leave under FMLA, health insurance continuation, job protection, and the return-to-work transition program. All details are accurate based on the provided context."
+      "reasoning": "The answer is highly relevant as it directly addresses the question about the maternity leave policy. It provides complete information, covering the duration of paid leave, the option for unpaid leave, health insurance continuity, job protection, and the return to work transition program. All details align accurately with the provided context."
     }
   },
   {
@@ -1938,7 +1938,7 @@
     },
     "routedTo": "finance",
     "agentResponse": {
-      "answer": "To update your payment method, follow these steps:\n1. Log into your account.\n2. Go to Billing Settings.\n3. Click \"Update Payment Method.\"\n4. Enter your new payment information.\n5. Verify the payment method (a small charge may be made and refunded).\n6. Save changes.\n7. Set as the default payment method if you have multiple methods on file.",
+      "answer": "To update your payment method, follow these steps:\n\n1. Log into your account.\n2. Go to Billing Settings.\n3. Click \"Update Payment Method.\"\n4. Enter your new payment information.\n5. Verify the payment method (a small charge may be made and refunded).\n6. Save changes.\n7. Set as the default payment method if you have multiple methods on file.",
       "sources": [
         {
           "id": "chunk-0",
@@ -1946,17 +1946,17 @@
           "sourceId": "/company-support-chatbot/data/finance_docs/billing.txt",
           "metadata": {
             "endChar": 2251,
-            "startChar": 1650,
-            "endCharStr": "2251",
             "startCharStr": "1650",
+            "endCharStr": "2251",
+            "startChar": 1650,
             "loc": {
               "lines": {
                 "from": 41,
                 "to": 57
               }
             },
-            "similarityScore": 0.6936491,
-            "score": 0.6936491
+            "similarityScore": 0.69321275,
+            "score": 0.69321275
           }
         },
         {
@@ -1964,18 +1964,18 @@
           "text": "Payment Methods:\n- Credit cards (Visa, MasterCard, American Express, Discover)\n- Debit cards (with credit card logo)\n- Bank transfer (ACH) - US customers only\n- Wire transfer (for amounts over $10,000 or Enterprise customers)\n- Check payments (must be pre-approved, Enterprise only)\n- PayPal (for small transactions)\n- Apple Pay and Google Pay (mobile payments)\n- Cryptocurrency (Bitcoin, Ethereum) - Enterprise only, requires approval\n\nInternational Payment Methods:\n- SEPA transfers (EU customers)\n- SWIFT wire transfers (international)\n- Local payment methods available in select countries\n- Currency conversion handled automatically\n- Exchange rates updated daily",
           "sourceId": "/company-support-chatbot/data/finance_docs/billing.txt",
           "metadata": {
-            "startChar": 981,
+            "startCharStr": "981",
             "endCharStr": "1648",
             "endChar": 1648,
-            "startCharStr": "981",
+            "startChar": 981,
             "loc": {
               "lines": {
                 "from": 24,
                 "to": 39
               }
             },
-            "similarityScore": 1.1152062,
-            "score": 1.1152062
+            "similarityScore": 1.1153926,
+            "score": 1.1153926
           }
         },
         {
@@ -1983,18 +1983,18 @@
           "text": "Common Payment Failure Reasons:\n- Insufficient funds\n- Expired credit card\n- Card declined by bank\n- Incorrect billing address\n- Card limit reached\n- Bank security hold\n- International transaction blocked\n\nTo resolve payment issues:\n- Update payment method in account settings\n- Contact finance@company.com for assistance\n- Check with your bank for any holds or restrictions\n- Verify billing address matches card statement\n- Try alternative payment method\n- Contact support for payment plan options (Enterprise only)\n\nPayment Failure Notifications:\n- Email sent immediately upon failure\n- Reminder emails sent before retry attempts\n- Final warning email sent before suspension\n- SMS notifications available (opt-in required)\n- In-app notifications for active users",
           "sourceId": "/company-support-chatbot/data/finance_docs/billing.txt",
           "metadata": {
-            "startCharStr": "6629",
-            "endChar": 7393,
-            "endCharStr": "7393",
             "startChar": 6629,
+            "endCharStr": "7393",
+            "endChar": 7393,
+            "startCharStr": "6629",
             "loc": {
               "lines": {
                 "from": 170,
                 "to": 192
               }
             },
-            "similarityScore": 1.1205974,
-            "score": 1.1205974
+            "similarityScore": 1.1197925,
+            "score": 1.1197925
           }
         },
         {
@@ -2002,18 +2002,18 @@
           "text": "Payment Methods Accepted:\n- Credit cards (Visa, MasterCard, Amex, Discover)\n- Debit cards\n- Bank transfer (ACH) - US customers\n- Wire transfer (Enterprise only, minimum $1,000)\n- Purchase orders (Enterprise only, Net 30 terms)\n- PayPal (for Starter and Professional plans)\n- Apple Pay and Google Pay (mobile)\n\nPayment Terms:\n- Standard: Payment due upon receipt\n- Net 15: Available for Enterprise (small fee)\n- Net 30: Available for Enterprise (standard)\n- Net 60: Available for Enterprise (custom pricing)\n- Prepayment discounts: 5% for annual prepayment\n\nINVOICE DETAILS",
           "sourceId": "/company-support-chatbot/data/finance_docs/pricing.txt",
           "metadata": {
-            "endCharStr": "3342",
             "startChar": 2770,
-            "endChar": 3342,
             "startCharStr": "2770",
+            "endCharStr": "3342",
+            "endChar": 3342,
             "loc": {
               "lines": {
                 "from": 97,
                 "to": 113
               }
             },
-            "similarityScore": 1.2425637,
-            "score": 1.2425637
+            "similarityScore": 1.2426467,
+            "score": 1.2426467
           }
         },
         {
@@ -2021,18 +2021,18 @@
           "text": "Payment Processing:\n- Payment terms: Payment term management\n- Payment methods: Check, ACH, wire transfer\n- Payment schedule: Payment scheduling\n- Payment approval: Payment authorization\n- Payment execution: Payment processing\n- Payment reconciliation: Bank reconciliation\n\nACCOUNTS RECEIVABLE\n\nCustomer Management:\n- Customer setup: New customer registration\n- Customer master data: Customer information management\n- Credit terms: Payment terms and credit limits\n- Customer contracts: Contract management\n- Customer relationships: Relationship management\n- Customer credit: Credit evaluation",
           "sourceId": "/company-support-chatbot/data/finance_docs/accounting.txt",
           "metadata": {
-            "endChar": 2343,
-            "startCharStr": "1751",
-            "endCharStr": "2343",
             "startChar": 1751,
+            "endCharStr": "2343",
+            "startCharStr": "1751",
+            "endChar": 2343,
             "loc": {
               "lines": {
                 "from": 60,
                 "to": 76
               }
             },
-            "similarityScore": 1.3046715,
-            "score": 1.3046715
+            "similarityScore": 1.3047588,
+            "score": 1.3047588
           }
         }
       ],
@@ -2045,13 +2045,13 @@
           "totalTokens": 811
         },
         "timings": {
-          "retrievalMs": 285,
-          "llmGenerationMs": 1757,
-          "totalMs": 2042
+          "retrievalMs": 765,
+          "llmGenerationMs": 1908,
+          "totalMs": 2673
         }
       },
-      "content": "To update your payment method, follow these steps:\n1. Log into your account.\n2. Go to Billing Settings.\n3. Click \"Update Payment Method.\"\n4. Enter your new payment information.\n5. Verify the payment method (a small charge may be made and refunded).\n6. Save changes.\n7. Set as the default payment method if you have multiple methods on file.",
-      "text": "To update your payment method, follow these steps:\n1. Log into your account.\n2. Go to Billing Settings.\n3. Click \"Update Payment Method.\"\n4. Enter your new payment information.\n5. Verify the payment method (a small charge may be made and refunded).\n6. Save changes.\n7. Set as the default payment method if you have multiple methods on file.",
+      "content": "To update your payment method, follow these steps:\n\n1. Log into your account.\n2. Go to Billing Settings.\n3. Click \"Update Payment Method.\"\n4. Enter your new payment information.\n5. Verify the payment method (a small charge may be made and refunded).\n6. Save changes.\n7. Set as the default payment method if you have multiple methods on file.",
+      "text": "To update your payment method, follow these steps:\n\n1. Log into your account.\n2. Go to Billing Settings.\n3. Click \"Update Payment Method.\"\n4. Enter your new payment information.\n5. Verify the payment method (a small charge may be made and refunded).\n6. Save changes.\n7. Set as the default payment method if you have multiple methods on file.",
       "_safety": {
         "outputChecked": true,
         "moderationResult": {
@@ -2072,19 +2072,19 @@
             "violence/graphic": false
           },
           "category_scores": {
-            "harassment": 0.0000025071593847983196,
-            "harassment/threatening": 0.0000017231572752142392,
+            "harassment": 0.0000023187477504664324,
+            "harassment/threatening": 0.0000016187581436151335,
             "sexual": 0.000006014151777699533,
-            "hate": 0.0000010616134237448653,
-            "hate/threatening": 2.4824800371656586e-7,
-            "illicit": 0.003816743303777091,
-            "illicit/violent": 0.000004264746818557914,
-            "self-harm/intent": 0.0000024682904407607285,
-            "self-harm/instructions": 0.0000016442494559854523,
-            "self-harm": 0.000006814872211615988,
+            "hate": 0.0000010953122821495382,
+            "hate/threatening": 2.332074525844782e-7,
+            "illicit": 0.0052863735009531,
+            "illicit/violent": 0.000004198630823683514,
+            "self-harm/intent": 0.0000022474089854291757,
+            "self-harm/instructions": 0.0000015936620247162786,
+            "self-harm": 0.00000610885510164857,
             "sexual/minors": 0.000001670142184809518,
-            "violence": 0.000005562206273647035,
-            "violence/graphic": 0.0000011843139025979655
+            "violence": 0.00000498595821272702,
+            "violence/graphic": 0.0000010783312222985275
           }
         },
         "piiDetected": false,
@@ -2098,13 +2098,14 @@
       "completeness": 10,
       "accuracy": 10,
       "overall": 10,
-      "reasoning": "The answer is highly relevant as it directly addresses the user's request to update their payment method. It provides a complete step-by-step guide that matches the context provided, ensuring that the user has all the necessary information to successfully update their payment method. Additionally, the steps are accurate and align perfectly with the context sources."
+      "reasoning": "The answer directly addresses the question about updating the payment method by providing a clear, step-by-step guide that aligns perfectly with the context provided. It covers all necessary steps without omitting any details, ensuring completeness. Additionally, the information is accurate and consistent with the context sources."
     }
   },
   {
     "question": "What are the health insurance benefits and how do I reset my password?",
     "expectedIntent": "hr",
     "description": "Multi-intent: HR benefits + IT password reset",
+    "intent": "hr",
     "intents": [
       "hr",
       "it"
@@ -2113,15 +2114,15 @@
       "intents": [
         {
           "intent": "hr",
-          "confidence": 0.9,
+          "confidence": 1,
           "subQuery": "What are the health insurance benefits?",
           "reasoning": "The query asks about health insurance benefits, which is an HR benefits question."
         },
         {
           "intent": "it",
-          "confidence": 0.9,
+          "confidence": 1,
           "subQuery": "How do I reset my password?",
-          "reasoning": "The query asks about resetting a password, which is an IT support question."
+          "reasoning": "The query asks about password reset, which is an IT support question."
         }
       ],
       "requiresMultipleAgents": true
@@ -2131,7 +2132,7 @@
       "it"
     ],
     "agentResponse": {
-      "answer": "[HR - What are the health insurance benefits?]\n\nThe health insurance benefits include:\n\n- Coverage begins on the first day of employment.\n- Three plan options: Basic, Standard, and Premium.\n- The company covers 80% of premiums for employees and 60% for dependents.\n- Deductibles range from $500 (Premium) to $2,000 (Basic).\n- Annual out-of-pocket maximums range from $3,000 to $6,000.\n- Coverage includes preventive care, emergency services, hospitalization, prescription drugs, mental health and substance abuse treatment, maternity and newborn care, and pediatric services.\n- Network includes 95% of providers nationwide, with out-of-network coverage available at a higher cost.\n\n---\n\n[IT - How do I reset my password?]\n\nYou can reset your password using one of the following methods:\n\n1. **Self-Service Password Reset**:\n   - Go to the company portal login page and click on the \"Forgot Password\" link.\n   - Enter your company email address and check your email for reset instructions.\n   - Follow the link in the email to create a new password.\n\n2. **Password Reset via Phone**:\n   - Call the IT Help Desk at extension 1234.\n   - Provide your employee ID and manager's name, and answer security questions for verification.\n   - IT will send a temporary password via email.\n\n3. **Password Reset via IT Portal** (if you have access):\n   - Log into the IT Support Portal and navigate to the \"Password Reset\" section.\n   - Select your account and verify your identity with security questions to receive a reset link via email.\n\nMake sure to follow the password requirements when creating a new password.",
+      "answer": "[HR - What are the health insurance benefits?]\n\nThe health insurance benefits include:\n\n- Coverage begins on the first day of employment.\n- Three plan options: Basic, Standard, and Premium.\n- Company covers 80% of premiums for employees and 60% for dependents.\n- Deductibles range from $500 (Premium) to $2,000 (Basic).\n- Annual out-of-pocket maximums range from $3,000 to $6,000.\n- Coverage includes preventive care, emergency services, hospitalization, prescription drugs, mental health and substance abuse treatment, maternity and newborn care, and pediatric services.\n- Network includes 95% of providers nationwide, with out-of-network coverage available at a higher cost.\n\n---\n\n[IT - How do I reset my password?]\n\nYou can reset your password using one of the following methods:\n\n1. **Self-Service Password Reset:**\n   - Go to the company portal login page.\n   - Click on the \"Forgot Password\" link.\n   - Enter your company email address.\n   - Check your email for reset instructions.\n   - Click the reset link in the email (valid for 1 hour) and follow the instructions to create a new password.\n\n2. **Password Reset via Phone:**\n   - Call the IT Help Desk at extension 1234.\n   - Provide your employee ID and manager's name.\n   - Answer security questions for verification.\n   - IT will send a temporary password via email, which you should log in with and change immediately.\n\n3. **Password Reset via IT Portal:**\n   - Log into the IT Support Portal (if you have access).\n   - Navigate to the \"Password Reset\" section.\n   - Select your account and verify your identity with security questions.\n   - Receive a reset link via email and follow the instructions to reset your password.\n\nMake sure your new password meets the password requirements listed in the guidelines.",
       "sources": [
         {
           "intent": "hr",
@@ -2142,10 +2143,10 @@
               "text": "HEALTH INSURANCE BENEFITS\n\nOur company offers comprehensive health insurance benefits to all full-time employees.\n\nMedical Insurance:\n- Coverage begins on the first day of employment\n- We offer three plan options: Basic, Standard, and Premium\n- The company covers 80% of premiums for employees and 60% for dependents\n- Deductibles range from $500 (Premium) to $2,000 (Basic)\n- Annual out-of-pocket maximums range from $3,000 to $6,000\n- Coverage includes preventive care, emergency services, hospitalization, prescription drugs\n- Mental health and substance abuse treatment covered\n- Maternity and newborn care included\n- Pediatric services covered\n- Network includes 95% of providers nationwide\n- Out-of-network coverage available (higher cost)",
               "sourceId": "/company-support-chatbot/data/hr_docs/benefits.txt",
               "metadata": {
-                "endChar": 745,
                 "endCharStr": "745",
                 "startChar": 0,
                 "startCharStr": "0",
+                "endChar": 745,
                 "loc": {
                   "lines": {
                     "from": 1,
@@ -2161,10 +2162,10 @@
               "text": "Dental Insurance:\n- Preventive care is covered at 100% (cleanings, exams, X-rays)\n- Basic procedures covered at 80% (fillings, extractions)\n- Major procedures covered at 50% (crowns, bridges, root canals)\n- Orthodontia covered at 50% up to $2,000 lifetime maximum\n- Annual maximum benefit of $1,500 per person\n- No deductible for preventive care\n- $50 deductible for basic procedures, $100 for major\n- Network includes 90% of dentists nationwide\n- Annual cleanings: 2 per year covered at 100%",
               "sourceId": "/company-support-chatbot/data/hr_docs/benefits.txt",
               "metadata": {
-                "startCharStr": "1218",
-                "endCharStr": "1710",
                 "startChar": 1218,
+                "startCharStr": "1218",
                 "endChar": 1710,
+                "endCharStr": "1710",
                 "loc": {
                   "lines": {
                     "from": 30,
@@ -2181,9 +2182,9 @@
               "sourceId": "/company-support-chatbot/data/hr_docs/benefits.txt",
               "metadata": {
                 "startChar": 10423,
+                "startCharStr": "10423",
                 "endChar": 11203,
                 "endCharStr": "11203",
-                "startCharStr": "10423",
                 "loc": {
                   "lines": {
                     "from": 292,
@@ -2200,17 +2201,17 @@
               "sourceId": "/company-support-chatbot/data/hr_docs/benefits.txt",
               "metadata": {
                 "endChar": 2145,
-                "startChar": 1712,
                 "endCharStr": "2145",
                 "startCharStr": "1712",
+                "startChar": 1712,
                 "loc": {
                   "lines": {
                     "from": 41,
                     "to": 51
                   }
                 },
-                "similarityScore": 1.0700134,
-                "score": 1.0700134
+                "similarityScore": 1.0701263,
+                "score": 1.0701263
               }
             },
             {
@@ -2218,18 +2219,18 @@
               "text": "OTHER BENEFITS\n\nCommuter Benefits:\n- Pre-tax commuter benefits: Up to $300/month\n- Public transportation reimbursement\n- Parking reimbursement (with approval)\n- Bike-to-work program: $20/month incentive\n- Carpool matching service\n\nEmployee Discounts:\n- Corporate discounts on products and services\n- Technology discounts (Apple, Dell, etc.)\n- Travel discounts\n- Entertainment discounts\n- Restaurant discounts\n- Discount portal access\n\nWork-Life Balance:\n- Flexible work hours: Core hours 10 AM - 3 PM\n- Remote work options: Available with manager approval\n- Compressed workweek: Available for some positions\n- Summer hours: Half-day Fridays (Memorial Day to Labor Day)\n- Sabbatical program: 4 weeks after 7 years of service",
               "sourceId": "/company-support-chatbot/data/hr_docs/benefits.txt",
               "metadata": {
-                "endCharStr": "10421",
                 "endChar": 10421,
-                "startCharStr": "9698",
                 "startChar": 9698,
+                "endCharStr": "10421",
+                "startCharStr": "9698",
                 "loc": {
                   "lines": {
                     "from": 268,
                     "to": 290
                   }
                 },
-                "similarityScore": 1.11351,
-                "score": 1.11351
+                "similarityScore": 1.1133056,
+                "score": 1.1133056
               }
             }
           ]
@@ -2243,18 +2244,18 @@
               "text": "PASSWORD RESET PROCEDURES\n\nHow to Reset Your Password:\n\nSelf-Service Password Reset:\n1. Go to the company portal login page\n2. Click on \"Forgot Password\" link\n3. Enter your company email address\n4. Check your email for reset instructions (check spam folder if not received)\n5. Click the reset link in the email (valid for 1 hour)\n6. Follow the link to create a new password\n7. Enter new password twice to confirm\n8. Log in with new password\n\nPassword Reset via Phone:\n1. Call IT Help Desk at extension 1234\n2. Provide your employee ID and manager's name\n3. Answer security questions for verification\n4. IT will send temporary password via email\n5. Log in and change password immediately\n6. Temporary passwords expire after 24 hours",
               "sourceId": "/company-support-chatbot/data/it_docs/password-reset.txt",
               "metadata": {
-                "startCharStr": "0",
                 "endChar": 731,
-                "startChar": 0,
                 "endCharStr": "731",
+                "startChar": 0,
+                "startCharStr": "0",
                 "loc": {
                   "lines": {
                     "from": 1,
                     "to": 21
                   }
                 },
-                "similarityScore": 0.71918774,
-                "score": 0.71918774
+                "similarityScore": 0.71916765,
+                "score": 0.71916765
               }
             },
             {
@@ -2262,9 +2263,9 @@
               "text": "Password Reset via IT Portal:\n1. Log into IT Support Portal (if you have access)\n2. Navigate to \"Password Reset\" section\n3. Select your account\n4. Verify identity with security questions\n5. Receive reset link via email\n6. Follow email instructions to reset\n\nPassword Requirements:\n- Minimum 12 characters\n- Must include uppercase and lowercase letters\n- Must include at least one number\n- Must include at least one special character (!@#$%^&*)\n- Cannot reuse your last 5 passwords\n- Cannot contain your username or email\n- Cannot contain common words or patterns\n- Must be changed every 90 days\n- Password complexity meter shows strength",
               "sourceId": "/company-support-chatbot/data/it_docs/password-reset.txt",
               "metadata": {
-                "startChar": 733,
                 "startCharStr": "733",
                 "endChar": 1370,
+                "startChar": 733,
                 "endCharStr": "1370",
                 "loc": {
                   "lines": {
@@ -2272,8 +2273,8 @@
                     "to": 40
                   }
                 },
-                "similarityScore": 0.8062259,
-                "score": 0.8062259
+                "similarityScore": 0.8066398,
+                "score": 0.8066398
               }
             },
             {
@@ -2281,18 +2282,18 @@
               "text": "Password Best Practices:\n- Use a unique password (not used elsewhere)\n- Consider using a passphrase (multiple words)\n- Use password manager (company-approved)\n- Never share your password with anyone\n- Never write passwords down in visible locations\n- Change password immediately if compromised\n- Use different passwords for different systems\n\nACCOUNT LOCKOUT AND RECOVERY\n\nIf you're locked out of your account:\n- Account locks after 5 failed login attempts\n- Lockout duration: 30 minutes (auto-unlock)\n- Contact IT Support at it-support@company.com\n- Call the IT Help Desk at extension 1234\n- Provide your employee ID and manager's name for verification\n- IT can unlock account immediately after verification\n- May require password reset after unlock",
               "sourceId": "/company-support-chatbot/data/it_docs/password-reset.txt",
               "metadata": {
+                "endChar": 2122,
+                "startChar": 1372,
                 "endCharStr": "2122",
                 "startCharStr": "1372",
-                "startChar": 1372,
-                "endChar": 2122,
                 "loc": {
                   "lines": {
                     "from": 42,
                     "to": 60
                   }
                 },
-                "similarityScore": 1.0671952,
-                "score": 1.0671952
+                "similarityScore": 1.0671794,
+                "score": 1.0671794
               }
             },
             {
@@ -2300,18 +2301,18 @@
               "text": "Account Recovery Process:\n1. Contact IT Support with employee ID\n2. Verify identity with security questions\n3. Manager verification may be required\n4. Account unlocked or password reset\n5. Log in and change password\n6. Review account activity for suspicious access\n\nSuspicious Activity:\n- If you notice suspicious activity, contact IT immediately\n- Change password immediately\n- Review account access logs\n- Report to security@company.com\n- IT will investigate and secure account\n\nMULTI-FACTOR AUTHENTICATION (MFA)\n\nMFA Setup:\n- MFA is required for all company accounts\n- Setup during initial account creation\n- Can be set up via IT portal or with IT assistance\n- Multiple methods available: Authenticator app, SMS, Email",
               "sourceId": "/company-support-chatbot/data/it_docs/password-reset.txt",
               "metadata": {
-                "startChar": 2124,
-                "endCharStr": "2845",
-                "endChar": 2845,
                 "startCharStr": "2124",
+                "endCharStr": "2845",
+                "startChar": 2124,
+                "endChar": 2845,
                 "loc": {
                   "lines": {
                     "from": 62,
                     "to": 83
                   }
                 },
-                "similarityScore": 1.0943017,
-                "score": 1.0943017
+                "similarityScore": 1.0942034,
+                "score": 1.0942034
               }
             },
             {
@@ -2320,17 +2321,17 @@
               "sourceId": "/company-support-chatbot/data/it_docs/password-reset.txt",
               "metadata": {
                 "startCharStr": "2847",
-                "startChar": 2847,
-                "endChar": 3550,
                 "endCharStr": "3550",
+                "endChar": 3550,
+                "startChar": 2847,
                 "loc": {
                   "lines": {
                     "from": 85,
                     "to": 104
                   }
                 },
-                "similarityScore": 1.3171036,
-                "score": 1.3171036
+                "similarityScore": 1.3170505,
+                "score": 1.3170505
               }
             }
           ]
@@ -2349,7 +2350,7 @@
         "timings": {
           "executionMs": 0,
           "mergeMs": 0,
-          "totalMs": 3946
+          "totalMs": 4077
         }
       }
     },
@@ -2358,13 +2359,14 @@
       "completeness": 10,
       "accuracy": 10,
       "overall": 10,
-      "reasoning": "The answer thoroughly addresses both parts of the question: health insurance benefits and password reset procedures. It provides detailed information on health insurance options, coverage, and the password reset process, including multiple methods and specific instructions. All information is accurate and relevant to the context provided."
+      "reasoning": "The answer thoroughly addresses both parts of the question regarding health insurance benefits and password reset procedures. It provides detailed information about the health insurance options, coverage, and the process for resetting a password, including multiple methods and requirements. All information is accurate and aligns with the provided context."
     }
   },
   {
     "question": "What is the refund policy and what are the terms of service?",
     "expectedIntent": "finance",
     "description": "Multi-intent: Finance refund + Legal terms",
+    "intent": "finance",
     "intents": [
       "finance",
       "legal"
@@ -2391,7 +2393,7 @@
       "legal"
     ],
     "agentResponse": {
-      "answer": "[FINANCE - What is the refund policy?]\n\nThe refund policy includes the following key points:\n\n- Refunds are available within 30 days of purchase.\n- Subscription cancellations allow for refunds only within the first 30 days.\n- Refund processing time is 5-7 business days.\n- Refunds are issued to the original payment method.\n- Partial refunds are available for unused services.\n- Annual plan refunds are prorated based on months used.\n\nTo request a refund, you must contact customer support with your order number and reason for the refund. The request will be reviewed within 2 business days, and if approved, the refund will be processed within 5-7 business days. You will receive email confirmation once the refund is processed. Refunds should appear on your statement within 1-2 billing cycles.\n\nExceptions to the policy include:\n- No refunds for services already used.\n- Custom products/services may have different policies.\n- Refunds after 30 days require special approval.\n- Setup fees are non-refundable.\n- Third-party integrations and add-ons are subject to vendor policies.\n- Promotional credits and discounts are non-refundable.\n\n---\n\n[LEGAL - What are the terms of service?]\n\nThe Terms of Service outline the rules and conditions for using the services, including acceptance of terms, use of services, severability, entire agreement, governing law, and jurisdiction. Key points include:\n\n- By using the services, you agree to the terms and applicable laws.\n- You are responsible for checking for updates to the terms.\n- If any provision is found to be unenforceable, the rest of the terms remain effective.\n- The terms constitute the entire agreement between you and the service provider.\n- Continued use after modifications indicates acceptance of those changes.\n- Disputes are governed by specific jurisdiction laws, depending on the user’s location. \n\nFor detailed information, users should refer to the complete Terms of Service document.",
+      "answer": "[FINANCE - What is the refund policy?]\n\nThe refund policy includes the following key points:\n\n- Refunds are available within 30 days of purchase.\n- Subscription cancellations can receive refunds within the first 30 days only.\n- Refund processing time is 5-7 business days.\n- Refunds are issued to the original payment method.\n- Partial refunds are available for unused services.\n- Annual plan refunds are prorated based on months used.\n\nTo request a refund, you need to contact customer support, provide your order number and reason for the refund, and support will review your request within 2 business days. If approved, the refund will be processed within 5-7 business days, and you'll receive email confirmation. Refunds may appear on your statement within 1-2 billing cycles. \n\nExceptions include non-eligibility for services already used, custom products/services may have different policies, and setup fees are non-refundable.\n\n---\n\n[LEGAL - What are the terms of service?]\n\nThe Terms of Service outline the conditions under which users may access and use the services provided. Key elements include:\n\n1. **Acceptance of Terms**: By using the services, you agree to comply with the Terms and applicable laws. If you disagree, you cannot use the services.\n2. **Use of Services**: Services must be used lawfully and in accordance with the Terms.\n3. **Modifications**: Continued use after modifications indicates acceptance of the changes.\n4. **Severability**: If any part of the Terms is unenforceable, the remainder remains effective.\n5. **Entire Agreement**: The Terms, along with the Privacy Policy, represent the complete agreement between you and the service provider.\n6. **Governing Law**: The Terms are governed by the laws of a specified State/Country, with jurisdiction for disputes in that location.\n\nFor more detailed information, users should refer to the specific sections of the Terms of Service.",
       "sources": [
         {
           "intent": "finance",
@@ -2403,17 +2405,17 @@
               "sourceId": "/company-support-chatbot/data/finance_docs/billing.txt",
               "metadata": {
                 "endCharStr": "3660",
-                "endChar": 3660,
-                "startChar": 2945,
                 "startCharStr": "2945",
+                "startChar": 2945,
+                "endChar": 3660,
                 "loc": {
                   "lines": {
                     "from": 77,
                     "to": 93
                   }
                 },
-                "similarityScore": 0.7878655,
-                "score": 0.7878655
+                "similarityScore": 0.7878088,
+                "score": 0.7878088
               }
             },
             {
@@ -2421,18 +2423,18 @@
               "text": "Refund Exceptions:\n- Services already used are not eligible\n- Custom products/services may have different policies\n- Refunds after 30 days require special approval\n- Setup fees are non-refundable\n- Third-party integrations and add-ons subject to vendor policies\n- Promotional credits and discounts are non-refundable\n\nRefund Methods:\n- Credit card: Refunded to original card (5-7 business days)\n- Bank transfer: Refunded to original account (7-10 business days)\n- Wire transfer: Refunded to original account (10-14 business days)\n- Check: Mailed to billing address (14-21 business days)\n\nEXPENSE REPORTS",
               "sourceId": "/company-support-chatbot/data/finance_docs/billing.txt",
               "metadata": {
-                "endCharStr": "4265",
-                "startChar": 3662,
                 "endChar": 4265,
                 "startCharStr": "3662",
+                "startChar": 3662,
+                "endCharStr": "4265",
                 "loc": {
                   "lines": {
                     "from": 95,
                     "to": 109
                   }
                 },
-                "similarityScore": 0.85892016,
-                "score": 0.85892016
+                "similarityScore": 0.85886055,
+                "score": 0.85886055
               }
             },
             {
@@ -2440,9 +2442,9 @@
               "text": "Cancellation:\n- Cancel anytime from account settings\n- Access continues until end of billing period\n- No refunds for partial periods (unless within 30-day window)\n- Data export available for 30 days after cancellation\n- Cancellation confirmation sent via email\n\nTRIAL PERIODS AND MONEY-BACK GUARANTEE\n\nFree Trial:\n- 14-day free trial for all plans\n- No credit card required for trial\n- Full access to plan features during trial\n- Trial converts to paid plan automatically\n- Can cancel before trial ends with no charge\n- Trial extensions available (contact sales)\n\nMoney-Back Guarantee:\n- 30-day money-back guarantee\n- Full refund if not satisfied\n- Applies to first subscription only\n- No questions asked refund policy\n- Refund processed within 5-7 business days\n\nENTERPRISE CUSTOM PRICING",
               "sourceId": "/company-support-chatbot/data/finance_docs/pricing.txt",
               "metadata": {
-                "startChar": 6868,
                 "endChar": 7657,
                 "startCharStr": "6868",
+                "startChar": 6868,
                 "endCharStr": "7657",
                 "loc": {
                   "lines": {
@@ -2450,8 +2452,8 @@
                     "to": 244
                   }
                 },
-                "similarityScore": 1.0920353,
-                "score": 1.0920353
+                "similarityScore": 1.0920578,
+                "score": 1.0920578
               }
             },
             {
@@ -2459,18 +2461,18 @@
               "text": "BILLING CYCLE AND FREQUENCY\n\nBilling Cycles:\n- Monthly billing: Charges on same date each month\n- Annual billing: Charges on anniversary date\n- Quarterly billing: Available for Enterprise customers\n- Custom billing cycles: Available for Enterprise with approval\n\nBilling Date Changes:\n- Can be changed once per year for free\n- Additional changes incur $25 administrative fee\n- Changes take effect on next billing cycle\n- Prorated charges apply when changing billing date\n\nProration:\n- Plan upgrades: Prorated charge for remainder of billing period\n- Plan downgrades: Credit applied to next invoice\n- Add-ons: Prorated based on activation date\n- Cancellations: No refund for partial periods (unless within refund window)\n\nREFUND POLICY",
               "sourceId": "/company-support-chatbot/data/finance_docs/billing.txt",
               "metadata": {
-                "startChar": 2224,
-                "startCharStr": "2224",
-                "endChar": 2958,
                 "endCharStr": "2958",
+                "startCharStr": "2224",
+                "startChar": 2224,
+                "endChar": 2958,
                 "loc": {
                   "lines": {
                     "from": 57,
                     "to": 77
                   }
                 },
-                "similarityScore": 1.1528726,
-                "score": 1.1528726
+                "similarityScore": 1.1527221,
+                "score": 1.1527221
               }
             },
             {
@@ -2478,18 +2480,18 @@
               "text": "PAYMENT TERMS AND POLICIES\n\nStandard Terms:\n- Payment due upon receipt for Starter and Professional\n- Net 30 terms available for Enterprise\n- Late fees: 1.5% per month (Enterprise only)\n- Service suspension after 30 days overdue\n- Interest charges: 1.5% per month on overdue amounts\n\nPayment Processing:\n- Payments processed immediately upon receipt\n- Failed payments: 3 retry attempts over 9 days\n- Email notifications sent for all payment events\n- Account suspension after 7 days of failed payment\n- Automatic retry for failed payments\n\nEarly Payment Discounts:\n- 2% discount for payment within 10 days (Enterprise)\n- 5% discount for annual prepayment\n- Volume discounts for multi-year contracts\n\nCREDITS AND DISCOUNTS",
               "sourceId": "/company-support-chatbot/data/finance_docs/pricing.txt",
               "metadata": {
-                "startChar": 4737,
                 "startCharStr": "4737",
-                "endCharStr": "5457",
                 "endChar": 5457,
+                "startChar": 4737,
+                "endCharStr": "5457",
                 "loc": {
                   "lines": {
                     "from": 157,
                     "to": 178
                   }
                 },
-                "similarityScore": 1.258956,
-                "score": 1.258956
+                "similarityScore": 1.2589493,
+                "score": 1.2589493
               }
             }
           ]
@@ -2504,17 +2506,17 @@
               "sourceId": "/company-support-chatbot/data/legal_docs/terms.txt",
               "metadata": {
                 "endChar": 686,
-                "startChar": 0,
                 "endCharStr": "686",
                 "startCharStr": "0",
+                "startChar": 0,
                 "loc": {
                   "lines": {
                     "from": 1,
                     "to": 13
                   }
                 },
-                "similarityScore": 0.5483639,
-                "score": 0.5483639
+                "similarityScore": 0.54833674,
+                "score": 0.54833674
               }
             },
             {
@@ -2522,18 +2524,18 @@
               "text": "SEVERABILITY\n\nIf any provision of these Terms of Service is found to be unenforceable or invalid, that provision will be limited or eliminated to the minimum extent necessary so that these Terms will otherwise remain in full force and effect and enforceable.\n\nENTIRE AGREEMENT\n\nThese Terms of Service, together with our Privacy Policy and any other legal notices published on our website, constitute the entire agreement between you and us concerning your use of our services and supersede all prior agreements and understandings.",
               "sourceId": "/company-support-chatbot/data/legal_docs/terms.txt",
               "metadata": {
-                "startCharStr": "16363",
                 "startChar": 16363,
-                "endCharStr": "16893",
+                "startCharStr": "16363",
                 "endChar": 16893,
+                "endCharStr": "16893",
                 "loc": {
                   "lines": {
                     "from": 443,
                     "to": 449
                   }
                 },
-                "similarityScore": 0.8785924,
-                "score": 0.8785924
+                "similarityScore": 0.87863106,
+                "score": 0.87863106
               }
             },
             {
@@ -2542,8 +2544,8 @@
               "sourceId": "/company-support-chatbot/data/legal_docs/terms.txt",
               "metadata": {
                 "startCharStr": "15739",
-                "endCharStr": "16375",
                 "endChar": 16375,
+                "endCharStr": "16375",
                 "startChar": 15739,
                 "loc": {
                   "lines": {
@@ -2551,8 +2553,8 @@
                     "to": 443
                   }
                 },
-                "similarityScore": 0.91139966,
-                "score": 0.91139966
+                "similarityScore": 0.9114202,
+                "score": 0.9114202
               }
             },
             {
@@ -2561,8 +2563,8 @@
               "sourceId": "/company-support-chatbot/data/legal_docs/terms.txt",
               "metadata": {
                 "endCharStr": "871",
-                "startCharStr": "668",
                 "endChar": 871,
+                "startCharStr": "668",
                 "startChar": 668,
                 "loc": {
                   "lines": {
@@ -2570,8 +2572,8 @@
                     "to": 15
                   }
                 },
-                "similarityScore": 0.9281031,
-                "score": 0.9281031
+                "similarityScore": 0.9277828,
+                "score": 0.9277828
               }
             },
             {
@@ -2579,18 +2581,18 @@
               "text": "Service Terms:\n- Scope of services: Services to be provided\n- Service levels: SLA requirements\n- Performance metrics: Service performance KPIs\n- Pricing: Service pricing and payment\n- Term: Service agreement duration\n- Termination: Termination rights and procedures\n\nSLA Management:\n- SLA definition: Service level definitions\n- SLA monitoring: SLA performance monitoring\n- SLA reporting: SLA performance reporting\n- SLA penalties: SLA penalty provisions\n- SLA credits: Service credits\n- SLA reviews: Regular SLA reviews\n\nPURCHASE AGREEMENTS",
               "sourceId": "/company-support-chatbot/data/legal_docs/contracts.txt",
               "metadata": {
-                "startChar": 8246,
-                "endCharStr": "8787",
                 "startCharStr": "8246",
                 "endChar": 8787,
+                "endCharStr": "8787",
+                "startChar": 8246,
                 "loc": {
                   "lines": {
                     "from": 241,
                     "to": 257
                   }
                 },
-                "similarityScore": 0.942763,
-                "score": 0.942763
+                "similarityScore": 0.94285893,
+                "score": 0.94285893
               }
             }
           ]
@@ -2609,7 +2611,7 @@
         "timings": {
           "executionMs": 0,
           "mergeMs": 0,
-          "totalMs": 6152
+          "totalMs": 4974
         }
       }
     },
@@ -2618,7 +2620,7 @@
       "completeness": 10,
       "accuracy": 10,
       "overall": 10,
-      "reasoning": "The answer thoroughly addresses both parts of the question regarding the refund policy and the terms of service. It provides detailed information on the refund process, eligibility, exceptions, and the terms of service, including acceptance, use of services, and governing laws. All information is accurate and aligns with the provided context."
+      "reasoning": "The answer directly addresses the question regarding the refund policy and terms of service. It provides detailed and specific information about both topics, ensuring that the user has a comprehensive understanding of the policies. The information is accurate and aligns with the context provided."
     }
   }
 ]

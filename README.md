@@ -72,17 +72,6 @@ data/
 ├── finance_docs/     # Finance documentation
 └── legal_docs/       # Legal documentation
 ```
-
-**Document Requirements:**
-- Each domain directory should contain sufficient content to generate **minimum 50 chunks** when split
-- Documents should be in `.txt` or `.md` format
-- With default chunk size (800 tokens) and overlap (100 tokens), each domain needs approximately **26,000+ words** of content
-- Current document collections meet this requirement:
-  - **HR**: benefits.txt, onboarding.txt, employee-relations.txt
-  - **IT**: password-reset.txt, software.txt, infrastructure.txt
-  - **Finance**: billing.txt, pricing.txt, accounting.txt
-  - **Legal**: compliance.txt, terms.txt, contracts.txt
-
 **Verifying Chunk Counts:**
 After building indexes, check the logs to verify chunk counts per domain. Each domain should show 50+ chunks in the build output.
 
@@ -103,14 +92,7 @@ This will:
 
 **Validation:**
 - The build process automatically validates that each domain has at least 50 chunks (configurable via `MIN_CHUNKS`)
-- If a domain has insufficient chunks, the build will fail with a clear error message
 - You can override the minimum requirement by setting `MIN_CHUNKS` in your `.env` file (e.g., `MIN_CHUNKS=20` for testing)
-
-**Error Example:**
-If a domain has insufficient chunks, you'll see:
-```
-ERROR: Chunk count validation failed for domain 'hr_docs': Domain 'hr_docs' has only 25 chunks, but 50 are required. Please add more documents to meet the minimum requirement.
-```
 
 ### 3. Query the System
 
@@ -164,108 +146,35 @@ This will:
 ```
 company-support-chatbot/
 ├── src/
-│   ├── index.ts                    # Main entry point (CLI mode)
-│   ├── cli/                        # CLI interfaces
-│   │   ├── conversation.ts         # Interactive conversation mode
-│   │   └── index.ts                # CLI exports
-│   ├── orchestrator/               # Orchestrator agent
-│   │   ├── agent.ts                # Orchestrator implementation
-│   │   ├── classifier.ts           # Intent classification (single & multi-intent)
-│   │   ├── handoff-chain.ts        # Agent handoff processing
-│   │   ├── result-merger.ts        # Multi-agent response merging
-│   │   ├── types.ts                # Orchestrator types
-│   │   └── index.ts                # Orchestrator exports
 │   ├── agents/                     # Specialized RAG agents
-│   │   ├── base-agent.ts           # Base agent class
-│   │   ├── hr-agent.ts             # HR agent
-│   │   ├── it-agent.ts             # IT Support agent
-│   │   ├── finance-agent.ts        # Finance agent
-│   │   ├── legal-agent.ts          # Legal agent
-│   │   ├── factory.ts              # Agent factory & lazy loading
-│   │   └── index.ts                # Agent exports
-│   ├── evaluator/                  # Evaluator agent (BONUS)
-│   │   ├── agent.ts                # Evaluator implementation
-│   │   ├── scorer.ts               # Langfuse score integration
-│   │   └── index.ts                # Evaluator exports
-│   ├── chains/                     # LangChain chains
-│   │   └── rag-chain.ts            # Base RAG chain with LCEL
-│   ├── safety/                     # Safety middleware
-│   │   ├── middleware.ts           # LangChain safety middleware
-│   │   ├── moderation.ts           # Content moderation (OpenAI)
-│   │   ├── pii.ts                  # PII detection & redaction
-│   │   ├── injection.ts            # Injection detection
-│   │   └── index.ts                # Safety exports
-│   ├── monitoring/                 # Observability
-│   │   ├── langfuse.ts             # Langfuse integration
-│   │   ├── callbacks.ts            # LangChain callbacks
-│   │   ├── metrics.ts              # Metrics collection
-│   │   └── tracing.ts              # Distributed tracing
-│   ├── retrievers/                 # Retrieval strategies
-│   │   ├── similarity.ts           # Similarity search retriever
-│   │   ├── mmr.ts                  # MMR (Maximal Marginal Relevance)
-│   │   ├── compression.ts          # Context compression retriever
-│   │   └── index.ts                # Retriever factory
-│   ├── vector-stores/              # Vector store implementations
-│   │   ├── chroma.ts               # ChromaDB integration
-│   │   ├── memory.ts               # In-memory vector store
-│   │   └── index.ts                # Vector store factory
-│   ├── embeddings/                 # Embedding providers
-│   │   ├── providers/
-│   │   │   ├── openai.ts           # OpenAI embeddings
-│   │   │   └── index.ts
-│   │   └── index.ts
-│   ├── llm/                        # LLM providers
-│   │   ├── providers/
-│   │   │   ├── openai.ts           # OpenAI LLM
-│   │   │   └── index.ts
-│   │   └── index.ts
-│   ├── loaders/                    # Document loaders
-│   │   └── directory-loader.ts     # Directory-based loader
-│   ├── splitters/                  # Text splitters
-│   │   └── index.ts                # Text splitter factory
-│   ├── prompts/                    # Prompt templates
-│   │   ├── rag.ts                  # RAG prompts
-│   │   ├── classifier.ts           # Classification prompts
-│   │   ├── evaluator.ts            # Evaluation prompts
-│   │   ├── compression.ts          # Compression prompts
-│   │   └── index.ts
 │   ├── cache/                      # Caching layer
-│   │   ├── in-memory.ts            # In-memory cache
-│   │   └── index.ts
-│   ├── memory/                     # Conversation memory
-│   │   └── index.ts                # Memory management
+│   ├── chains/                     # LangChain chains
+│   ├── cli/                        # CLI interfaces
 │   ├── config/                     # Configuration
-│   │   ├── env.ts                  # Environment config with Zod
-│   │   └── index.ts
+│   ├── embeddings/                 # Embedding providers
+│   ├── evaluator/                  # Evaluator agent
+│   ├── llm/                        # LLM providers
+│   ├── loaders/                    # Document loaders
+│   ├── memory/                     # Conversation memory
+│   ├── monitoring/                 # Observability
+│   ├── orchestrator/               # Orchestrator agent
+│   ├── prompts/                    # Prompt templates
+│   ├── retrievers/                 # Retrieval strategies
+│   ├── safety/                     # Safety middleware
+│   ├── splitters/                  # Text splitters
 │   ├── types/                      # TypeScript types
-│   │   ├── schemas.ts              # Zod schemas
-│   │   └── index.ts
 │   ├── utils/                      # Utility functions
-│   │   ├── circuit-breaker.ts      # Circuit breaker pattern
-│   │   ├── retry.ts                # Retry with backoff
-│   │   ├── timeout.ts              # Timeout handling
-│   │   ├── errors.ts               # Custom error classes
-│   │   └── validation.ts           # Validation utilities
-│   └── logger.ts                   # Pino logger setup
+│   ├── vector-stores/              # Vector store implementations
+│   └── logger.ts
 ├── data/                           # Document collections
-│   ├── hr_docs/                    # HR documentation
-│   ├── it_docs/                    # IT Support documentation
-│   ├── finance_docs/               # Finance documentation
-│   └── legal_docs/                 # Legal documentation
+│   ├── hr_docs/
+│   ├── it_docs/
+│   ├── finance_docs/
+│   └── legal_docs/
 ├── scripts/                        # Utility scripts
-│   ├── build-index.ts              # Build vector indexes
-│   └── test-system.ts              # Run test queries
 ├── tests/                          # Test suite
-│   └── test-queries.json           # Test queries with expected intents
 ├── docs/                           # Documentation
-│   ├── ARCHITECTURE.md             # Architecture documentation
-│   └── safety.md                   # Safety middleware documentation
-├── dist/                           # Compiled output (TypeScript)
-├── docker-compose.yml              # ChromaDB Docker setup
-├── tsconfig.json                   # TypeScript configuration
-├── vitest.config.ts                # Vitest test configuration
-├── package.json                    # Dependencies & scripts
-└── README.md                       # This file
+└── [config files]
 ```
 
 ## ⚙️ Configuration
@@ -370,7 +279,7 @@ docker run -p 8000:8000 chromadb/chroma
 Check that ChromaDB is accessible:
 
 ```bash
-curl http://localhost:8000/api/v1/heartbeat
+curl http://localhost:8000/api/v2/heartbeat
 ```
 
 You should see a response indicating ChromaDB is running.
@@ -437,7 +346,7 @@ npm run e2e            # Run e2e tests
 
 ### Response Format
 
-The system returns structured JSON responses with the following format. Note that some fields are optional and may not appear in all responses (e.g., `evaluation` only appears when evaluation is enabled, `_safety` only when safety checks are enabled).
+The system returns structured JSON responses. Some fields are optional (e.g., `evaluation` only when evaluation is enabled, `_safety` only when safety checks are enabled).
 
 **Single Intent Response:**
 ```json
@@ -446,7 +355,7 @@ The system returns structured JSON responses with the following format. Note tha
   "classification": {
     "intent": "hr",
     "confidence": 0.9,
-    "reasoning": "The query asks about health insurance benefits..."
+    "reasoning": "..."
   },
   "routedTo": "hr",
   "agentResponse": {
@@ -459,7 +368,8 @@ The system returns structured JSON responses with the following format. Note tha
         "metadata": {
           "startChar": 0,
           "endChar": 500,
-          "similarityScore": 0.85
+          "similarityScore": 0.85,
+          "loc": {...}
         }
       }
     ],
@@ -498,6 +408,7 @@ The system returns structured JSON responses with the following format. Note tha
 **Multi-Intent Response (Multiple Agents):**
 ```json
 {
+  "intent": "hr",
   "intents": ["hr", "it"],
   "classification": {
     "intents": [
@@ -514,8 +425,7 @@ The system returns structured JSON responses with the following format. Note tha
         "reasoning": "..."
       }
     ],
-    "requiresMultipleAgents": true,
-    "primaryIntent": "hr"
+    "requiresMultipleAgents": true
   },
   "routedTo": ["hr", "it"],
   "agentResponse": {
@@ -527,7 +437,7 @@ The system returns structured JSON responses with the following format. Note tha
         "sources": [
           {
             "id": "chunk-0",
-            "text": "Document chunk content...",
+            "text": "...",
             "sourceId": "/path/to/hr_doc.txt",
             "metadata": {...}
           }
@@ -539,7 +449,7 @@ The system returns structured JSON responses with the following format. Note tha
         "sources": [
           {
             "id": "chunk-0",
-            "text": "Document chunk content...",
+            "text": "...",
             "sourceId": "/path/to/it_doc.txt",
             "metadata": {...}
           }
@@ -568,11 +478,11 @@ The system returns structured JSON responses with the following format. Note tha
   "classification": {
     "intent": "legal",
     "confidence": 0.8,
-    "reasoning": "Handoff reason: requires_expertise"
+    "reasoning": "..."
   },
   "routedTo": "legal",
   "agentResponse": {
-    "answer": "Complete answer from legal agent...",
+    "answer": "...",
     "sources": [...],
     "metadata": {
       "agent": "legal",
@@ -608,7 +518,7 @@ npm run typecheck      # Type check without emitting
 
 ## 🔧 Troubleshooting
 
-**ChromaDB Connection**: Verify it's running with `curl http://localhost:8000/api/v1/heartbeat` or start with `docker-compose up -d`. Use `VECTOR_STORE_TYPE=memory` as fallback.
+**ChromaDB Connection**: Verify it's running with `curl http://localhost:8000/api/v2/heartbeat` or start with `docker-compose up -d`. Use `VECTOR_STORE_TYPE=memory` as fallback.
 
 **OpenAI API**: Ensure `OPENAI_API_KEY` is set correctly in `.env`. Check rate limits and API key format (should start with `sk-`).
 
