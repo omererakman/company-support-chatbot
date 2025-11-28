@@ -45,7 +45,7 @@ export interface SafetyMiddlewareOptions {
   redactPII?: boolean;
   /** PII redaction strategy: 'redact', 'mask', 'hash', or 'block' (default: 'redact') */
   piiStrategy?: PIIStrategy;
-  /** Check LLM outputs for safety (default: false) */
+  /** Check LLM outputs for safety (default: from SAFETY_CHECK_OUTPUT env var, which defaults to true) */
   checkOutput?: boolean;
 }
 

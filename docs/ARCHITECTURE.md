@@ -443,21 +443,3 @@ Resilience patterns:
 1. Implement interface
 2. Add to factory
 3. Update config
-
-## Deployment
-
-**Development:**
-- Local ChromaDB (Docker)
-- Debug logging
-- Hot reload
-
-**Production:**
-- Persistent ChromaDB
-- JSON logging
-- Error monitoring
-- Rate limiting (if API)
-
-**Scaling:**
-- Stateless agents (except memory)
-- Distributed ChromaDB for vector store
-- External session store for memory
