@@ -2,6 +2,7 @@
 
 import "./utils/suppress-chroma-warnings.js";
 
+import { fileURLToPath } from "url";
 import { initializeAgents } from "./orchestrator/index.js";
 import { evaluateResponse, recordScore } from "./evaluator/index.js";
 import {
@@ -170,7 +171,11 @@ export async function processQuestion(
   }
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+// Check if this module is being run directly
+const isMainModule =
+  process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1];
+
+if (isMainModule) {
   const question = process.argv[2];
 
   if (!question) {
