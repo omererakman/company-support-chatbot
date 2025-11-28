@@ -87,3 +87,29 @@ export async function createChromaVectorStore(
     }
   });
 }
+
+export async function loadChromaVectorStore(
+  collectionName: string,
+): Promise<Chroma> {
+  return trace("vectorstore.chroma.load", async () => {
+    const config = getConfig();
+    const embeddings = createEmbeddings();
+
+    try {
+      const client = createChromaClient(config);
+
+      logger.debug({ collectionName }, "Loading existing ChromaDB collection");
+
+      return await Chroma.fromExistingCollection(embeddings, {
+        collectionName,
+        index: client,
+      });
+    } catch (error) {
+      logger.error({ error }, "Failed to load ChromaDB vector store");
+      throw new VectorStoreError(
+        "Failed to load ChromaDB vector store",
+        error as Error,
+      );
+    }
+  });
+}

@@ -279,77 +279,88 @@ export class OrchestratorAgent {
     classification: MultiIntentClassification,
     memory?: BufferMemory | ConversationSummaryMemory | null,
   ): Promise<OrchestratorResponse> {
-    logger.debug(
+    return trace(
+      "orchestrator.processMultiTopic",
+      async () => {
+        logger.debug(
+          {
+            intents: classification.intents.map((i) => i.intent),
+            question: question.substring(0, 100),
+          },
+          "Processing multi-topic query",
+        );
+
+        const agents = new Map<Intent, BaseAgent>();
+        for (const { intent } of classification.intents) {
+          const agent = await this.getAgentByIntent(intent);
+          if (agent) {
+            agents.set(intent, agent);
+          } else {
+            logger.warn(
+              { intent },
+              "Agent not found for intent in multi-topic query",
+            );
+          }
+        }
+
+        if (agents.size === 0) {
+          throw new OrchestratorError(
+            "No agents available for multi-topic query",
+          );
+        }
+
+        const parallelMap: Record<
+          string,
+          ReturnType<typeof RunnableLambda.from>
+        > = {};
+
+        for (const { intent, subQuery } of classification.intents) {
+          const agent = agents.get(intent);
+          if (agent) {
+            parallelMap[intent] = RunnableLambda.from(async () => {
+              try {
+                logger.debug(
+                  { intent, subQuery: subQuery.substring(0, 100) },
+                  "Executing parallel agent query",
+                );
+                return await agent.invoke(subQuery, memory);
+              } catch (error) {
+                logger.error(
+                  { intent, error, subQuery: subQuery.substring(0, 100) },
+                  "Agent execution failed",
+                );
+                throw error;
+              }
+            });
+          }
+        }
+
+        const parallelChain = RunnableParallel.from(parallelMap);
+        const results = await parallelChain.invoke({});
+
+        const mergedResponse = await this.resultMerger.merge(
+          results as Record<string, AgentResponse>,
+          question,
+          classification.intents,
+        );
+
+        // Use primary intent if available, otherwise use the first intent
+        const primaryIntent =
+          classification.primaryIntent || classification.intents[0]?.intent;
+
+        return {
+          intent: primaryIntent,
+          intents: classification.intents.map((i) => i.intent),
+          classification,
+          routedTo: Array.from(agents.keys()),
+          agentResponse: mergedResponse,
+        };
+      },
       {
         intents: classification.intents.map((i) => i.intent),
-        question: question.substring(0, 100),
+        agentCount: classification.intents.length,
       },
-      "Processing multi-topic query",
     );
-
-    const agents = new Map<Intent, BaseAgent>();
-    for (const { intent } of classification.intents) {
-      const agent = await this.getAgentByIntent(intent);
-      if (agent) {
-        agents.set(intent, agent);
-      } else {
-        logger.warn(
-          { intent },
-          "Agent not found for intent in multi-topic query",
-        );
-      }
-    }
-
-    if (agents.size === 0) {
-      throw new OrchestratorError("No agents available for multi-topic query");
-    }
-
-    const parallelMap: Record<
-      string,
-      ReturnType<typeof RunnableLambda.from>
-    > = {};
-
-    for (const { intent, subQuery } of classification.intents) {
-      const agent = agents.get(intent);
-      if (agent) {
-        parallelMap[intent] = RunnableLambda.from(async () => {
-          try {
-            logger.debug(
-              { intent, subQuery: subQuery.substring(0, 100) },
-              "Executing parallel agent query",
-            );
-            return await agent.invoke(subQuery, memory);
-          } catch (error) {
-            logger.error(
-              { intent, error, subQuery: subQuery.substring(0, 100) },
-              "Agent execution failed",
-            );
-            throw error;
-          }
-        });
-      }
-    }
-
-    const parallelChain = RunnableParallel.from(parallelMap);
-    const results = await parallelChain.invoke({});
-
-    const mergedResponse = await this.resultMerger.merge(
-      results as Record<string, AgentResponse>,
-      question,
-      classification.intents,
-    );
-
-    // Use primary intent if available, otherwise use the first intent
-    const primaryIntent =
-      classification.primaryIntent || classification.intents[0]?.intent;
-
-    return {
-      intent: primaryIntent,
-      intents: classification.intents.map((i) => i.intent),
-      classification,
-      routedTo: Array.from(agents.keys()),
-      agentResponse: mergedResponse,
-    };
   }
 
   /**
@@ -360,59 +371,69 @@ export class OrchestratorAgent {
     classification: IntentClassification,
     memory?: BufferMemory | ConversationSummaryMemory | null,
   ): Promise<OrchestratorResponse> {
-    const agent = await this.getAgentByIntent(classification.intent);
+    return trace(
+      "orchestrator.processSingleTopic",
+      async () => {
+        const agent = await this.getAgentByIntent(classification.intent);
 
-    if (!agent) {
-      logger.warn(
-        { intent: classification.intent },
-        "No agent found for intent, using IT agent as fallback",
-      );
-      const fallbackAgent = await this.getAgentByIntent("it");
-      if (!fallbackAgent) {
-        throw new OrchestratorError(
-          `No agent available for intent: ${classification.intent}`,
+        if (!agent) {
+          logger.warn(
+            { intent: classification.intent },
+            "No agent found for intent, using IT agent as fallback",
+          );
+          const fallbackAgent = await this.getAgentByIntent("it");
+          if (!fallbackAgent) {
+            throw new OrchestratorError(
+              `No agent available for intent: ${classification.intent}`,
+            );
+          }
+
+          const agentResponse = await fallbackAgent.invoke(question, memory);
+          return {
+            intent: classification.intent,
+            classification,
+            routedTo: "it",
+            agentResponse,
+          };
+        }
+
+        logger.debug(
+          {
+            intent: classification.intent,
+            confidence: classification.confidence,
+            agent: agent.name,
+          },
+          "Routing to specialized agent",
         );
-      }
 
-      const agentResponse = await fallbackAgent.invoke(question, memory);
-      return {
-        intent: classification.intent,
-        classification,
-        routedTo: "it",
-        agentResponse,
-      };
-    }
+        const agentResponse = await agent.invoke(question, memory);
 
-    logger.debug(
+        if (agentResponse.handoffRequest) {
+          const validHandoffRequest: HandoffRequest = {
+            ...agentResponse.handoffRequest,
+            reason: agentResponse.handoffRequest
+              .reason as HandoffRequest["reason"],
+          };
+          return await this.processHandoff(
+            validHandoffRequest,
+            question,
+            agentResponse,
+            memory,
+          );
+        }
+
+        return {
+          intent: classification.intent,
+          classification,
+          routedTo: agent.name,
+          agentResponse,
+        };
+      },
       {
         intent: classification.intent,
         confidence: classification.confidence,
-        agent: agent.name,
       },
-      "Routing to specialized agent",
     );
-
-    const agentResponse = await agent.invoke(question, memory);
-
-    if (agentResponse.handoffRequest) {
-      const validHandoffRequest: HandoffRequest = {
-        ...agentResponse.handoffRequest,
-        reason: agentResponse.handoffRequest.reason as HandoffRequest["reason"],
-      };
-      return await this.processHandoff(
-        validHandoffRequest,
-        question,
-        agentResponse,
-        memory,
-      );
-    }
-
-    return {
-      intent: classification.intent,
-      classification,
-      routedTo: agent.name,
-      agentResponse,
-    };
   }
 
   /**
@@ -424,68 +445,78 @@ export class OrchestratorAgent {
     previousResponse: AgentResponse,
     memory?: BufferMemory | ConversationSummaryMemory | null,
   ): Promise<OrchestratorResponse> {
-    logger.debug(
+    return trace(
+      "orchestrator.processHandoff",
+      async () => {
+        logger.debug(
+          {
+            from: previousResponse.metadata.agent,
+            to: handoffRequest.requestedAgent,
+            reason: handoffRequest.reason,
+          },
+          "Processing handoff request",
+        );
+
+        const targetAgent = await this.getAgentByIntent(
+          handoffRequest.requestedAgent,
+        );
+        if (!targetAgent) {
+          logger.error(
+            { requestedAgent: handoffRequest.requestedAgent },
+            "Target agent not available for handoff",
+          );
+          return {
+            intent: previousResponse.metadata.agent as Intent,
+            classification: {
+              intent: previousResponse.metadata.agent as Intent,
+              confidence: 0.5,
+              reasoning: "Handoff failed - target agent unavailable",
+            },
+            routedTo: previousResponse.metadata.agent,
+            agentResponse: previousResponse,
+            handoffOccurred: false,
+          };
+        }
+
+        const validHandoffRequest: HandoffRequest = {
+          ...handoffRequest,
+          reason: handoffRequest.reason as HandoffRequest["reason"],
+        };
+
+        const handoffContext = {
+          originalQuery,
+          previousAgent: previousResponse.metadata.agent,
+          previousResponse,
+          conversationHistory: [],
+          handoffReason: validHandoffRequest.reason,
+        };
+
+        const completeResponse = await this.handoffChain.processHandoff(
+          validHandoffRequest,
+          handoffContext,
+          targetAgent,
+          memory,
+        );
+
+        return {
+          intent: handoffRequest.requestedAgent,
+          classification: {
+            intent: handoffRequest.requestedAgent,
+            confidence: handoffRequest.confidence || 0.8,
+            reasoning: handoffRequest.reason,
+          },
+          routedTo: targetAgent.name,
+          agentResponse: completeResponse,
+          handoffOccurred: true,
+          handoffChain: [previousResponse.metadata.agent, targetAgent.name],
+        };
+      },
       {
         from: previousResponse.metadata.agent,
         to: handoffRequest.requestedAgent,
         reason: handoffRequest.reason,
       },
-      "Processing handoff request",
     );
-
-    const targetAgent = await this.getAgentByIntent(
-      handoffRequest.requestedAgent,
-    );
-    if (!targetAgent) {
-      logger.error(
-        { requestedAgent: handoffRequest.requestedAgent },
-        "Target agent not available for handoff",
-      );
-      return {
-        intent: previousResponse.metadata.agent as Intent,
-        classification: {
-          intent: previousResponse.metadata.agent as Intent,
-          confidence: 0.5,
-          reasoning: "Handoff failed - target agent unavailable",
-        },
-        routedTo: previousResponse.metadata.agent,
-        agentResponse: previousResponse,
-        handoffOccurred: false,
-      };
-    }
-
-    const validHandoffRequest: HandoffRequest = {
-      ...handoffRequest,
-      reason: handoffRequest.reason as HandoffRequest["reason"],
-    };
-
-    const handoffContext = {
-      originalQuery,
-      previousAgent: previousResponse.metadata.agent,
-      previousResponse,
-      conversationHistory: [],
-      handoffReason: validHandoffRequest.reason,
-    };
-
-    const completeResponse = await this.handoffChain.processHandoff(
-      validHandoffRequest,
-      handoffContext,
-      targetAgent,
-      memory,
-    );
-
-    return {
-      intent: handoffRequest.requestedAgent,
-      classification: {
-        intent: handoffRequest.requestedAgent,
-        confidence: handoffRequest.confidence || 0.8,
-        reasoning: handoffRequest.reason,
-      },
-      routedTo: targetAgent.name,
-      agentResponse: completeResponse,
-      handoffOccurred: true,
-      handoffChain: [previousResponse.metadata.agent, targetAgent.name],
-    };
   }
 
   /**

@@ -1,53 +1,75 @@
 import { OrchestratorAgent } from "./agent.js";
 import { HRAgent, ITAgent, FinanceAgent, LegalAgent } from "../agents/index.js";
-import { createVectorStore } from "../vector-stores/index.js";
+import { createVectorStore, loadVectorStore } from "../vector-stores/index.js";
 import { loadAndChunkAllDomains } from "../utils/document-loader.js";
 import { logger } from "../logger.js";
 import { getConfig } from "../config/index.js";
 
-export async function initializeAgents(): Promise<OrchestratorAgent> {
-  const config = getConfig();
-  logger.info("Initializing agents...");
+let cachedOrchestrator: OrchestratorAgent | null = null;
+let initializationPromise: Promise<OrchestratorAgent> | null = null;
 
-  let chunks;
-  if (config.vectorStoreType === "memory") {
-    logger.info("Using memory vector store - loading and chunking documents");
-    chunks = await loadAndChunkAllDomains();
-  } else {
-    logger.info(
-      "Using ChromaDB vector store - loading existing collections (indexes not rebuilt)",
-    );
+export async function initializeAgents(): Promise<OrchestratorAgent> {
+  if (cachedOrchestrator) {
+    return cachedOrchestrator;
   }
 
-  const hrVectorStore = await createVectorStore(
-    chunks?.hrChunks,
-    "hr_embeddings",
-  );
-  const itVectorStore = await createVectorStore(
-    chunks?.itChunks,
-    "it_embeddings",
-  );
-  const financeVectorStore = await createVectorStore(
-    chunks?.financeChunks,
-    "finance_embeddings",
-  );
-  const legalVectorStore = await createVectorStore(
-    chunks?.legalChunks,
-    "legal_embeddings",
-  );
+  if (initializationPromise) {
+    return initializationPromise;
+  }
 
-  const hrAgent = new HRAgent({ vectorStore: hrVectorStore });
-  const itAgent = new ITAgent({ vectorStore: itVectorStore });
-  const financeAgent = new FinanceAgent({ vectorStore: financeVectorStore });
-  const legalAgent = new LegalAgent({ vectorStore: legalVectorStore });
+  initializationPromise = (async () => {
+    const config = getConfig();
+    logger.info("Initializing agents...");
 
-  const orchestrator = new OrchestratorAgent({
-    hrAgent,
-    itAgent,
-    financeAgent,
-    legalAgent,
-  });
+    let chunks;
+    if (config.vectorStoreType === "memory") {
+      logger.info("Using memory vector store - loading and chunking documents");
+      chunks = await loadAndChunkAllDomains();
+    } else {
+      logger.info(
+        "Using ChromaDB vector store - loading existing collections (indexes not rebuilt)",
+      );
+    }
 
-  logger.info("All agents initialized");
-  return orchestrator;
+    const hrVectorStore =
+      config.vectorStoreType === "chromadb"
+        ? await loadVectorStore("hr_embeddings")
+        : await createVectorStore(chunks?.hrChunks, "hr_embeddings");
+    const itVectorStore =
+      config.vectorStoreType === "chromadb"
+        ? await loadVectorStore("it_embeddings")
+        : await createVectorStore(chunks?.itChunks, "it_embeddings");
+    const financeVectorStore =
+      config.vectorStoreType === "chromadb"
+        ? await loadVectorStore("finance_embeddings")
+        : await createVectorStore(chunks?.financeChunks, "finance_embeddings");
+    const legalVectorStore =
+      config.vectorStoreType === "chromadb"
+        ? await loadVectorStore("legal_embeddings")
+        : await createVectorStore(chunks?.legalChunks, "legal_embeddings");
+
+    const hrAgent = new HRAgent({ vectorStore: hrVectorStore });
+    const itAgent = new ITAgent({ vectorStore: itVectorStore });
+    const financeAgent = new FinanceAgent({ vectorStore: financeVectorStore });
+    const legalAgent = new LegalAgent({ vectorStore: legalVectorStore });
+
+    const orchestrator = new OrchestratorAgent({
+      hrAgent,
+      itAgent,
+      financeAgent,
+      legalAgent,
+    });
+
+    logger.info("All agents initialized");
+    cachedOrchestrator = orchestrator;
+    initializationPromise = null;
+    return orchestrator;
+  })();
+
+  return initializationPromise;
+}
+
+export function resetAgents(): void {
+  cachedOrchestrator = null;
+  initializationPromise = null;
 }

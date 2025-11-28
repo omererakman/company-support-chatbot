@@ -6,6 +6,14 @@ import {
 import { CallbackHandler } from "@langfuse/langchain";
 import { getConfig } from "../config/index.js";
 import { logger } from "../logger.js";
+import {
+  getCurrentTraceId,
+  runWithTraceContext,
+  runWithSpanContext,
+} from "./trace-context.js";
+
+export { getCurrentTraceId } from "./trace-context.js";
+export { getCurrentSpanId } from "./trace-context.js";
 
 let langfuseClient: LangfuseAPIClient | null = null;
 let callbackHandler: CallbackHandler | null = null;
@@ -159,4 +167,137 @@ export async function flushLangfuse(): Promise<void> {
   } catch (error) {
     logger.error({ error }, "Failed to flush Langfuse traces");
   }
+}
+
+export interface Span {
+  id: string;
+  end: () => Promise<void>;
+  update: (updates: Record<string, unknown>) => Promise<void>;
+}
+
+export async function createSpan(
+  name: string,
+  options?: {
+    parentTraceId?: string;
+    parentSpanId?: string;
+    metadata?: Record<string, unknown>;
+    startTime?: Date;
+    input?: unknown;
+  },
+): Promise<Span | null> {
+  const client = getLangfuseClient();
+  if (!client) {
+    return null;
+  }
+
+  const traceId = options?.parentTraceId || getCurrentTraceId();
+  if (!traceId) {
+    return null;
+  }
+
+  try {
+    const spanId = `${Date.now()}-${Math.random().toString(36).substr(2, 9)}-${Math.random().toString(36).substr(2, 9)}`;
+    const eventId = `${Date.now()}-${Math.random().toString(36).substr(2, 9)}-${Math.random().toString(36).substr(2, 9)}`;
+    const timestamp = (options?.startTime || new Date()).toISOString();
+
+    const spanBody: Record<string, unknown> = {
+      id: spanId,
+      traceId,
+      type: "SPAN",
+      name,
+      parentObservationId: options?.parentSpanId,
+      metadata: options?.metadata as Record<string, unknown>,
+      startTime: timestamp,
+    };
+
+    if (options?.input !== undefined) {
+      spanBody.input = options.input;
+    }
+
+    const spanEvent: IngestionEvent.ObservationCreate = {
+      type: "observation-create",
+      id: eventId,
+      timestamp,
+      body: spanBody as IngestionEvent.ObservationCreate["body"],
+    };
+
+    const request: IngestionRequest = {
+      batch: [spanEvent],
+    };
+
+    await client.ingestion.batch(request);
+
+    return {
+      id: spanId,
+      end: async () => {
+        try {
+          const endEventId = `${Date.now()}-${Math.random().toString(36).substr(2, 9)}-${Math.random().toString(36).substr(2, 9)}`;
+          const endTimestamp = new Date().toISOString();
+
+          const endEvent: IngestionEvent.ObservationUpdate = {
+            type: "observation-update",
+            id: endEventId,
+            timestamp: endTimestamp,
+            body: {
+              id: spanId,
+              traceId,
+              type: "SPAN",
+              endTime: endTimestamp,
+            },
+          };
+
+          const endRequest: IngestionRequest = {
+            batch: [endEvent],
+          };
+
+          await client.ingestion.batch(endRequest);
+        } catch (error) {
+          logger.error({ error }, "Failed to end span");
+        }
+      },
+      update: async (updates: Record<string, unknown>) => {
+        try {
+          const updateEventId = `${Date.now()}-${Math.random().toString(36).substr(2, 9)}-${Math.random().toString(36).substr(2, 9)}`;
+          const updateTimestamp = new Date().toISOString();
+
+          const updateEvent: IngestionEvent.ObservationUpdate = {
+            type: "observation-update",
+            id: updateEventId,
+            timestamp: updateTimestamp,
+            body: {
+              id: spanId,
+              traceId,
+              type: "SPAN",
+              ...updates,
+            },
+          };
+
+          const updateRequest: IngestionRequest = {
+            batch: [updateEvent],
+          };
+
+          await client.ingestion.batch(updateRequest);
+        } catch (error) {
+          logger.error({ error }, "Failed to update span");
+        }
+      },
+    };
+  } catch (error) {
+    logger.error({ error }, "Failed to create span");
+    return null;
+  }
+}
+
+export async function withTraceContext<T>(
+  traceId: string,
+  fn: () => Promise<T>,
+): Promise<T> {
+  return runWithTraceContext(traceId, undefined, fn);
+}
+
+export async function withSpanContext<T>(
+  spanId: string,
+  fn: () => Promise<T>,
+): Promise<T> {
+  return runWithSpanContext(spanId, fn);
 }

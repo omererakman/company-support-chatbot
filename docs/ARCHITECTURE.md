@@ -387,6 +387,24 @@ Infrastructure (Vector Store, LLM, Embeddings, Memory)
 - Structured logging (Pino)
 - Metrics: Operation counts, timings, error rates
 
+#### Langfuse Tracing
+
+Langfuse provides comprehensive distributed tracing for the entire query processing pipeline, enabling visibility into:
+- Intent classification and routing decisions
+- Agent execution and RAG chain operations
+- Multi-agent coordination and result merging
+- Handoff chains and agent transfers
+- Evaluation scores and quality metrics
+
+**Single Topic Query Tracing:**
+![Single Topic Tracing](langfuse_single_topic.png)
+
+**Multi-Topic Query Tracing:**
+![Multi-Topic Tracing](langfuse_multi_topic.png)
+
+**Conversation with Single Topic:**
+![Conversation Single Topic](langfuse_conversation_single_topic.png)
+
 ## Configuration
 
 Environment variables via `src/config/env.ts`:

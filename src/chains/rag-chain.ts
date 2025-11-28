@@ -51,9 +51,13 @@ export function createRAGChain(
     RunnablePassthrough.assign({
       documents: async (input: { question: string }) => {
         const retrievalStartTime = Date.now();
-        const docs = await trace("retrieval", async () => {
-          return await retriever.invoke(input.question);
-        });
+        const docs = await trace(
+          "retrieval",
+          async () => {
+            return await retriever.invoke(input.question);
+          },
+          { agent: agentName },
+        );
         const searchTimeMs = Date.now() - retrievalStartTime;
         logger.debug(
           { documentCount: docs.length, searchTimeMs, agent: agentName },
@@ -79,80 +83,87 @@ export function createRAGChain(
       }) => {
         const llmStartTime = Date.now();
 
-        return trace("llm.generate", async () => {
-          if (input.documents.docs.length === 0) {
-            logger.debug({ agent: agentName }, "No documents retrieved");
+        return trace(
+          "llm.generate",
+          async () => {
+            if (input.documents.docs.length === 0) {
+              logger.debug({ agent: agentName }, "No documents retrieved");
+              return {
+                answer:
+                  "I couldn't find relevant information to answer your question.",
+                tokenUsage: undefined,
+                timingMs: Date.now() - llmStartTime,
+              };
+            }
+
+            const context = input.documents.docs
+              .map((doc, i) => `[${i + 1}] ${doc.pageContent}`)
+              .join("\n\n");
+
+            interface PromptInput {
+              question: string;
+              context: string;
+              chat_history?: BaseMessage[];
+            }
+
+            const promptInput: PromptInput = {
+              question: input.question,
+              context,
+            };
+
+            if (useMemory && input.chat_history) {
+              promptInput.chat_history = input.chat_history;
+            }
+
+            const response = await chain.invoke(promptInput);
+
+            if (useMemory && memory) {
+              await memory.saveContext(
+                { input: input.question },
+                { output: (response as BaseMessage).content as string },
+              );
+            }
+
+            const responseMetadata = (
+              response as BaseMessage & LLMResponseMetadata
+            ).response_metadata;
+            let tokenUsage: TokenUsage | undefined = responseMetadata?.usage;
+
+            if (!tokenUsage && responseMetadata) {
+              tokenUsage =
+                responseMetadata.token_usage || responseMetadata.usage_metadata;
+            }
+
+            if (!tokenUsage) {
+              const responseWithMetadata = response as BaseMessage &
+                LLMResponseMetadata;
+              tokenUsage =
+                responseWithMetadata.usage ||
+                responseWithMetadata.llmOutput?.tokenUsage;
+            }
+
             return {
-              answer:
-                "I couldn't find relevant information to answer your question.",
-              tokenUsage: undefined,
+              answer: response.content as string,
+              tokenUsage: tokenUsage
+                ? {
+                    promptTokens:
+                      tokenUsage.promptTokens ?? tokenUsage.prompt_tokens ?? 0,
+                    completionTokens:
+                      tokenUsage.completionTokens ??
+                      tokenUsage.completion_tokens ??
+                      0,
+                    totalTokens:
+                      tokenUsage.totalTokens ?? tokenUsage.total_tokens ?? 0,
+                  }
+                : undefined,
               timingMs: Date.now() - llmStartTime,
             };
-          }
-
-          const context = input.documents.docs
-            .map((doc, i) => `[${i + 1}] ${doc.pageContent}`)
-            .join("\n\n");
-
-          interface PromptInput {
-            question: string;
-            context: string;
-            chat_history?: BaseMessage[];
-          }
-
-          const promptInput: PromptInput = {
-            question: input.question,
-            context,
-          };
-
-          if (useMemory && input.chat_history) {
-            promptInput.chat_history = input.chat_history;
-          }
-
-          const response = await chain.invoke(promptInput);
-
-          if (useMemory && memory) {
-            await memory.saveContext(
-              { input: input.question },
-              { output: (response as BaseMessage).content as string },
-            );
-          }
-
-          const responseMetadata = (
-            response as BaseMessage & LLMResponseMetadata
-          ).response_metadata;
-          let tokenUsage: TokenUsage | undefined = responseMetadata?.usage;
-
-          if (!tokenUsage && responseMetadata) {
-            tokenUsage =
-              responseMetadata.token_usage || responseMetadata.usage_metadata;
-          }
-
-          if (!tokenUsage) {
-            const responseWithMetadata = response as BaseMessage &
-              LLMResponseMetadata;
-            tokenUsage =
-              responseWithMetadata.usage ||
-              responseWithMetadata.llmOutput?.tokenUsage;
-          }
-
-          return {
-            answer: response.content as string,
-            tokenUsage: tokenUsage
-              ? {
-                  promptTokens:
-                    tokenUsage.promptTokens ?? tokenUsage.prompt_tokens ?? 0,
-                  completionTokens:
-                    tokenUsage.completionTokens ??
-                    tokenUsage.completion_tokens ??
-                    0,
-                  totalTokens:
-                    tokenUsage.totalTokens ?? tokenUsage.total_tokens ?? 0,
-                }
-              : undefined,
-            timingMs: Date.now() - llmStartTime,
-          };
-        });
+          },
+          {
+            agent: agentName,
+            documentCount: input.documents.docs.length,
+          },
+        );
       },
     }),
     RunnableLambda.from(
@@ -253,9 +264,13 @@ export async function* streamRAGChain(
     yield { type: "start" as const, metadata: { agent: agentName } };
 
     const retrievalStartTime = Date.now();
-    const docs = await trace("retrieval", async () => {
-      return await retriever.invoke(question);
-    });
+    const docs = await trace(
+      "retrieval",
+      async () => {
+        return await retriever.invoke(question);
+      },
+      { agent: agentName },
+    );
     const searchTimeMs = Date.now() - retrievalStartTime;
 
     logger.debug(
@@ -300,9 +315,13 @@ export async function* streamRAGChain(
     const llmStartTime = Date.now();
     let tokenUsage: TokenUsage | undefined;
 
-    const stream = await trace("llm.stream", async () => {
-      return await llm.stream(prompt);
-    });
+    const stream = await trace(
+      "llm.stream",
+      async () => {
+        return await llm.stream(prompt);
+      },
+      { agent: agentName, documentCount: docs.length },
+    );
 
     for await (const chunk of stream) {
       const content = chunk.content as string;

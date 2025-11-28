@@ -12,6 +12,7 @@ import { createRAGChain, streamRAGChain } from "../chains/rag-chain.js";
 import { withSafetyMiddleware } from "../safety/middleware.js";
 import { AgentResponse, StreamChunk } from "../types/schemas.js";
 import { logger } from "../logger.js";
+import { trace } from "../monitoring/tracing.js";
 
 export interface BaseAgentConfig {
   name: string;
@@ -53,25 +54,35 @@ export abstract class BaseAgent {
     question: string,
     memory?: BufferMemory | ConversationSummaryMemory | null,
   ): Promise<AgentResponse> {
-    logger.debug(
-      { agent: this.name, question: question.substring(0, 100) },
-      "Processing question",
+    return trace(
+      "agent.invoke",
+      async () => {
+        logger.debug(
+          { agent: this.name, question: question.substring(0, 100) },
+          "Processing question",
+        );
+
+        if (memory !== undefined && memory !== null) {
+          const ragChain = createRAGChain(
+            this.retriever,
+            this.llm,
+            this.name,
+            memory,
+          );
+          const chainWithMemory = withSafetyMiddleware(ragChain);
+          const result = await chainWithMemory.invoke({ question });
+          return result as AgentResponse;
+        }
+
+        const result = await this.chain.invoke({ question });
+        return result as AgentResponse;
+      },
+      {
+        agent: this.name,
+        hasMemory: memory !== undefined && memory !== null,
+      },
+      question,
     );
-
-    if (memory !== undefined && memory !== null) {
-      const ragChain = createRAGChain(
-        this.retriever,
-        this.llm,
-        this.name,
-        memory,
-      );
-      const chainWithMemory = withSafetyMiddleware(ragChain);
-      const result = await chainWithMemory.invoke({ question });
-      return result as AgentResponse;
-    }
-
-    const result = await this.chain.invoke({ question });
-    return result as AgentResponse;
   }
 
   /**

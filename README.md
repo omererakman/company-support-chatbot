@@ -50,8 +50,8 @@ https://github.com/user-attachments/assets/585e602a-c096-4436-a9f5-5cabd1a87d58
    
    **Optional (but recommended):**
    ```env
-   # Langfuse for observability - omit if you don't need tracing
-   LANGFUSE_ENABLED=true
+   # Langfuse for observability
+   LANGFUSE_ENABLED=false
    LANGFUSE_PUBLIC_KEY=pk-lf-xxx
    LANGFUSE_SECRET_KEY=sk-lf-xxx
    LANGFUSE_HOST=https://cloud.langfuse.com
@@ -295,9 +295,7 @@ All variables below are optional and have sensible defaults. Only set them if yo
 
 ```env
 # Langfuse (OPTIONAL - for observability)
-# Set LANGFUSE_ENABLED=false to disable Langfuse entirely
-# Omit these if you don't want tracing and evaluation features
-LANGFUSE_ENABLED=true
+LANGFUSE_ENABLED=false
 LANGFUSE_PUBLIC_KEY=pk-lf-xxx
 LANGFUSE_SECRET_KEY=sk-lf-xxx
 LANGFUSE_HOST=https://cloud.langfuse.com

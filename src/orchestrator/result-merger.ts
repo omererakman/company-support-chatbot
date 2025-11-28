@@ -112,10 +112,13 @@ async function mergeLLMSynthesis(
   originalQuery: string,
   subQueries: Array<{ intent: Intent; subQuery: string }>,
 ): Promise<MergedResponse> {
-  const synthesisPrompt = ChatPromptTemplate.fromMessages([
-    [
-      "system",
-      `You are synthesizing answers from multiple specialized agents into a coherent, unified response.
+  return trace(
+    "orchestrator.mergeLLMSynthesis",
+    async () => {
+      const synthesisPrompt = ChatPromptTemplate.fromMessages([
+        [
+          "system",
+          `You are synthesizing answers from multiple specialized agents into a coherent, unified response.
 
 Original question: {originalQuery}
 
@@ -127,68 +130,74 @@ You have received answers from {agentCount} different agents. Combine them into 
 5. Eliminates redundancy
 
 If there are conflicts or contradictions, note them and provide the most accurate information based on the sources.`,
-    ],
-    [
-      "human",
-      `Agent Responses:
+        ],
+        [
+          "human",
+          `Agent Responses:
 
 {responses}
 
 Please synthesize these into a single, coherent answer to the original question: {originalQuery}`,
-    ],
-  ]);
+        ],
+      ]);
 
-  // Format agent responses
-  const responsesText = subQueries
-    .map(({ intent, subQuery }) => {
-      const response = results[intent];
-      if (!response) return null;
-      return `Agent: ${response.metadata.agent} (${intent})
+      // Format agent responses
+      const responsesText = subQueries
+        .map(({ intent, subQuery }) => {
+          const response = results[intent];
+          if (!response) return null;
+          return `Agent: ${response.metadata.agent} (${intent})
 Question: ${subQuery}
 Answer: ${response.answer}`;
-    })
-    .filter(Boolean)
-    .join("\n\n---\n\n");
+        })
+        .filter(Boolean)
+        .join("\n\n---\n\n");
 
-  // LCEL chain composition
-  const llm = createLLM();
-  const chain = synthesisPrompt.pipe(llm);
+      // LCEL chain composition
+      const llm = createLLM();
+      const chain = synthesisPrompt.pipe(llm);
 
-  const synthesizedAnswer = await chain.invoke({
-    originalQuery,
-    agentCount: Object.keys(results).length,
-    responses: responsesText,
-  });
+      const synthesizedAnswer = await chain.invoke({
+        originalQuery,
+        agentCount: Object.keys(results).length,
+        responses: responsesText,
+      });
 
-  const answer =
-    typeof synthesizedAnswer.content === "string"
-      ? synthesizedAnswer.content
-      : String(synthesizedAnswer.content);
+      const answer =
+        typeof synthesizedAnswer.content === "string"
+          ? synthesizedAnswer.content
+          : String(synthesizedAnswer.content);
 
-  return {
-    answer,
-    sources: subQueries
-      .map(({ intent }) => {
-        const response = results[intent];
-        if (!response) return null;
-        return {
-          intent,
-          agent: response.metadata.agent,
-          sources: response.sources,
-        };
-      })
-      .filter((s): s is MergedResponse["sources"][0] => s !== null),
-    metadata: {
-      agents: Object.values(results).map((r) => r.metadata.agent),
-      intents: subQueries.map((sq) => sq.intent),
-      mergeStrategy: "llm_synthesis",
-      timings: {
-        executionMs: 0,
-        mergeMs: 0,
-        totalMs: 0,
-      },
+      return {
+        answer,
+        sources: subQueries
+          .map(({ intent }) => {
+            const response = results[intent];
+            if (!response) return null;
+            return {
+              intent,
+              agent: response.metadata.agent,
+              sources: response.sources,
+            };
+          })
+          .filter((s): s is MergedResponse["sources"][0] => s !== null),
+        metadata: {
+          agents: Object.values(results).map((r) => r.metadata.agent),
+          intents: subQueries.map((sq) => sq.intent),
+          mergeStrategy: "llm_synthesis",
+          timings: {
+            executionMs: 0,
+            mergeMs: 0,
+            totalMs: 0,
+          },
+        },
+      };
     },
-  };
+    {
+      agentCount: Object.keys(results).length,
+      strategy: "llm_synthesis",
+    },
+  );
 }
 
 /**

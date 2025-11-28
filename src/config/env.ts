@@ -28,7 +28,7 @@ const ConfigSchema = z.object({
   langfusePublicKey: z.string().optional(),
   langfuseSecretKey: z.string().optional(),
   langfuseHost: z.string().default("https://cloud.langfuse.com"),
-  langfuseEnabled: z.boolean().default(true),
+  langfuseEnabled: z.boolean().default(false),
   cacheEnabled: z.boolean().default(true),
   cacheTtl: z.number().int().positive().default(3600),
   memoryType: z.enum(["buffer", "summary", "none"]).default("buffer"),

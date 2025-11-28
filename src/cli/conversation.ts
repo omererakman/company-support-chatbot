@@ -6,11 +6,12 @@ import * as readline from "readline";
 import { OrchestratorAgent, initializeAgents } from "../orchestrator/index.js";
 import { createMemory, clearMemory, getMemory } from "../memory/index.js";
 import { logger } from "../logger.js";
-import { createTrace, flushLangfuse } from "../monitoring/langfuse.js";
+import {
+  createTrace,
+  flushLangfuse,
+  withTraceContext,
+} from "../monitoring/langfuse.js";
 
-/**
- * Process a question with conversation memory
- */
 async function processQuestionWithMemory(
   orchestrator: OrchestratorAgent,
   question: string,
@@ -20,10 +21,15 @@ async function processQuestionWithMemory(
     question,
     sessionId,
   });
+  const traceId = langfuseTrace?.id;
 
   try {
     const memory = getMemory(sessionId);
-    const result = await orchestrator.process(question, memory);
+    const result = traceId
+      ? await withTraceContext(traceId, async () => {
+          return await orchestrator.process(question, memory);
+        })
+      : await orchestrator.process(question, memory);
 
     return result;
   } catch (error) {
